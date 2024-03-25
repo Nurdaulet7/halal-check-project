@@ -1,9 +1,9 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-}
+} */
 
 .container {
   display: flex;
@@ -19,12 +19,6 @@
   transition: var(--tran-03);
   opacity: 1;
 }
-
-/* .sidebar .image {
-    min-width: 50px;
-  } */
-
-/* ****** Sidebar ******/
 
 .sidebar {
   position: fixed;
