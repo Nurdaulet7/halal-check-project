@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import styles from "../styles/Sidebar.module.css";
 
 export const MenuItem = ({ item }) => {
   const { path, icon, name } = item;
@@ -7,11 +8,11 @@ export const MenuItem = ({ item }) => {
       <NavLink
         to={path}
         className={({ isActive }) =>
-          isActive ? "activeLink nav-link" : "nav-link"
+          isActive ? `${styles.activeLink} ${styles.navLink}` : styles.navLink
         }
       >
-        <i className="icon">{icon}</i>
-        <span className="text nav-text">{name}</span>
+        <i className={styles.icon}>{icon}</i>
+        <span className={`${styles.text} ${styles.navText}`}>{name}</span>
       </NavLink>
     </li>
   );

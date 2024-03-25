@@ -5,6 +5,7 @@ import { PiBarcode, PiPhoneCallBold } from "react-icons/pi";
 import { TbMessage2Question } from "react-icons/tb";
 import { v4 as uuidv4 } from "uuid";
 import { MenuItem } from "./MenuItem";
+import styles from "../styles/Sidebar.module.css";
 
 const menuItem = [
   {
@@ -51,7 +52,7 @@ const menuItem = [
 
 export const MenuItems = () => {
   return (
-    <ul className="menu-links">
+    <ul className={`${styles["menu-links"]}`}>
       {menuItem.map((item) => (
         <MenuItem item={item} key={uuidv4()} />
       ))}

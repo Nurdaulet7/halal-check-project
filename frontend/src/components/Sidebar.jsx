@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../img/logo.png";
 import { MenuItems } from "./MenuItems";
+import styles from "../styles/Sidebar.module.css";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,40 +15,50 @@ const Sidebar = ({ children }) => {
   }, [darkMode]);
 
   return (
-    <div className="container">
-      <nav className={isOpen ? "sidebar close" : "sidebar"}>
+    <div className={styles.container}>
+      <nav className={`${styles.sidebar} ${isOpen && styles.close}`}>
         <header>
-          <div className="image-text">
-            <span className="image">
+          <div className={`${styles["image-text"]}`}>
+            <span className={styles.image}>
               <img src={logo} alt="logo" />
             </span>
 
-            <div className="text header-text">
-              <span className="name">HalalCheck</span>
-              <span className="subtext">Your halal lifestyle companion</span>
+            <div className={`${styles.text} ${styles["header-text"]}`}>
+              <span className={styles.name}>HalalCheck</span>
+              <span className={styles.subtext}>
+                Your halal lifestyle companion
+              </span>
             </div>
           </div>
 
-          <i className="bx bxs-chevron-left toggle" onClick={toggle}></i>
+          <i
+            className={`bx bxs-chevron-left ${styles.toggle}`}
+            onClick={toggle}
+          />
         </header>
 
-        <div className="menu-bar">
-          <div className="menu">
+        <div className={`${styles["menu-bar"]}`}>
+          <div className={styles.menu}>
             <MenuItems />
           </div>
-          <div className="bottom-content">
-            <li className="mode">
-              <div className="moon-sun">
-                <i className="bx bx-moon icon moon"></i>
-                <i className="bx bx-sun icon sun"></i>
+          <div className={styles["bottom-content"]}>
+            <li className={styles.mode}>
+              <div className={styles["moon-sun"]}>
+                <i className={`bx bx-sun ${styles.icon} ${styles.moon}`} />
+                <i className={`bx bx-moon ${styles.icon} ${styles.sun}`} />
               </div>
-              <span className="mode-text text">DarkMode</span>
+
+              <span className={`${styles["mode-text"]} ${styles.text}`}>
+                {darkMode ? "Dark Mode" : "Light Mode"}
+              </span>
 
               <div
                 onClick={darkToggle}
-                className={darkMode ? "toggle-switch dark" : "toggle-switch"}
+                className={`${styles["toggle-switch"]} ${
+                  darkMode ? "dark" : ""
+                }`}
               >
-                <span className="switch"></span>
+                <span className={styles.switch}></span>
               </div>
             </li>
           </div>

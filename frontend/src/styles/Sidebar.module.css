@@ -5,64 +5,11 @@
   text-decoration: none;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
-
 .container {
   display: flex;
 }
-main {
-  width: 100%;
-  /* padding: 20px; */
-}
 
-:root {
-  --body-color: #e4e9f7;
-  --sidebar-color: #ffffff;
-  --primary-color: #5d7285;
-  --primary-color-light: #f6f5ff;
-  --text-color-menu: #636363;
-  --header-color: #43ba5b;
-  --toggle-color: #ddd;
-  --hover-color: #ffffff;
-  --hover-menu-color: #43ba5b;
-  --text-color: rgb(0, 0, 0);
-  --warning: #e4bc43;
-  --error: #cb4f4f;
-  --active-menu-dropdown: #43ba5b;
-  --hover-sidebar: #47b85aa6;
-  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-  /* ====== Transition ====== */
-  --tran-02: all 0.2s ease;
-  --tran-03: all 0.3s ease;
-  --tran-04: all 0.4s ease;
-  --tran-05: all 0.5s ease;
-}
-
-body {
-  height: 100vh;
-  background-color: var(--body-color);
-  transition: var(--tran-04);
-}
-
-body.dark {
-  --body-color: #18191a;
-  --sidebar-color: #242526;
-  --primary-color: #3a3b3c;
-  --primary-color-light: #3a3b3c;
-  --toggle-color: #fff;
-  --text-color-menu: #ccc;
-  --hover-color: #ffffff;
-  --hover-menu-color: #3a3b3c;
-  --text-color: #ffffff;
-  --active-menu-dropdown: #909090;
-  --hover-sidebar: #3a3b3c;
-}
-
-/* ****** Reusable CSS */
-/* .sidebar .text {
+.sidebar .text {
   font-size: 16px;
   font-weight: 450;
   display: flex;
@@ -73,13 +20,18 @@ body.dark {
   opacity: 1;
 }
 
+/* .sidebar .image {
+    min-width: 50px;
+  } */
 
+/* ****** Sidebar ******/
 
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
+  /* height: 100vh; */
   width: 270px;
   padding: 10px 14px;
   background-color: var(--sidebar-color);
@@ -240,11 +192,11 @@ header .image-text .header-text {
   opacity: 0;
 }
 
-body.dark .menu-bar .mode i.sun {
+:global(body.dark) .menu-bar .mode i.sun {
   opacity: 1;
 }
 
-body.dark .menu-bar .mode i.moon {
+:global(body.dark) .menu-bar .mode i.moon {
   opacity: 0;
 }
 
@@ -282,30 +234,11 @@ body.dark .menu-bar .mode i.moon {
   transition: var(--tran-03);
 }
 
-body.dark .toggle-switch .switch::before {
+:global(.dark) .toggle-switch .switch::before {
   left: 20px;
-}
-
-
-
-main .text {
-  font-size: 30px;
-  padding: 8px 40px;
 }
 
 .sidebar.close ~ main {
   left: 78px;
   width: calc(100% - 78px);
-} */
-
-main {
-  position: relative;
-  left: 270px;
-  height: 100vh;
-  width: calc(100% - 270px);
-  background: var(--body-color);
-  transition: var(--tran-05);
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
 }
