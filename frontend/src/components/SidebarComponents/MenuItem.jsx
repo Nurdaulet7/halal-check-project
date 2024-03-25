@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styles from "../styles/Sidebar.module.css";
+import styles from "../../styles/Sidebar.module.css";
 
 export const MenuItem = ({ item }) => {
   const { path, icon, name } = item;

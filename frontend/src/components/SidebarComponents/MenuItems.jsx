@@ -4,8 +4,8 @@ import { RiTeamLine } from "react-icons/ri";
 import { PiBarcode, PiPhoneCallBold } from "react-icons/pi";
 import { TbMessage2Question } from "react-icons/tb";
 import { v4 as uuidv4 } from "uuid";
-import { MenuItem } from "./MenuItem";
-import styles from "../styles/Sidebar.module.css";
+import { MenuItem } from "./MenuItem.jsx";
+import styles from "../../styles/Sidebar.module.css";
 
 const menuItem = [
   {
