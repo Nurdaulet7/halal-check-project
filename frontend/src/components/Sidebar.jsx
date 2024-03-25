@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import logo from "../../img/logo.png";
-import { MenuItems } from "./MenuItems.jsx";
-import styles from "../../styles/Sidebar.module.css";
+import logo from "../img/logo.png";
+import { MenuItems } from "./SidebarComponents/MenuItems.jsx";
+import styles from "../styles/Sidebar.module.css";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);

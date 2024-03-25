@@ -1,0 +1,62 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+header.vertificationHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 15px 20px;
+  padding-top: 10px;
+  background-color: var(--sidebar-color);
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+}
+
+.searchHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.searchHeader h3 {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.searchHeader form {
+  width: 70%;
+}
+
+.searchHeader form input {
+  width: 50%;
+  border: 2.5px solid var(--header-color);
+  padding: 5px 10px;
+  height: 40px;
+  border-radius: 5px;
+  color: #7f8183;
+}
+
+.colortext {
+  color: var(--header-color);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.checkbox {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.bottomText {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-color-menu);
+}
+
+.lngSwitcher img {
+  height: 35px;
+}

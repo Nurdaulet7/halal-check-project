@@ -1,0 +1,41 @@
+.statusColorsContainer {
+  box-shadow: var(--shadow);
+  background-color: var(--sidebar-color);
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  text-shadow: 0.2px 1px 0.5px rgba(0, 0, 0, 0.15);
+}
+
+.statusColorsContainer h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color-menu);
+}
+
+.statusProduct {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.status {
+  width: 31%;
+  border: none;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+.status.halal {
+  background-color: #28a745;
+}
+
+.status.doubtful {
+  background-color: #ffc107;
+}
+
+.status.haram {
+  background-color: #dc3545;
+}
