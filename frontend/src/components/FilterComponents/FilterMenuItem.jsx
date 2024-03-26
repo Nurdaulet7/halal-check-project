@@ -26,7 +26,22 @@ export const FilterMenuItem = () => {
 
   // Обработчик клика по элементу
   const handleItemClick = (index) => {
+    if (expanded === null) {
+      setWrapped(index);
+    } else {
+      setWrapped(null);
+    }
     setExpanded(expanded === index ? null : index); // Расширять или сворачивать элемент
+  };
+
+  const [wrapped, setWrapped] = useState(null);
+  const handleWrapClick = (index) => {
+    if (wrapped === null) {
+      setExpanded(index);
+    } else {
+      setExpanded(null);
+    }
+    setWrapped(wrapped === index ? null : index);
   };
 
   return (
@@ -34,17 +49,32 @@ export const FilterMenuItem = () => {
       <ul className="items">
         {menuFilter.map((product, index) => (
           <li key={index}>
-            <a
-              href="#!"
-              onClick={() => handleItemClick(index)}
-              className={expanded === index ? "active" : ""}
-            >
-              {product.category}
-              <a className={expanded === index ? "rotate" : "rotateBack"}>
+            <div className="menuWrap">
+              <a
+                href="#!"
+                onClick={() => handleItemClick(index)}
+                className={expanded === index ? "active" : ""}
+              >
+                {product.category}
+              </a>
+              <a
+                style={{ transition: "transform 0.5s ease" }}
+                onClick={() => handleWrapClick(index)}
+                className={`${
+                  wrapped === index || expanded == index
+                    ? "rotate"
+                    : "rotateBack"
+                }${wrapped === index ? "active" : ""}`}
+              >
                 <IoIosArrowDown />
               </a>
-            </a>
-            <ul className={`sub-items ${expanded === index ? "show" : ""}`}>
+            </div>
+
+            <ul
+              className={`sub-items ${
+                expanded === index || wrapped === index ? "show" : ""
+              }`}
+            >
               {product.subCategory.map((sub, subIndex) => (
                 <li key={subIndex}>
                   <a href="#!">{sub}</a>
