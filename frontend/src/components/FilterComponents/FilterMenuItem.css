@@ -25,7 +25,7 @@
   text-decoration: none;
   color: var(--text-color-menu);
   padding: 10px 0px;
-  transition: #64d7e2 0.4s ease-in-out;
+  transition: var(--header-color) 0.4s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,9 +33,7 @@
 
 .menuWrap {
   text-decoration: none;
-  color: #646464;
   padding: 10px 0px;
-  transition: #64d7e2 0.4s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,35 +46,40 @@
 .items > li > .menuWrap a:hover,
 .items > li > .menuWrap a.active {
   /* Класс 'active' будет добавлен к текущему активному элементу */
-  color: #64d7e2;
+  color: var(--header-color);
 }
 
 .sub-items {
   border-left: solid 1px var(--header-color);
   list-style: none;
-  display: none; /* Скрыто по умолчанию */
+  visibility: hidden; /* Изменено с display: none на visibility: hidden */
+  opacity: 0; /* Добавлено для анимации прозрачности */
+  max-height: 0; /* Начальное состояние для анимации высоты */
+  overflow: hidden; /* Предотвращает отображение содержимого при max-height: 0 */
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear,
+    max-height 0.5s ease-out; /* Анимация */
   left: 0;
   right: 0;
-  top: 100%; /* Расположение под родительским элементом */
-  background-color: var(--sidebar-color); /* Фон, такой же, как у .wrapper */
+  top: 100%;
+  background-color: var(--sidebar-color);
 }
-
 .sub-items > li > a {
   display: block;
   text-decoration: none;
   color: var(--text-color-menu);
-
   padding: 10px;
   transition: color 0.4s ease-in-out;
 }
 
 .sub-items > li > a:hover {
-  color: #8ee8f1;
+  color: var(--header-color);
 }
 
-/* Класс для отображения подменю */
 .sub-items.show {
-  display: block;
+  visibility: visible; /* Элемент теперь видим */
+  opacity: 1; /* Элемент полностью непрозрачен */
+  max-height: 500px; /* Примерное максимальное значение. Настройте в зависимости от содержимого */
+  transition-delay: 0s; /* Убедитесь, что visibility становится visible без задержки */
 }
 
 .rotate {

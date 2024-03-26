@@ -20,6 +20,14 @@ export const FilterMenuItem = () => {
       category: "Milk products",
       subCategory: ["Milk", "Kumys", "Shybat", "Cheese"],
     },
+    {
+      category: "Milk products",
+      subCategory: ["Milk", "Kumys", "Shybat", "Cheese"],
+    },
+    {
+      category: "Milk products",
+      subCategory: ["Milk", "Kumys", "Shybat", "Cheese"],
+    },
   ];
   // Состояние для отслеживания расширенных элементов
   const [expanded, setExpanded] = useState(null);
