@@ -1,4 +1,4 @@
-import { DropDownMenu } from "../components/FilterComponents/DropDownMenu";
+import { FilterMenuItem } from "../components/FilterComponents/FilterMenuItem";
 import { StatusIncticator } from "../components/FilterComponents/StatusIncticatorOfProduct";
 import { HeaderMain } from "../components/HeaderMain/HeaderMain";
 
@@ -7,7 +7,7 @@ export const HalalVertification = () => {
     <div className="mainComponents">
       <HeaderMain />
       <StatusIncticator />
-      <DropDownMenu />
+      <FilterMenuItem />
     </div>
   );
 };
