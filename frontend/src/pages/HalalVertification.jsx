@@ -5,10 +5,10 @@ import styles from "../styles/HalalVertificationGrid.module.css";
 
 export const HalalVertification = () => {
   return (
-    <div className="mainComponents">
+    <>
       <HeaderMain className={styles.header} />
-      <ProductsList className={styles.mainContent} />
+      <ProductsList className={styles.main} />
       <Filter className={styles.filter} />
-    </div>
+    </>
   );
 };

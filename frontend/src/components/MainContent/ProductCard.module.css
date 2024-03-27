@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  box-sizing: border-box;
+  color: var(--sidebar-color);
+  width: clamp(230px, 50%, 260px);
+  background-color: var(--header-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  padding: 13px;
+}
+
+.card img {
+  width: 100%;
+  height: 175px;
+  border-radius: 10px;
+}
+
+.cardContent h3 {
+  font-size: clamp(0.75rem, 0.6286rem + 0.5178vw, 1.25rem);
+}
+
+.cardContent p {
+  color: rgba(255, 255, 255, 0.85); /* Белый текст с 85% непрозрачности */
+  font-size: clamp(0.625rem, 0.5643rem + 0.2589vw, 0.875rem);
+  line-height: 1.5;
+}
+
+.textBold {
+  font-weight: 500;
+}
+
+.cardBottom {
+  font-size: clamp(0.75rem, 0.6893rem + 0.2589vw, 1rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.cardBottom label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.cardBottom .btn {
+  padding: 5px 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: var(--sidebar-color);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.cardBottom .btn:hover {
+  background-color: rgba(200, 209, 205, 0.315);
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}

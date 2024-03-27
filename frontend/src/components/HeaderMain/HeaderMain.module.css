@@ -3,6 +3,7 @@
 }
 
 header.vertificationHeader {
+  grid-column: 1 / -1; /* Занимает все 4 колонки */
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -32,13 +33,24 @@ header.vertificationHeader {
 
 .searchHeader form input {
   width: 50%;
-  border: 2.5px solid var(--header-color);
+  border: 2px solid var(--text-color-menu);
+  outline: none;
   padding: 5px 10px;
   height: 40px;
   border-radius: 5px;
-  color: #7f8183;
+  background-color: var(--sidebar-color);
+  color: var(--text-color-menu);
+  transition: var(--tran-05);
 }
 
+.searchHeader form input:focus {
+  color: var(--text-color);
+  font-weight: 450;
+  border: 2px solid var(--header-color);
+  box-shadow: rgba(136, 191, 154, 0.48) 6px 2px 16px 0px,
+    rgba(116, 168, 92, 0.8) -6px -2px 16px 0px;
+  border-radius: 10px 0;
+}
 .colortext {
   color: var(--header-color);
   font-size: 22px;

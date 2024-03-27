@@ -12,7 +12,10 @@ export const HeaderMain = () => {
           companion in the world of halal nutrition!
         </h3>
         <form action="">
-          <input type="text" placeholder="What are you looking for?" />
+          <input
+            type="text"
+            placeholder="Search by product name. Ex: Chocolate"
+          />
           <span className={styles.checkbox}>
             <Checkbox {...label} defaultChecked color="success" />
             Show only certified products
