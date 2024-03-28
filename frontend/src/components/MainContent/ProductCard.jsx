@@ -2,7 +2,17 @@ import { useSelector } from "react-redux";
 import styles from "./ProductCard.module.css";
 import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
 
-export const ProductCard = () => {
+export const ProductCard = (props) => {
+  const {
+    name,
+    barcode,
+    ingredients,
+    status,
+    img,
+    additives,
+    certified,
+    certifiacates,
+  } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
 
   return (
@@ -11,22 +21,26 @@ export const ProductCard = () => {
         sidebarVisible ? styles.withoutSidebar : styles.withSidebar
       }`}
     >
-      <div className={styles.card}>
-        <img src="https://www.bestofcandy.de/images/product_images/original_images/hershey_milk_chocolate.jpg" />
+      <div className={`${styles.card} ${styles[status]}`}>
+        <img src={img} />
         <div className={styles.cardContent}>
           <div className={styles.cardCenter}>
-            <h3>Chocolate “Hersey's”</h3>
+            <h3>{name}</h3>
             <p>
-              <span className={styles.textBold}>Ingredients:</span> sugar, cocoa
-              mass, cocoa butter, whey solids, whole..
+              <span className={styles.textBold}>Ingredients:</span>{" "}
+              {ingredients.description}
             </p>
             <hr color="white" margin="5px" />
             <p>
-              <span className={styles.textBold}>Barcode:</span> 87585590505
+              <span className={styles.textBold}>Barcode: </span>
+              {barcode}
             </p>
           </div>
           <div className={styles.cardBottom}>
-            <label>Not certified</label>
+            <label className={certified ? styles.certified : ""}>
+              {certified ? "Certified" : "Not certified"}
+            </label>
+            {certified && <img src={certifiacates.logo} alt="" />}
             <a href="" className={styles.btn}>
               Read More
             </a>

@@ -58,6 +58,18 @@
   padding: 1rem;
 }
 
+.halal {
+  background-color: var(--header-color);
+}
+
+.haram {
+  background-color: var(--error);
+}
+
+.doubtful {
+  background-color: var(--warning);
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -65,7 +77,6 @@
   justify-content: center;
   color: var(--sidebar-color);
   /* flex: 3; */
-  background-color: var(--header-color);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -84,6 +95,11 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 3px;
+}
+
+.cardCenter hr {
+  border: none;
+  height: 0.1px;
 }
 
 .cardContent h3 {
@@ -114,6 +130,19 @@
   align-items: center;
   font-style: italic;
   font-weight: 500;
+}
+
+.cardBottom .certified {
+  display: none;
+}
+
+/* .cardBottom .notCertified {
+  display: none;
+} */
+
+.cardBottom img {
+  width: 25px;
+  height: auto;
 }
 
 .cardBottom .btn {
