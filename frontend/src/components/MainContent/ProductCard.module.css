@@ -2,33 +2,101 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.4;
 }
 
-.card {
+@media (min-width: 500px) {
+  .viewsRow {
+    display: flex;
+    box-sizing: border-box;
+    width: 33%;
+    /* width: 20%; */
+    padding: 1em;
+  }
+}
+@media (min-width: 900px) {
+  .viewsRow {
+    display: flex;
+    box-sizing: border-box;
+    width: 33%;
+    /* width: 20%; */
+    padding: 1em;
+  }
+}
+@media (min-width: 1200px) {
+  .viewsRow {
+    display: flex;
+    box-sizing: border-box;
+    width: 33%;
+    /* width: 20%; */
+    padding: 1em;
+  }
+}
+@media (min-width: 1200px) {
+  .viewsRow {
+    display: flex;
+    box-sizing: border-box;
+    width: 25%;
+    /* width: 20%; */
+    padding: 1em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .viewsRow {
+    display: flex;
+    box-sizing: border-box;
+    width: 20%;
+    /* width: 20%; */
+    padding: 0.5em;
+  }
+}
+
+/* .viewsRow {
+  display: flex;
   box-sizing: border-box;
+  width: 33%;
+  padding: 1em;
+} */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  flex: 3;
   color: var(--sidebar-color);
-  width: clamp(230px, 50%, 260px);
+  /* width: clamp(230px, 50%, 260px);
+  width: 100%; */
   background-color: var(--header-color);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  padding: 13px;
+  padding: 10px;
 }
 
 .card img {
   width: 100%;
-  height: 175px;
+  height: 170px;
   border-radius: 10px;
+}
+
+.cardCenter {
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3px;
 }
 
 .cardContent h3 {
   font-size: clamp(0.75rem, 0.6286rem + 0.5178vw, 1.25rem);
+  /* margin: 5px 0; */
 }
 
 .cardContent p {
   color: rgba(255, 255, 255, 0.85); /* Белый текст с 85% непрозрачности */
   font-size: clamp(0.625rem, 0.5643rem + 0.2589vw, 0.875rem);
-  line-height: 1.5;
 }
 
 .textBold {
@@ -40,7 +108,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5px;
 }
 
 .cardBottom label {

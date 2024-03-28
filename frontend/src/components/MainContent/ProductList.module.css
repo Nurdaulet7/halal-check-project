@@ -5,11 +5,12 @@
 }
 
 .mainContainer {
-  width: 100%;
+  /* width: 100%; */
   grid-column: 1 / span 4;
-  display: flex;
+  margin: 15px;
+  /* display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px; */
 }
 
 .mainContainer h2 {
@@ -19,7 +20,7 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
+  flex: 1;
+  width: 100%;
 }

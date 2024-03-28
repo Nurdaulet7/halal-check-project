@@ -6,15 +6,17 @@ export const ProductsList = () => {
     <div className={styles.mainContainer}>
       <h2>Confectionery / «Chocolate bars»</h2>
       <hr />
-      <div className={styles.container}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+      <div className={styles.viewContent}>
+        <div className={styles.container}>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </div>
       </div>
     </div>
   );
