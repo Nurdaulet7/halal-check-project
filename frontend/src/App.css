@@ -37,6 +37,7 @@ body {
 }
 
 body.dark {
+  --header-color: #2a8f5c;
   --body-color: #18191a;
   --sidebar-color: #242526;
   --primary-color: #3a3b3c;

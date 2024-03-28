@@ -1,9 +1,16 @@
+import { useSelector } from "react-redux";
 import styles from "./ProductCard.module.css";
-import { MdOutlineNotInterested } from "react-icons/md";
+import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
 
 export const ProductCard = () => {
+  const sidebarVisible = useSelector(selectsidebarVisible);
+
   return (
-    <div className={styles.viewsRow}>
+    <div
+      className={`${styles.viewsRow} ${
+        sidebarVisible ? styles.withoutSidebar : styles.withSidebar
+      }`}
+    >
       <div className={styles.card}>
         <img src="https://www.bestofcandy.de/images/product_images/original_images/hershey_milk_chocolate.jpg" />
         <div className={styles.cardContent}>
@@ -19,10 +26,7 @@ export const ProductCard = () => {
             </p>
           </div>
           <div className={styles.cardBottom}>
-            <label>
-              Not certified{" "}
-              <MdOutlineNotInterested fontSize="clamp(0.75rem, 0.6286rem + 0.5178vw, 1.25rem)" />
-            </label>
+            <label>Not certified</label>
             <a href="" className={styles.btn}>
               Read More
             </a>

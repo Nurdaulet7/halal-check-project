@@ -6,68 +6,65 @@
 }
 
 @media (min-width: 500px) {
-  .viewsRow {
-    display: flex;
-    box-sizing: border-box;
-    width: 33%;
-    /* width: 20%; */
-    padding: 1em;
-  }
 }
+
 @media (min-width: 900px) {
-  .viewsRow {
-    display: flex;
-    box-sizing: border-box;
-    width: 33%;
-    /* width: 20%; */
-    padding: 1em;
+  .viewsRow.withSidebar {
+    width: calc(100% / 2);
+    min-width: 220px;
+  }
+
+  .viewsRow.withoutSidebar {
+    min-width: 220px;
+    width: calc(100% / 3);
   }
 }
 @media (min-width: 1200px) {
-  .viewsRow {
-    display: flex;
-    box-sizing: border-box;
-    width: 33%;
-    /* width: 20%; */
-    padding: 1em;
+  .viewsRow.withSidebar {
+    width: calc(100% / 3);
   }
-}
-@media (min-width: 1200px) {
-  .viewsRow {
-    display: flex;
-    box-sizing: border-box;
-    width: 25%;
-    /* width: 20%; */
-    padding: 1em;
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 4);
   }
 }
 
 @media (min-width: 1400px) {
-  .viewsRow {
-    display: flex;
-    box-sizing: border-box;
-    width: 20%;
-    /* width: 20%; */
-    padding: 0.5em;
+  .viewsRow.withSidebar {
+    width: calc(100% / 3);
+  }
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 4);
   }
 }
 
-/* .viewsRow {
+@media (min-width: 1600px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 4);
+  }
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 5);
+  }
+}
+
+.viewsRow {
   display: flex;
   box-sizing: border-box;
-  width: 33%;
-  padding: 1em;
-} */
+  min-width: 250px;
+  max-width: 320px;
+  transition: var(--trans-03);
+  padding: 1rem;
+}
 
 .card {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   justify-content: center;
-  flex: 3;
   color: var(--sidebar-color);
-  /* width: clamp(230px, 50%, 260px);
-  width: 100%; */
+  /* flex: 3; */
   background-color: var(--header-color);
   border-radius: 15px;
   overflow: hidden;
@@ -90,6 +87,7 @@
 }
 
 .cardContent h3 {
+  color: rgba(255, 255, 255, 0.95);
   font-size: clamp(0.75rem, 0.6286rem + 0.5178vw, 1.25rem);
   /* margin: 5px 0; */
 }
@@ -111,18 +109,19 @@
 }
 
 .cardBottom label {
+  color: rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
-  gap: 5px;
   font-style: italic;
   font-weight: 500;
 }
 
 .cardBottom .btn {
+  font-size: clamp(0.75rem, 0.6893rem + 0.2589vw, 1rem);
   padding: 5px 8px;
   text-decoration: none;
   border-radius: 5px;
-  color: var(--sidebar-color);
+  color: rgba(255, 255, 255, 0.85);
   text-align: center;
   background-color: rgba(0, 0, 0, 0.25);
 }

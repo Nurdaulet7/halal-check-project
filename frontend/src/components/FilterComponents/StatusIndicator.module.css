@@ -30,7 +30,7 @@
 }
 
 .status.halal {
-  background-color: #28a745;
+  background-color: var(--header-color);
 }
 
 .status.doubtful {

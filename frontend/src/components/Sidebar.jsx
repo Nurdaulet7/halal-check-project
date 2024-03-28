@@ -1,13 +1,22 @@
-import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
 import logo from "../img/logo.png";
 import { MenuItems } from "./SidebarComponents/MenuItems.jsx";
+import {
+  setSidebarWidth,
+  setDarkMode,
+  selectsidebarVisible,
+  selectdarkMode,
+} from "../redux/slices/sidebarSlice";
+
 import styles from "../styles/Sidebar.module.css";
 
 const Sidebar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-  const darkToggle = () => setDarkMode(!darkMode);
-  const toggle = () => setIsOpen(!isOpen);
+  const dispatch = useDispatch();
+  const isClose = useSelector(selectsidebarVisible);
+  const darkMode = useSelector(selectdarkMode);
+  const darkToggle = () => dispatch(setDarkMode());
+  const toggle = () => dispatch(setSidebarWidth());
 
   useEffect(() => {
     // Применение класса 'dark-mode' к <body>, в зависимости от состояния darkMode
@@ -16,7 +25,7 @@ const Sidebar = ({ children }) => {
 
   return (
     <div className={styles.container}>
-      <nav className={`${styles.sidebar} ${isOpen && styles.close}`}>
+      <nav className={`${styles.sidebar} ${isClose && styles.close}`}>
         <header>
           <div className={`${styles["image-text"]}`}>
             <span className={styles.image}>
