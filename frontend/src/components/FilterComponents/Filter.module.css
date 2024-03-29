@@ -1,6 +1,7 @@
 .filterContainer {
   grid-column: 5 / 6; /* Занимает последнюю колонку */
   display: flex;
+  width: 330px;
   flex-direction: column;
   gap: 0.5rem;
 }

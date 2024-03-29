@@ -5,15 +5,31 @@ const initialState = {
   darkMode: true,
 };
 
+// const sidebarSlice = createSlice({
+//   name: "sidebar",
+//   initialState,
+//   reducers: {
+//     setSidebarWidth: (state) => {
+//       state.sidebarVisible = !state.sidebarVisible;
+//     },
+//     setDarkMode: (state) => {
+//       state.darkMode = !state.darkMode;
+//     },
+//   },
+// });
+
 const sidebarSlice = createSlice({
   name: "sidebar",
   initialState,
   reducers: {
-    setSidebarWidth: (state) => {
-      state.sidebarVisible = !state.sidebarVisible;
+    // Модификация setSidebarWidth для приема явного значения
+    setSidebarWidth: (state, action) => {
+      state.sidebarVisible =
+        action.payload !== undefined ? action.payload : !state.sidebarVisible;
     },
-    setDarkMode: (state) => {
-      state.darkMode = !state.darkMode;
+    // Модификация setDarkMode для приема явного значения
+    setDarkMode: (state, action) => {
+      state.darkMode = action.payload;
     },
   },
 });

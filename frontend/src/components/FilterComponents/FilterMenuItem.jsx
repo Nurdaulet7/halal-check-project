@@ -59,14 +59,12 @@ export const FilterMenuItem = () => {
           <li key={index}>
             <div className="menuWrap">
               <a
-                href="#!"
                 onClick={() => handleItemClick(index)}
                 className={expanded === index ? "active" : ""}
               >
                 {product.category}
               </a>
               <a
-                href="/"
                 style={{ transition: "transform 0.5s ease" }}
                 onClick={() => handleWrapClick(index)}
                 className={`${
@@ -86,7 +84,7 @@ export const FilterMenuItem = () => {
             >
               {product.subCategory.map((sub, subIndex) => (
                 <li key={subIndex}>
-                  <a href="#!">{sub}</a>
+                  <a>{sub}</a>
                 </li>
               ))}
             </ul>

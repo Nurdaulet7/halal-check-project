@@ -1,8 +1,27 @@
+import { useDispatch, useSelector } from "react-redux";
 import Checkbox from "@mui/material/Checkbox";
 import styles from "./HeaderMain.module.css";
 import engLng from "../../img/UnitedKingdom.png";
+import {
+  selectProductNameFilter,
+  selectOnlyCertifiedFilter,
+  setProductNameFilter,
+  setOnlyCertified,
+} from "../../redux/slices/filterSlice";
 
 export const HeaderMain = () => {
+  const dispatch = useDispatch();
+  const productNameFilter = useSelector(selectProductNameFilter);
+  const onlyCertifiedFilter = useSelector(selectOnlyCertifiedFilter);
+
+  const handleProductNameFilterChange = (e) => {
+    dispatch(setProductNameFilter(e.target.value));
+  };
+
+  const handleOnlyCertifiedFilterChange = () => {
+    dispatch(setOnlyCertified());
+  };
+
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
     <header className={styles.vertificationHeader}>
@@ -14,10 +33,19 @@ export const HeaderMain = () => {
         <form action="">
           <input
             type="text"
+            value={productNameFilter}
+            onChange={handleProductNameFilterChange}
             placeholder="Search by product name. Ex: Chocolate"
           />
           <span className={styles.checkbox}>
-            <Checkbox {...label} defaultChecked color="success" />
+            <Checkbox
+              type="checkbox"
+              checked={onlyCertifiedFilter}
+              onChange={handleOnlyCertifiedFilterChange}
+              {...label}
+              defaultChecked
+              color="success"
+            />
             Show only certified products
           </span>
         </form>

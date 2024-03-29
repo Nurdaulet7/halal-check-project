@@ -14,11 +14,41 @@ const Sidebar = ({ children }) => {
   const dispatch = useDispatch();
   const isClose = useSelector(selectsidebarVisible);
   const darkMode = useSelector(selectdarkMode);
-  const darkToggle = () => dispatch(setDarkMode());
-  const toggle = () => dispatch(setSidebarWidth());
+  // const darkToggle = () => dispatch(setDarkMode());
+  // const toggle = () => dispatch(setSidebarWidth());
+
+  // useEffect(() => {
+  //   // Применение класса 'dark-mode' к <body>, в зависимости от состояния darkMode
+  //   document.body.classList.toggle("dark", darkMode);
+  // }, [darkMode]);
 
   useEffect(() => {
-    // Применение класса 'dark-mode' к <body>, в зависимости от состояния darkMode
+    // Восстановление состояния темы из localStorage при загрузке компонента
+    const savedDarkMode = localStorage.getItem("darkMode");
+    if (savedDarkMode !== null) {
+      dispatch(setDarkMode(savedDarkMode === "true"));
+    }
+
+    // Восстановление состояния видимости боковой панели из localStorage
+    const savedSidebarVisible = localStorage.getItem("sidebarVisible");
+    if (savedSidebarVisible !== null) {
+      dispatch(setSidebarWidth(savedSidebarVisible === "true")); // Убедитесь, что экшен может принимать значение
+    }
+  }, [dispatch]);
+
+  const darkToggle = () => {
+    const newDarkModeState = !darkMode;
+    dispatch(setDarkMode(newDarkModeState));
+    localStorage.setItem("darkMode", newDarkModeState.toString());
+  };
+
+  const toggle = () => {
+    const newIsCloseState = !isClose;
+    dispatch(setSidebarWidth()); // Предполагается, что этот экшен переключает состояние видимости
+    localStorage.setItem("sidebarVisible", newIsCloseState.toString());
+  };
+
+  useEffect(() => {
     document.body.classList.toggle("dark", darkMode);
   }, [darkMode]);
 

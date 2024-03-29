@@ -1,4 +1,3 @@
-import React from "react";
 import ContentLoader from "react-content-loader";
 
 const MyLoader = (props) => (
@@ -7,8 +6,8 @@ const MyLoader = (props) => (
     width={280}
     height={360}
     viewBox="0 0 280 360"
-    backgroundColor="#e8e8e8"
-    foregroundColor="#73d987"
+    backgroundColor="#cccccc"
+    foregroundColor="#6dd582"
     {...props}
   >
     <rect x="16" y="222" rx="5" ry="5" width="220" height="14" />

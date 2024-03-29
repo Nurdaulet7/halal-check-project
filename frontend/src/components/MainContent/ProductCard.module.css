@@ -50,8 +50,8 @@
 }
 
 .viewsRow {
-  display: flex;
   box-sizing: border-box;
+  display: flex;
   min-width: 250px;
   max-width: 320px;
   transition: var(--trans-03);
