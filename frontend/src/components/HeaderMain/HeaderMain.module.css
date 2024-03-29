@@ -40,16 +40,14 @@ header.vertificationHeader {
   border-radius: 5px;
   background-color: var(--sidebar-color);
   color: var(--text-color-menu);
-  transition: var(--tran-05);
+  transition: var(--tran-03);
 }
 
 .searchHeader form input:focus {
   color: var(--text-color);
-  font-weight: 450;
   border: 2px solid var(--header-color);
   box-shadow: rgba(136, 191, 154, 0.48) 6px 2px 16px 0px,
     rgba(116, 168, 92, 0.8) -6px -2px 16px 0px;
-  border-radius: 10px 0;
 }
 .colortext {
   color: var(--header-color);

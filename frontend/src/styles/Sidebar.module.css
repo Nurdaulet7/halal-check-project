@@ -35,6 +35,10 @@
   box-shadow: var(--shadow);
 }
 
+.sidebar.image svg {
+  fill: red;
+}
+
 .sidebar.close {
   width: 78px;
 }
@@ -236,4 +240,14 @@ header .image-text .header-text {
 .sidebar.close ~ main {
   left: 78px;
   width: calc(100% - 78px);
+}
+
+.sidebar .hideBarcode {
+  display: none !important;
+}
+
+@media (max-width: 500px) {
+  .sidebar .hideBarcode {
+    display: block !important;
+  }
 }

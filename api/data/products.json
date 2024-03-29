@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Kinder",
+    "barcode": "08854724",
+    "ingredients": {
+      "description": "dried coconut pulp, sugar, glucose syrup (corn, wheat), emulsifier (mono- and diglycerides of fatty acids), moisture-retaining agent (glycerin), flavoring (vanillin), salt; milk chocolate (total cocoa solids – at least 27%, skimmed cocoa solids – at least 4.5%, dry milk residue – at least 20%, milk fat – at least 3.5%): sugar, cocoa butter, cocoa mass, lactose, whole milk powder, whey powder, milk fat, emulsifier (soy lecithin), flavoring (vanillin) Transisomers of unsaturated fatty acids in chocolate – no more than 1%.",
+      "origin": "Italy",
+      "storage": " store at a temperature from 15 ° C to 22 ° C and a relative humidity of no more than 65%.",
+      "helfLife": "120 days."
+    },
+    "status": "halal",
+    "img": "https://erkemay-baby.kz/upload/iblock/36c/356rhwexfxr5a7hstd412dfcosmjqjqw.jpg",
+    "additives": ["E322", "E500", "E503"],
+    "certified": true,
+    "certifiacates": {
+      "name": "Стандарт ПРО",
+      "logo": "https://gsg-rt.ru/upload/iblock/15d/Halal-Logo-02.png",
+      "certificate": "https://medinaschool.org/files/images/2017/12/933f8e6fddd0fd0b71e9d590fc7f8b1e.jpg"
+    }
+  },
+  {
+    "name": "Orion Choco-Pie",
+    "barcode": "09854724",
+    "ingredients": {
+      "description": "dried coconut pulp, sugar, glucose syrup (corn, wheat), emulsifier (mono- and diglycerides of fatty acids), moisture-retaining agent (glycerin), flavoring (vanillin), salt; milk chocolate (total cocoa solids – at least 27%, skimmed cocoa solids – at least 4.5%, dry milk residue – at least 20%, milk fat – at least 3.5%): sugar, cocoa butter, cocoa mass, lactose, whole milk powder, whey powder, milk fat, emulsifier (soy lecithin), flavoring (vanillin) Transisomers of unsaturated fatty acids in chocolate – no more than 1%.",
+      "origin": "Italy",
+      "storage": " store at a temperature from 15 ° C to 22 ° C and a relative humidity of no more than 65%.",
+      "helfLife": "120 days."
+    },
+    "status": "haram",
+    "img": "https://arbuz.kz/image/s3/arbuz-kz-products/250496-pechene_orion_choco-pie_120_g.jpg?w=1100&h=1100&_c=1702952047",
+    "additives": ["E322", "E500", "E503"],
+    "certified": false
+  },
+  {
+    "name": "Alpen Gold",
+    "barcode": "07854724",
+    "ingredients": {
+      "description": "dried coconut pulp, sugar, glucose syrup (corn, wheat), emulsifier (mono- and diglycerides of fatty acids), moisture-retaining agent (glycerin), flavoring (vanillin), salt; milk chocolate (total cocoa solids – at least 27%, skimmed cocoa solids – at least 4.5%, dry milk residue – at least 20%, milk fat – at least 3.5%): sugar, cocoa butter, cocoa mass, lactose, whole milk powder, whey powder, milk fat, emulsifier (soy lecithin), flavoring (vanillin) Transisomers of unsaturated fatty acids in chocolate – no more than 1%.",
+      "origin": "Italy",
+      "storage": " store at a temperature from 15 ° C to 22 ° C and a relative humidity of no more than 65%.",
+      "helfLife": "120 days."
+    },
+    "status": "doubtful",
+    "img": "https://sizomarket.kz/wp-content/uploads/2023/01/57.jpg",
+    "additives": ["E322", "E500", "E503"],
+    "certified": false
+  },
+  {
+    "name": "Snickers",
+    "barcode": "07754724",
+    "ingredients": {
+      "description": "dried coconut pulp, sugar, glucose syrup (corn, wheat), emulsifier (mono- and diglycerides of fatty acids), moisture-retaining agent (glycerin), flavoring (vanillin), salt; milk chocolate (total cocoa solids – at least 27%, skimmed cocoa solids – at least 4.5%, dry milk residue – at least 20%, milk fat – at least 3.5%): sugar, cocoa butter, cocoa mass, lactose, whole milk powder, whey powder, milk fat, emulsifier (soy lecithin), flavoring (vanillin) Transisomers of unsaturated fatty acids in chocolate – no more than 1%.",
+      "origin": "Italy",
+      "storage": " store at a temperature from 15 ° C to 22 ° C and a relative humidity of no more than 65%.",
+      "helfLife": "120 days."
+    },
+    "status": "halal",
+    "img": "https://cdn1.tovaro.kz/uploads/2021/10/24025721/136092-shokoladnyi_batonchik_snickers_super_95_g.jpg",
+    "additives": ["E322", "E500", "E503"],
+    "certified": false
+  }
+]

@@ -66,10 +66,11 @@ export const FilterMenuItem = () => {
                 {product.category}
               </a>
               <a
+                href="/"
                 style={{ transition: "transform 0.5s ease" }}
                 onClick={() => handleWrapClick(index)}
                 className={`${
-                  wrapped === index || expanded == index
+                  wrapped === index || expanded === index
                     ? "rotate"
                     : "rotateBack"
                 }${wrapped === index ? "active" : ""}`}

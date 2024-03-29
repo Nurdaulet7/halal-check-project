@@ -4,7 +4,7 @@ import styles from "../../styles/Sidebar.module.css";
 export const MenuItem = ({ item }) => {
   const { path, icon, name } = item;
   return (
-    <li className="nav-link">
+    <li className={name === "Barcode Scanner" ? styles.hideBarcode : ""}>
       <NavLink
         to={path}
         className={({ isActive }) =>

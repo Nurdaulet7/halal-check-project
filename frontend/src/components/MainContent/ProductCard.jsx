@@ -1,18 +1,11 @@
 import { useSelector } from "react-redux";
 import styles from "./ProductCard.module.css";
 import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
+import TruncatedText from "../../utils/TruncatedText";
 
 export const ProductCard = (props) => {
-  const {
-    name,
-    barcode,
-    ingredients,
-    status,
-    img,
-    additives,
-    certified,
-    certifiacates,
-  } = props;
+  const { name, barcode, ingredients, status, img, certified, certifiacates } =
+    props;
   const sidebarVisible = useSelector(selectsidebarVisible);
 
   return (
@@ -22,13 +15,13 @@ export const ProductCard = (props) => {
       }`}
     >
       <div className={`${styles.card} ${styles[status]}`}>
-        <img src={img} />
+        <img src={img} alt="product" />
         <div className={styles.cardContent}>
           <div className={styles.cardCenter}>
             <h3>{name}</h3>
             <p>
               <span className={styles.textBold}>Ingredients:</span>{" "}
-              {ingredients.description}
+              {<TruncatedText text={ingredients.description} maxLength={85} />}
             </p>
             <hr color="white" margin="5px" />
             <p>
@@ -40,10 +33,10 @@ export const ProductCard = (props) => {
             <label className={certified ? styles.certified : ""}>
               {certified ? "Certified" : "Not certified"}
             </label>
-            {certified && <img src={certifiacates.logo} alt="" />}
-            <a href="" className={styles.btn}>
+            {certified && <img src={certifiacates.logo} alt="certificate" />}
+            <button href="#" className={styles.btn}>
               Read More
-            </a>
+            </button>
           </div>
         </div>
       </div>
