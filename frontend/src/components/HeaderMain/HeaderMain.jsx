@@ -8,17 +8,21 @@ import {
   setProductNameFilter,
   setOnlyCertified,
 } from "../../redux/slices/filterSlice";
+import { useNavigate } from "react-router-dom";
 
 export const HeaderMain = () => {
   const dispatch = useDispatch();
   const productNameFilter = useSelector(selectProductNameFilter);
   const onlyCertifiedFilter = useSelector(selectOnlyCertifiedFilter);
+  const navigate = useNavigate();
 
   const handleProductNameFilterChange = (e) => {
+    navigate("/vertification");
     dispatch(setProductNameFilter(e.target.value));
   };
 
   const handleOnlyCertifiedFilterChange = () => {
+    navigate("/vertification");
     dispatch(setOnlyCertified());
   };
 
@@ -43,16 +47,15 @@ export const HeaderMain = () => {
               checked={onlyCertifiedFilter}
               onChange={handleOnlyCertifiedFilterChange}
               {...label}
-              defaultChecked
               color="success"
             />
             Show only certified products
           </span>
         </form>
-        <p className={styles.bottomText}>
+        {/* <p className={styles.bottomText}>
           Just start typing the product name into the search bar and select the
           appropriate option from the drop-down list of offers
-        </p>
+        </p> */}
       </div>
       <div className={styles.lngSwitcher}>
         <img src={engLng} alt="lngSwitcher" />

@@ -14,6 +14,7 @@ import {
   selectOnlyCertifiedFilter,
 } from "../../redux/slices/filterSlice";
 import styles from "./ProductList.module.css";
+import { EmptyPage } from "../../utils/EmptyPage";
 
 export const ProductsList = () => {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ export const ProductsList = () => {
       <div className={styles.viewContent}>
         <div className={styles.container}>
           {isLoading && loaders}
+          {!isLoading && filteredProducts.length === 0 && <EmptyPage />}
           {filteredProducts.map((product) => {
             return <ProductCard {...product} key={uuidv4()} />;
           })}

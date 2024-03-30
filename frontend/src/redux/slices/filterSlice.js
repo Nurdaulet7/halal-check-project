@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   productName: "",
+  slug: "",
   category: "",
   onlyCertified: false,
 };
@@ -18,11 +19,18 @@ const filterSlice = createSlice({
     setOnlyCertified: (state) => {
       state.onlyCertified = !state.onlyCertified;
     },
+    resetFilters: () => {
+      return initialState;
+    },
   },
 });
 
-export const { setProductNameFilter, setCategoryFilter, setOnlyCertified } =
-  filterSlice.actions;
+export const {
+  setProductNameFilter,
+  setCategoryFilter,
+  setOnlyCertified,
+  resetFilters,
+} = filterSlice.actions;
 
 export const selectProductNameFilter = (state) => state.filter.productName;
 export const selectCategoryFilter = (state) => state.filter.category;

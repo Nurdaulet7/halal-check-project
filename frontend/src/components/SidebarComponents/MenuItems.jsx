@@ -9,7 +9,7 @@ import styles from "../../styles/Sidebar.module.css";
 
 const menuItem = [
   {
-    path: "/",
+    path: "/vertification",
     name: "Halal Verification",
     icon: <BiSearchAlt />,
   },

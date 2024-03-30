@@ -47,6 +47,10 @@
   opacity: 0;
 }
 
+.sidebar.close .navText {
+  display: none;
+}
+
 .sidebar li {
   height: 45px;
   list-style: none;

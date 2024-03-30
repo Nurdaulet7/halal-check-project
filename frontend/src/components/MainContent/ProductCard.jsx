@@ -2,11 +2,38 @@ import { useSelector } from "react-redux";
 import styles from "./ProductCard.module.css";
 import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
 import TruncatedText from "../../utils/TruncatedText";
+import { selectProductNameFilter } from "../../redux/slices/filterSlice";
+import { Link } from "react-router-dom";
 
 export const ProductCard = (props) => {
-  const { name, barcode, ingredients, status, img, certified, certifiacates } =
-    props;
+  const productNameFilter = useSelector(selectProductNameFilter);
+  const {
+    name,
+    barcode,
+    ingredients,
+    status,
+    img,
+    certified,
+    certifiacates,
+    slug,
+  } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
+
+  const highlightMatch = (text, filter) => {
+    if (!filter) return text;
+
+    const regex = new RegExp(`(${filter})`, "gi");
+    return text.split(regex).map((substring, i) => {
+      if (substring.toLowerCase() === filter.toLowerCase()) {
+        return (
+          <span key={i} className={styles.highlight}>
+            {substring}
+          </span>
+        );
+      }
+      return substring;
+    });
+  };
 
   return (
     <div
@@ -18,7 +45,7 @@ export const ProductCard = (props) => {
         <img src={img} alt="product" />
         <div className={styles.cardContent}>
           <div className={styles.cardCenter}>
-            <h3>{name}</h3>
+            <h3>{highlightMatch(name, productNameFilter)}</h3>
             <p>
               <span className={styles.textBold}>Ingredients:</span>{" "}
               {<TruncatedText text={ingredients.description} maxLength={85} />}
@@ -35,7 +62,9 @@ export const ProductCard = (props) => {
             </label>
             {certified && <img src={certifiacates.logo} alt="certificate" />}
             <button href="#" className={styles.btn}>
-              Read More
+              <Link to={slug} className={styles.productLink}>
+                Read More
+              </Link>
             </button>
           </div>
         </div>

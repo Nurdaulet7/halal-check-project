@@ -11,13 +11,24 @@ import { AboutUs } from "./pages/AboutUs.jsx";
 import { FAQ } from "./pages/FAQ.jsx";
 import { ContactUs } from "./pages/ContactUs.jsx";
 import Error from "./Error/Error.jsx";
+import Main from "./pages/Main.jsx";
+import SingleProduct from "./pages/SingleProduct.jsx";
+import { ProductsList } from "./components/MainContent/ProductsList.jsx";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Sidebar>
         <Routes>
-          <Route path="/" element={<HalalVertification />} />
+          <Route path="/" element={<Main />} />
+          {/* <Route path="/vertification" element={<HalalVertification />} />
+          <Route path="/vertification/:slug" element={<SingleProduct />} /> */}
+
+          <Route path="/vertification" element={<HalalVertification />}>
+            <Route index element={<ProductsList />} />
+            <Route path=":slug" element={<SingleProduct />} />
+          </Route>
+
           <Route path="/scanner" element={<BarcodeScanner />} />
           <Route path="/additivies" element={<EAdditivies />} />
           <Route path="/certificate" element={<HalalCertification />} />

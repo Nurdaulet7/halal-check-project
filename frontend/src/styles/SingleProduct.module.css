@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+.productContent {
+  grid-column: 1 / span 4;
+  background-color: var(--sidebar-color);
+  border-radius: 5px;
+  width: 100%;
+}
+
+.contentTitle {
+  line-height: 1.2;
+  margin: 20px 0 10px 0;
+}
+
+.contentTitle .barcode::before {
+  content: "Barcode: ";
+}
+
+.contentTitle .barcode {
+  display: block;
+  font-size: 0.6em;
+  font-weight: normal;
+  padding: 5px 0;
+  margin-bottom: 5px;
+  color: grey;
+}
+
+.status {
+  width: 100%;
+  background-color: violet;
+}

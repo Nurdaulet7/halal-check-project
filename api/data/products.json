@@ -2,6 +2,7 @@
   {
     "name": "Kinder",
     "barcode": "08854724",
+    "slug": "kinder",
     "ingredients": {
       "description": "dried coconut pulp, sugar, glucose syrup (corn, wheat), emulsifier (mono- and diglycerides of fatty acids), moisture-retaining agent (glycerin), flavoring (vanillin), salt; milk chocolate (total cocoa solids – at least 27%, skimmed cocoa solids – at least 4.5%, dry milk residue – at least 20%, milk fat – at least 3.5%): sugar, cocoa butter, cocoa mass, lactose, whole milk powder, whey powder, milk fat, emulsifier (soy lecithin), flavoring (vanillin) Transisomers of unsaturated fatty acids in chocolate – no more than 1%.",
       "origin": "Italy",
@@ -21,6 +22,7 @@
   {
     "name": "Orion Choco-Pie",
     "barcode": "09854724",
+    "slug": "orion-choco-pie",
     "ingredients": {
       "description": "dried coconut pulp, sugar, glucose syrup (corn, wheat), emulsifier (mono- and diglycerides of fatty acids), moisture-retaining agent (glycerin), flavoring (vanillin), salt; milk chocolate (total cocoa solids – at least 27%, skimmed cocoa solids – at least 4.5%, dry milk residue – at least 20%, milk fat – at least 3.5%): sugar, cocoa butter, cocoa mass, lactose, whole milk powder, whey powder, milk fat, emulsifier (soy lecithin), flavoring (vanillin) Transisomers of unsaturated fatty acids in chocolate – no more than 1%.",
       "origin": "Italy",
@@ -35,6 +37,7 @@
   {
     "name": "Alpen Gold",
     "barcode": "07854724",
+    "slug": "alpen-gold",
     "ingredients": {
       "description": "dried coconut pulp, sugar, glucose syrup (corn, wheat), emulsifier (mono- and diglycerides of fatty acids), moisture-retaining agent (glycerin), flavoring (vanillin), salt; milk chocolate (total cocoa solids – at least 27%, skimmed cocoa solids – at least 4.5%, dry milk residue – at least 20%, milk fat – at least 3.5%): sugar, cocoa butter, cocoa mass, lactose, whole milk powder, whey powder, milk fat, emulsifier (soy lecithin), flavoring (vanillin) Transisomers of unsaturated fatty acids in chocolate – no more than 1%.",
       "origin": "Italy",
@@ -49,6 +52,7 @@
   {
     "name": "Snickers",
     "barcode": "07754724",
+    "slug": "snickers",
     "ingredients": {
       "description": "dried coconut pulp, sugar, glucose syrup (corn, wheat), emulsifier (mono- and diglycerides of fatty acids), moisture-retaining agent (glycerin), flavoring (vanillin), salt; milk chocolate (total cocoa solids – at least 27%, skimmed cocoa solids – at least 4.5%, dry milk residue – at least 20%, milk fat – at least 3.5%): sugar, cocoa butter, cocoa mass, lactose, whole milk powder, whey powder, milk fat, emulsifier (soy lecithin), flavoring (vanillin) Transisomers of unsaturated fatty acids in chocolate – no more than 1%.",
       "origin": "Italy",
