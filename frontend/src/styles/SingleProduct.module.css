@@ -2,16 +2,58 @@
   box-sizing: border-box;
 }
 
+.halal {
+  background-color: var(--header-color);
+}
+
+.doubtful {
+  background-color: var(--warning);
+}
+
+.haram {
+  background-color: var(--error);
+}
+
 .productContent {
   grid-column: 1 / span 4;
   background-color: var(--sidebar-color);
   border-radius: 5px;
   width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.header {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
 }
 
 .contentTitle {
-  line-height: 1.2;
-  margin: 20px 0 10px 0;
+  color: var(--text-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+.contentTitle button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  font-size: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--error);
+}
+
+.contentTitle button:hover {
+  background-color: rgb(124, 32, 32);
 }
 
 .contentTitle .barcode::before {
@@ -20,14 +62,207 @@
 
 .contentTitle .barcode {
   display: block;
-  font-size: 0.6em;
+  font-size: 14px;
   font-weight: normal;
-  padding: 5px 0;
-  margin-bottom: 5px;
   color: grey;
+}
+
+#iconCertified {
+  font-size: 40px;
+}
+
+.certified {
+  color: var(--header-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.certified p {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .status {
   width: 100%;
-  background-color: violet;
+  color: white;
+  padding: 10px 0;
+  font-weight: 600;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.productPage {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.productPageBottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.certifiedDoc {
+  color: var(--header-color);
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.productPageBottom .certifiedDoc #iconCertified {
+  font-size: 50px;
+}
+
+.certificate {
+  min-width: 400px;
+  width: 70%;
+}
+
+.certificate img {
+  width: 100%;
+}
+
+.productPageTop {
+  /* width: 100%; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 5%;
+  flex-direction: row;
+}
+
+.productImage {
+  width: 50%;
+  flex: 1;
+  min-width: 300px;
+  border-radius: 20%;
+  margin-bottom: 10px;
+}
+
+.productImage img {
+  flex: 1;
+  width: 100%;
+  min-width: 300px;
+  max-width: 100%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+}
+
+.productDetails {
+  flex: 1;
+  width: 50%;
+}
+
+.nutritionTableWrapper {
+  width: 100%;
+  min-width: 300px;
+  background: #b4ecbd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.nutritionTableWrapper h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.nutritionTableWrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutritionTableWrapper th,
+.nutritionTableWrapper td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #52a560af;
+}
+
+.nutritionTableWrapper thead th {
+  background-color: #6de981e8;
+}
+
+.nutritionTableWrapper tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.nutritionTableWrapper p {
+  font-size: 0.75em;
+  color: #666;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.additives {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.additives h3,
+.ingredients h3 {
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+.additives ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.additives li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.code {
+  background-color: var(--warning); /* жёлтый фон, как на картинке */
+  border-radius: 10px; /* скругление углов */
+  padding: 5px 15px; /* внутренние отступы */
+  font-weight: 600; /* жирный текст */
+  color: #ffffff; /* цвет текста */
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ingredients p {
+  color: var(--text-color);
+  background-color: var(--body-color); /* светло-серый фон, как на картинке */
+  padding: 10px; /* внутренние отступы */
+  border-radius: 5px; /* скругление углов */
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+}
+
+.information h3 {
+  font-size: 1em;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+}
+
+.information p {
+  font-size: 0.9em;
+  margin: 0;
 }

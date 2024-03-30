@@ -20,7 +20,7 @@ export const ProductsList = () => {
   const dispatch = useDispatch();
 
   const productNameFilter = useSelector(selectProductNameFilter);
-  const categoryFilter = useSelector(selectCategoryFilter);
+  // const categoryFilter = useSelector(selectCategoryFilter);
   const onlyCertifiedFilter = useSelector(selectOnlyCertifiedFilter);
   // Получаем данные о загрузке и продукты из состояния
   const isLoading = useSelector(selectIsLoadingViaAPI);
