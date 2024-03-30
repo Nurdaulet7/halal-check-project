@@ -10,6 +10,7 @@ import { EstablishmentsMap } from "./pages/EstablishmentsMap.jsx";
 import { AboutUs } from "./pages/AboutUs.jsx";
 import { FAQ } from "./pages/FAQ.jsx";
 import { ContactUs } from "./pages/ContactUs.jsx";
+import Error from "./Error/Error.jsx";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </Sidebar>
+      <Error />
     </BrowserRouter>
   );
 };
