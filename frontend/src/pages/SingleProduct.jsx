@@ -135,15 +135,17 @@ const SingleProduct = () => {
             </div>
           </div>
         </div>
-        <div className={styles.productPageBottom}>
-          <div className={styles.certifiedDoc}>
-            <FiCheckCircle id={styles.iconCertified} />
-            <p>{`Certified by: ${product.certifiacates.name}`}</p>
+        {product.certified && (
+          <div className={styles.productPageBottom}>
+            <div className={styles.certifiedDoc}>
+              <FiCheckCircle id={styles.iconCertified} />
+              <p>{`Certified by: ${product.certifiacates.name}`}</p>
+            </div>
+            <div className={styles.certificate}>
+              <img src={product.certifiacates.certificate} alt="certificate" />
+            </div>
           </div>
-          <div className={styles.certificate}>
-            <img src={product.certifiacates.certificate} alt="certificate" />
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
