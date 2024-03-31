@@ -1,11 +1,5 @@
-import { HeaderMain } from "../components/HeaderMain/HeaderMain";
+import { HeaderMain } from "./HalalVertification/HeaderMain";
 
 export const HalalCertification = () => {
-  return (
-    <div>
-      <div>
-        <HeaderMain />
-      </div>
-    </div>
-  );
+  return <HeaderMain />;
 };

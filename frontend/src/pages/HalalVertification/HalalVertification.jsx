@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { Filter } from "../components/FilterComponents/Filter";
-import { HeaderMain } from "../components/HeaderMain/HeaderMain";
-import styles from "../styles/HalalVertificationGrid.module.css";
+import { Filter } from "../../components/FilterComponents/Filter";
+import { HeaderMain } from "./HeaderMain";
+import styles from "../../styles/HalalVertificationGrid.module.css";
 
 export const HalalVertification = () => {
   return (
