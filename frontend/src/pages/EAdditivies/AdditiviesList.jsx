@@ -12,7 +12,7 @@ import {
   selectIsLoadingAdditiveViaAPI,
 } from "../../redux/slices/additiveSlice";
 import { useEffect } from "react";
-import MyLoader from "../../utils/MyLoader";
+import AdditiveCardLoader from "../../utils/AdditiveCardLoader";
 import AdditiveCard from "./AdditiveCard";
 
 const AdditiviesList = () => {
@@ -38,7 +38,9 @@ const AdditiviesList = () => {
   let loaders = [];
   if (isLoading) {
     for (let i = 0; i < 3; i++) {
-      loaders.push(<MyLoader className={styles.loaders} key={i} />); // Используйте индекс i в качестве ключа
+      loaders.push(
+        <AdditiveCardLoader className={styles.loaders} key={uuidv4()} />
+      ); // Используйте индекс i в качестве ключа
     }
   }
 

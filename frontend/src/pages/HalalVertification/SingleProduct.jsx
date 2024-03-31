@@ -63,7 +63,7 @@ const SingleProduct = () => {
       <div className={styles.productPage}>
         <div className={styles.productPageTop}>
           <div className={styles.productImage}>
-            <img src={product.img} alt="product-image" />
+            <img src={product.img} alt="product" />
             <div className={styles.information}>
               <div className={styles.countryOfOrigin}>
                 <h3>Country of origin:</h3>

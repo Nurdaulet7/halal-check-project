@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import { MdOutlineSearchOff } from "react-icons/md";
 import styles from "../styles/EmptyPage.module.css";
 
