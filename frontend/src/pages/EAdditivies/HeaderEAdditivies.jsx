@@ -28,12 +28,12 @@ export const HeaderEAdditivies = () => {
 
   return (
     <HeaderComponent
-      placeholder={placeholder}
-      productNameFilter={productNameFilter}
-      handleProductNameFilterChange={handleProductNameFilterChange}
-      hasCertifiedFilter={true}
-      onlyCertifiedFilter={onlyCertifiedFilter}
-      handleOnlyCertifiedFilterChange={handleOnlyCertifiedFilterChange}
+    //   placeholder={placeholder}
+    //   productNameFilter={productNameFilter}
+    //   handleProductNameFilterChange={handleProductNameFilterChange}
+    //   hasCertifiedFilter={true}
+    //   onlyCertifiedFilter={onlyCertifiedFilter}
+    //   handleOnlyCertifiedFilterChange={handleOnlyCertifiedFilterChange}
     />
   );
 };
