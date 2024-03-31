@@ -13,11 +13,11 @@
   font-size: 15px;
   font-weight: 500;
   color: aliceblue;
-  background-color: var(--header-color);
+  background-color: var(--error);
 }
 
 .message button:hover {
-  background-color: var(--error);
+  background-color: rgba(172, 37, 13, 0.87);
   box-shadow: var(--shadow);
 }
 

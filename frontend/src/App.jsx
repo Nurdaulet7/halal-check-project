@@ -15,7 +15,7 @@ import Main from "./pages/Main.jsx";
 import SingleProduct from "./pages/HalalVertification/SingleProduct.jsx";
 import { ProductsList } from "./components/MainContent/ProductsList.jsx";
 import AdditiviesList from "./pages/EAdditivies/AdditiviesList.jsx";
-import SingleAdditive from "./pages/EAdditivies/AdditiveCard.jsx";
+import AdditiveInfo from "./pages/EAdditivies/AdditiveInfo.jsx";
 
 const App = () => {
   return (
@@ -35,7 +35,7 @@ const App = () => {
 
           <Route path="/additivies" element={<EAdditivies />}>
             <Route index element={<AdditiviesList />} />
-            <Route path=":additiveSlug" element={<SingleAdditive />} />
+            <Route path=":additiveSlug" element={<AdditiveInfo />} />
           </Route>
 
           <Route path="/certificate" element={<HalalCertification />} />

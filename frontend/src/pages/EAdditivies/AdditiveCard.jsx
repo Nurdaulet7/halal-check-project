@@ -4,6 +4,7 @@ import { selectAdditiviesCodeFilter } from "../../redux/slices/filterAdditiviesS
 import { useSelector } from "react-redux";
 import styles from "./AdditiveCard.module.css";
 import TruncatedText from "../../utils/TruncatedText";
+import { Link } from "react-router-dom";
 
 const AdditiveCard = (props) => {
   const { code, name, status, description } = props;
@@ -33,12 +34,21 @@ const AdditiveCard = (props) => {
       }`}
     >
       <div className={`${styles.card} ${styles[status]}`}>
-        <div className={styles.additiveCode}>
-          <h3>{highlightMatch(code, additiveCode)}</h3>
+        <div className={styles.cardContent}>
+          <div className={styles.additiveCode}>
+            <h3>{highlightMatch(code, additiveCode)}</h3>
+          </div>
+          <div className={styles.additiveInfo}>
+            <h4>{<TruncatedText text={name} maxLength={25} />}</h4>
+            <p>{<TruncatedText text={description} maxLength={120} />}</p>
+          </div>
         </div>
-        <div className={styles.additiveInfo}>
-          <h4>{name}</h4>
-          <p>{<TruncatedText text={description} maxLength={130} />}</p>
+        <div className={styles.cardBottom}>
+          <button href="#" className={styles.btn}>
+            <Link to={code} className={styles.productLink}>
+              Read More
+            </Link>
+          </button>
         </div>
       </div>
     </div>

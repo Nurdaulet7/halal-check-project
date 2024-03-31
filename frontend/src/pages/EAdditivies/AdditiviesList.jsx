@@ -13,7 +13,7 @@ import {
 } from "../../redux/slices/additiveSlice";
 import { useEffect } from "react";
 import MyLoader from "../../utils/MyLoader";
-import SingleAdditive from "./AdditiveCard";
+import AdditiveCard from "./AdditiveCard";
 
 const AdditiviesList = () => {
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ const AdditiviesList = () => {
             <EmptyPage reset={handleResetFilter} title={"additivies"} />
           )}
           {filteredAdditivies.map((additive) => {
-            return <SingleAdditive {...additive} key={uuidv4()} />;
+            return <AdditiveCard {...additive} key={uuidv4()} />;
             // return <ProductCard {...product} key={uuidv4()} />;
           })}
         </div>

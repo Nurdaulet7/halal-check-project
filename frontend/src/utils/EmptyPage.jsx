@@ -3,8 +3,6 @@ import { MdOutlineSearchOff } from "react-icons/md";
 import styles from "../styles/EmptyPage.module.css";
 
 export const EmptyPage = ({ reset, title = "products" }) => {
-  const dispatch = useDispatch();
-
   return (
     <div className={styles.message}>
       <MdOutlineSearchOff id={styles.icon} />
