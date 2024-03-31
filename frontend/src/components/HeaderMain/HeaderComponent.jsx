@@ -10,6 +10,10 @@ export const HeaderComponent = ({
   onlyCertifiedFilter,
   handleOnlyCertifiedFilterChange,
 }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Предотвращаем перезагрузку страницы
+  };
+
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
     <header className={styles.vertificationHeader}>
@@ -18,7 +22,7 @@ export const HeaderComponent = ({
           <span className={styles.colortext}>HalalCheck</span> is your companion
           in the world of halal nutrition!
         </h3>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             value={productNameFilter} //

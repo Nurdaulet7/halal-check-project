@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+@media (min-width: 500px) {
+}
+
+@media (min-width: 900px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 2);
+    min-width: 220px;
+  }
+
+  .viewsRow.withoutSidebar {
+    min-width: 220px;
+    width: calc(100% / 3);
+  }
+}
+@media (min-width: 1200px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 3);
+  }
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 4);
+  }
+}
+
+@media (min-width: 1400px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 3);
+  }
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 4);
+  }
+}
+
+@media (min-width: 1600px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 4);
+  }
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 5);
+  }
+}
+
+.viewsRow {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 250px;
+  max-width: 320px;
+  min-height: 250px;
+  height: 250px;
+  transition: var(--trans-03);
+  padding: 0.7rem;
+}
+
+.halal {
+  background-color: var(--header-color);
+}
+
+.haram {
+  background-color: var(--error);
+}
+
+.doubtful {
+  background-color: var(--warning);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--sidebar-color);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  padding: 10px;
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* larger shadow on hover/focus for click indication */
+}
+
+.card .additiveCode h3 {
+  text-transform: uppercase;
+}
+
+.card .highlight {
+  background-color: #3b83ba;
+}
+
+.card .additiveInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}

@@ -3,10 +3,10 @@ import { FiCheckCircle } from "react-icons/fi";
 import { v4 as uuidv4 } from "uuid";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct, selectProducts } from "../redux/slices/productSlice";
+import { fetchProduct, selectProducts } from "../../redux/slices/productSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../styles/SingleProduct.module.css";
+import styles from "../../styles/SingleProduct.module.css";
 
 const SingleProduct = () => {
   const dispatch = useDispatch();

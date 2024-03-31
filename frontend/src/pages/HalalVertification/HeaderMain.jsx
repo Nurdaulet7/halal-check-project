@@ -4,7 +4,7 @@ import {
   selectOnlyCertifiedFilter,
   setProductNameFilter,
   setOnlyCertified,
-} from "../../redux/slices/filterSlice";
+} from "../../redux/slices/filterProductsSlice";
 import { useNavigate } from "react-router-dom";
 import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
 

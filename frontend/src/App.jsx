@@ -12,10 +12,10 @@ import { FAQ } from "./pages/FAQ.jsx";
 import { ContactUs } from "./pages/ContactUs.jsx";
 import Error from "./Error/Error.jsx";
 import Main from "./pages/Main.jsx";
-import SingleProduct from "./pages/SingleProduct.jsx";
+import SingleProduct from "./pages/HalalVertification/SingleProduct.jsx";
 import { ProductsList } from "./components/MainContent/ProductsList.jsx";
 import AdditiviesList from "./pages/EAdditivies/AdditiviesList.jsx";
-import SingleAdditive from "./pages/EAdditivies/SingleAdditive.jsx";
+import SingleAdditive from "./pages/EAdditivies/AdditiveCard.jsx";
 
 const App = () => {
   return (

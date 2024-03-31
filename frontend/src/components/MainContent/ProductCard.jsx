@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import styles from "./ProductCard.module.css";
 import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
 import TruncatedText from "../../utils/TruncatedText";
-import { selectProductNameFilter } from "../../redux/slices/filterSlice";
+import { selectProductNameFilter } from "../../redux/slices/filterProductsSlice";
 import { Link } from "react-router-dom";
 
 export const ProductCard = (props) => {

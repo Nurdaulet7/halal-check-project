@@ -12,7 +12,8 @@ import {
   selectProductNameFilter,
   selectCategoryFilter,
   selectOnlyCertifiedFilter,
-} from "../../redux/slices/filterSlice";
+  resetFilters,
+} from "../../redux/slices/filterProductsSlice";
 import styles from "./ProductList.module.css";
 import { EmptyPage } from "../../utils/EmptyPage";
 
@@ -41,6 +42,10 @@ export const ProductsList = () => {
     return matchesName && matchesCertified;
   });
 
+  const handleResetFilter = () => {
+    dispatch(resetFilters());
+  };
+
   let loaders = [];
   if (isLoading) {
     for (let i = 0; i < 3; i++) {
@@ -56,7 +61,9 @@ export const ProductsList = () => {
       <div className={styles.viewContent}>
         <div className={styles.container}>
           {isLoading && loaders}
-          {!isLoading && filteredProducts.length === 0 && <EmptyPage />}
+          {!isLoading && filteredProducts.length === 0 && (
+            <EmptyPage reset={handleResetFilter} />
+          )}
           {filteredProducts.map((product) => {
             return <ProductCard {...product} key={uuidv4()} />;
           })}
