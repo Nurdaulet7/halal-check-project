@@ -1,7 +1,8 @@
-import React from "react";
+import styles from "./AdditiviesList.module.css";
+import { EmptyPage } from "../../utils/EmptyPage";
 
 const AdditiviesList = () => {
-  return <div>AdditiviesList</div>;
+  return <EmptyPage />;
 };
 
 export default AdditiviesList;

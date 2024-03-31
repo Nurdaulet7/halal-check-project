@@ -1,0 +1,32 @@
+[
+  {
+    "code": "e100",
+    "status": "halal",
+    "name": "Curcumin (C.I. 75300)",
+    "description": "Colouring: Orange-yellow colouring extracted from the rhizome of a plant of the ginger family called Curcuma longa (turmeric)"
+  },
+  {
+    "code": "e101",
+    "status": "doubtful",
+    "name": "Riboflavin/Lactofavin/Vitamin B2 *",
+    "description": "Colouring/ Vitamin: Yellow or orange-yellow colouring manufactured from yeast or other fermenting organisms. May also be synthesised from xylene, ribose or alloxan"
+  },
+  {
+    "code": "e102",
+    "status": "halal",
+    "name": "Tartrazine/FD&C Yellow 5 (C.I. 19140)",
+    "description": "Colouring: Synthetic yellow colouring"
+  },
+  {
+    "code": "e471 ",
+    "status": "doubtful",
+    "name": "Mono-and Diglycerides of Fatty Acids*",
+    "description": "Emulsifier/ Stabiliser: Commercially prepared from glycerin (E422) and fatty acids"
+  },
+  {
+    "code": "e133",
+    "status": "halal",
+    "name": "Brilliant Blue FCF/FD&C Blue 1 (C.I. 42090)",
+    "description": "Colouring: Synthetic blue colouring"
+  }
+]

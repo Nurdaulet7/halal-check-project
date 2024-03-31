@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const productsData = require("./data/products.json");
+const additiviesData = require("./data/addivies.json");
 
 const app = express();
 
@@ -18,6 +19,16 @@ app.get("/product-list", (req, res) => {
 app.get("/product-list-delayed", (req, res) => {
   setTimeout(() => {
     res.json(productsData);
+  }, 2000);
+});
+
+app.get("/additivies-list", (req, res) => {
+  res.json(additiviesData);
+});
+
+app.get("/additivies-list-delayed", (req, res) => {
+  setTimeout(() => {
+    res.json(additiviesData);
   }, 2000);
 });
 
