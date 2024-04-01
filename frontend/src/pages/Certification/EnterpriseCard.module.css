@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+@media (min-width: 500px) {
+}
+
+@media (min-width: 900px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 2);
+    min-width: 220px;
+  }
+
+  .viewsRow.withoutSidebar {
+    min-width: 220px;
+    width: calc(100% / 2);
+  }
+}
+@media (min-width: 1200px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 2);
+  }
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 1400px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 2);
+  }
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 1600px) {
+  .viewsRow.withSidebar {
+    width: calc(100% / 3);
+  }
+
+  .viewsRow.withoutSidebar {
+    width: calc(100% / 4);
+  }
+}
+
+.viewsRow {
+  box-sizing: border-box;
+  display: flex;
+  height: 230px;
+  transition: var(--trans-03);
+  padding: 0.7rem;
+}
+
+.cardContent {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  transition: 0.3s all;
+  box-shadow: var(--shadow);
+  color: var(--sidebar-color);
+}
+
+.cardCenter {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  gap: 5px;
+}
+
+.cardContent .enterpriseInfo {
+  width: 60%;
+}
+
+.cardContent .enterpriseImg {
+  width: 100%;
+  height: 100%;
+  width: 200px;
+  overflow: hidden;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+}

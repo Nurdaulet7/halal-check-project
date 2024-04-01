@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const productsData = require("./data/products.json");
 const additiviesData = require("./data/addivies.json");
+const certifiedEnterprises = require("./data/certifiedEnterprises.json");
 
 const app = express();
 
@@ -29,6 +30,12 @@ app.get("/additivies-list", (req, res) => {
 app.get("/additivies-list-delayed", (req, res) => {
   setTimeout(() => {
     res.json(additiviesData);
+  }, 2000);
+});
+
+app.get("/enterprises-list-delayed", (req, res) => {
+  setTimeout(() => {
+    res.json(certifiedEnterprises);
   }, 2000);
 });
 

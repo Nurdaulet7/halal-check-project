@@ -1,0 +1,38 @@
+[
+  {
+    "name": "«Barista Cofee» ЖК",
+    "brand": "Barista Coffee",
+    "businessType": "Public catering",
+    "regNum": "000901",
+    "receipt": "04.05.2023",
+    "deadline": "03.05.2024",
+    "region": "Almaty city",
+    "address": "ҚР, Алматы қаласы, Т.Жароков көшесі, 91.",
+    "img": "https://static.tildacdn.pro/tild3238-6262-4031-b134-396462616139/photo.jpg",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/645/e2c/481/645e2c4816761764430541.jpg"
+  },
+  {
+    "name": "«Degirmen Astana (Дегирмэн Астана)» ЖШС",
+    "brand": "Degirmen",
+    "businessType": "Public catering",
+    "regNum": "001057/3",
+    "receipt": "18.03.2024",
+    "deadline": "17.03.2025",
+    "region": "Astana city",
+    "address": "Астана қаласы, Республика даңғылы, 19",
+    "img": "https://avatars.mds.yandex.net/get-altay/4599571/2a000001794b15c1276404babafcdddde4a3/L_height",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg"
+  },
+  {
+    "name": "«Degirmen Astana (Дегирмэн Астана)» ЖШС",
+    "brand": "Degirmen",
+    "businessType": "Public catering",
+    "regNum": "001057/3",
+    "receipt": "18.03.2023",
+    "deadline": "01.01.2024",
+    "region": "Astana city",
+    "address": "Астана қаласы, Республика даңғылы, 19",
+    "img": "https://avatars.mds.yandex.net/get-altay/4599571/2a000001794b15c1276404babafcdddde4a3/L_height",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg"
+  }
+]

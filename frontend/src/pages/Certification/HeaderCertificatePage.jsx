@@ -1,29 +1,29 @@
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectAdditiviesCodeFilter,
-  setAdditiveNameFilter,
-} from "../../redux/slices/filterAdditiviesSlice";
 import { useNavigate } from "react-router-dom";
 import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
+import {
+  selectEnterpriseFilter,
+  setEnterpriseNameFilter,
+} from "../../redux/slices/filterEnterprise";
 
 export const HeaderCertificatePage = () => {
   const dispatch = useDispatch();
-  const additiveCodeFilter = useSelector(selectAdditiviesCodeFilter);
+  const enterpriseFilter = useSelector(selectEnterpriseFilter);
   const navigate = useNavigate();
 
-  const handleAdditiveNameFilterChange = (e) => {
-    navigate("/additivies");
-    dispatch(setAdditiveNameFilter(e.target.value));
+  const handleEnterpriseNameFilterChange = (e) => {
+    navigate("/certificate");
+    dispatch(setEnterpriseNameFilter(e.target.value));
   };
 
-  const placeholder = "Search by company name";
+  const placeholder = "Search by enterprise name";
 
   return (
     <HeaderComponent
       placeholder={placeholder}
-      productNameFilter={additiveCodeFilter}
+      productNameFilter={enterpriseFilter}
       hasCertifiedFilter={false}
-      handleProductNameFilterChange={handleAdditiveNameFilterChange}
+      handleProductNameFilterChange={handleEnterpriseNameFilterChange}
     />
   );
 };

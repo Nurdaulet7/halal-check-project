@@ -5,8 +5,9 @@ import { setError } from "./errorSlice";
 
 const initialState = { enterprises: [], isLoadingViaAPI: false };
 
-export const fetchAdditive = createAsyncThunk(
-  "additivies/fetchAdditive",
+// /enterprises-list-delayed
+export const fetchEnterprise = createAsyncThunk(
+  "enterprises/fetchEnterprise",
   async (url, thunkAPI) => {
     try {
       const res = await axios.get(url);
@@ -18,30 +19,30 @@ export const fetchAdditive = createAsyncThunk(
   }
 );
 
-const additiviesSlice = createSlice({
-  name: "additivies",
+const enterprisesSlice = createSlice({
+  name: "enterprises",
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAdditive.pending, (state) => {
+      .addCase(fetchEnterprise.pending, (state) => {
         state.isLoadingViaAPI = true;
       })
-      .addCase(fetchAdditive.fulfilled, (state, action) => {
+      .addCase(fetchEnterprise.fulfilled, (state, action) => {
         state.isLoadingViaAPI = false;
-        state.additivies = action.payload.map((additive) => ({
-          ...additive,
+        state.enterprises = action.payload.map((enterprise) => ({
+          ...enterprise,
           id: uuidv4(), // или любой другой уникальный идентификатор, если нужно
         }));
       })
-      .addCase(fetchAdditive.rejected, (state) => {
+      .addCase(fetchEnterprise.rejected, (state) => {
         state.isLoadingViaAPI = false;
       });
   },
 });
 
-export const selectIsLoadingAdditiveViaAPI = (state) =>
-  state.additivies.isLoadingViaAPI;
+export const selectIsLoadingEnterpriseViaAPI = (state) =>
+  state.enterprises.isLoadingViaAPI;
 
-export const selectAdditivies = (state) => state.additivies.additivies;
+export const selectEnterprises = (state) => state.enterprises.enterprises;
 
-export default additiviesSlice.reducer;
+export default enterprisesSlice.reducer;
