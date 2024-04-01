@@ -6,7 +6,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
 
-export const HeaderEAdditivies = () => {
+export const HeaderCertificatePage = () => {
   const dispatch = useDispatch();
   const additiveCodeFilter = useSelector(selectAdditiviesCodeFilter);
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export const HeaderEAdditivies = () => {
     dispatch(setAdditiveNameFilter(e.target.value));
   };
 
-  const placeholder = "e100 (Without the prefix “e”)";
+  const placeholder = "Search by company name";
 
   return (
     <HeaderComponent

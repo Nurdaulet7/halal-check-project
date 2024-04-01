@@ -11,7 +11,11 @@
     },
     "status": "halal",
     "img": "https://erkemay-baby.kz/upload/iblock/36c/356rhwexfxr5a7hstd412dfcosmjqjqw.jpg",
-    "additives": ["E322", "E500", "E503"],
+    "additives": [
+      { "code": "e100", "status": "halal" },
+      { "code": "e103", "status": "halal" },
+      { "code": "e133", "status": "halal" }
+    ],
     "certified": true,
     "certifiacates": {
       "name": "Стандарт ПРО",
@@ -31,7 +35,11 @@
     },
     "status": "haram",
     "img": "https://arbuz.kz/image/s3/arbuz-kz-products/250496-pechene_orion_choco-pie_120_g.jpg?w=1100&h=1100&_c=1702952047",
-    "additives": ["E322", "E500", "E503"],
+    "additives": [
+      { "code": "e100", "status": "halal" },
+      { "code": "e140", "status": "haram" },
+      { "code": "e133", "status": "halal" }
+    ],
     "certified": false
   },
   {
@@ -46,7 +54,11 @@
     },
     "status": "doubtful",
     "img": "https://sizomarket.kz/wp-content/uploads/2023/01/57.jpg",
-    "additives": ["E322", "E500", "E503"],
+    "additives": [
+      { "code": "e100", "status": "halal" },
+      { "code": "e101", "status": "doubtful" },
+      { "code": "e133", "status": "halal" }
+    ],
     "certified": false
   },
   {
@@ -61,7 +73,11 @@
     },
     "status": "halal",
     "img": "https://cdn1.tovaro.kz/uploads/2021/10/24025721/136092-shokoladnyi_batonchik_snickers_super_95_g.jpg",
-    "additives": ["E322", "E500", "E503"],
+    "additives": [
+      { "code": "e100", "status": "halal" },
+      { "code": "e103", "status": "halal" },
+      { "code": "e133", "status": "halal" }
+    ],
     "certified": false
   }
 ]

@@ -18,12 +18,6 @@
     "description": "Colouring: Synthetic yellow colouring"
   },
   {
-    "code": "e471 ",
-    "status": "doubtful",
-    "name": "Mono-and Diglycerides of Fatty Acids*",
-    "description": "Emulsifier/ Stabiliser: Commercially prepared from glycerin (E422) and fatty acids"
-  },
-  {
     "code": "e140",
     "status": "haram",
     "name": "Chlorophyll (C.I. 75810)*",
@@ -34,5 +28,11 @@
     "status": "halal",
     "name": "Brilliant Blue FCF/FD&C Blue 1 (C.I. 42090)",
     "description": "Colouring: Synthetic blue colouring"
+  },
+  {
+    "code": "e471",
+    "status": "doubtful",
+    "name": "Mono-and Diglycerides of Fatty Acids*",
+    "description": "Emulsifier/ Stabiliser: Commercially prepared from glycerin (E422) and fatty acids"
   }
 ]

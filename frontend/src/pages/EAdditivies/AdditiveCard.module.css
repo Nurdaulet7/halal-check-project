@@ -95,9 +95,9 @@
   transform: scale(1.05);
 }
 
-.card .additiveCode h3 {
+/* .card .additiveCode h3 {
   text-transform: uppercase;
-}
+} */
 
 .card .highlight {
   background-color: #3b83ba;

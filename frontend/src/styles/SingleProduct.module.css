@@ -99,36 +99,6 @@
   flex-direction: column;
 }
 
-.productPageBottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.certifiedDoc {
-  color: var(--header-color);
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.productPageBottom .certifiedDoc #iconCertified {
-  font-size: 50px;
-}
-
-.certificate {
-  min-width: 400px;
-  width: 70%;
-}
-
-.certificate img {
-  width: 100%;
-}
-
 .productPageTop {
   /* width: 100%; */
   display: flex;
@@ -161,47 +131,6 @@
   width: 50%;
 }
 
-.nutritionTableWrapper {
-  width: 100%;
-  min-width: 300px;
-  background: #b4ecbd;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.nutritionTableWrapper h2 {
-  margin-top: 0;
-  color: #333;
-}
-
-.nutritionTableWrapper table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.nutritionTableWrapper th,
-.nutritionTableWrapper td {
-  text-align: left;
-  padding: 8px;
-  border: 1px solid #52a560af;
-}
-
-.nutritionTableWrapper thead th {
-  background-color: #6de981e8;
-}
-
-.nutritionTableWrapper tbody tr:nth-child(even) {
-  background-color: #ffffff;
-}
-
-.nutritionTableWrapper p {
-  font-size: 0.75em;
-  color: #666;
-  text-align: left;
-  margin-top: 5px;
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -231,11 +160,18 @@
 }
 
 .code {
-  background-color: var(--warning); /* жёлтый фон, как на картинке */
   border-radius: 10px; /* скругление углов */
   padding: 5px 15px; /* внутренние отступы */
   font-weight: 600; /* жирный текст */
   color: #ffffff; /* цвет текста */
+}
+
+.code:hover {
+  box-shadow: var(--shadow);
+}
+
+.code a {
+  color: #ffffff;
 }
 
 .ingredients {
@@ -252,6 +188,8 @@
 }
 
 .information {
+  flex: 1;
+  width: 70%;
   display: flex;
   flex-direction: column;
 }
@@ -265,4 +203,30 @@
 .information p {
   font-size: 0.9em;
   margin: 0;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.certifiedDoc {
+  width: 30%;
+  color: var(--header-color);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom .certifiedDoc #iconCertified {
+  font-size: 50px;
+}
+
+.bottom .certifiedDoc p {
+  display: flex;
+  flex-direction: column;
 }

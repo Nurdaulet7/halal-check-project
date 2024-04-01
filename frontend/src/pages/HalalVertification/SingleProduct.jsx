@@ -1,7 +1,7 @@
 import { IoMdClose } from "react-icons/io";
 import { FiCheckCircle } from "react-icons/fi";
 import { v4 as uuidv4 } from "uuid";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct, selectProducts } from "../../redux/slices/productSlice";
 import { useEffect } from "react";
@@ -64,57 +64,8 @@ const SingleProduct = () => {
         <div className={styles.productPageTop}>
           <div className={styles.productImage}>
             <img src={product.img} alt="product" />
-            <div className={styles.information}>
-              <div className={styles.countryOfOrigin}>
-                <h3>Country of origin:</h3>
-                <p>{product.ingredients.origin}</p>
-              </div>
-              <div className={styles.storage}>
-                <h3>Storage:</h3>
-                <p>{product.ingredients.storage}</p>
-              </div>
-              <div className={styles.company}>
-                <h3>HelfLife:</h3>
-                <p>{product.ingredients.helfLife}</p>
-              </div>
-            </div>
           </div>
           <div className={styles.productDetails}>
-            <div className={styles.nutritionTableWrapper}>
-              <h2>Nutrition Facts</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Weight</th>
-                    <th>100 g</th>
-                    <th>100 g*</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Protein</td>
-                    <td>6.3 g</td>
-                    <td>6.3 g</td>
-                  </tr>
-                  <tr>
-                    <td>Fat</td>
-                    <td>29 g</td>
-                    <td>29 g</td>
-                  </tr>
-                  <tr>
-                    <td>Carb</td>
-                    <td>51.3 g</td>
-                    <td>51.3 g</td>
-                  </tr>
-                  <tr>
-                    <td>Calories</td>
-                    <td>482 kcal</td>
-                    <td>482 kcal</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p>* - Weight of 1 unit of the product</p>
-            </div>
             <div className={styles.content}>
               <div className={styles.additives}>
                 <h3>Additivies:</h3>
@@ -122,7 +73,21 @@ const SingleProduct = () => {
                   {product.additives.map((additive) => {
                     return (
                       <li key={uuidv4()}>
-                        <span className={styles.code}>{additive}</span>
+                        <span
+                          className={`${styles.code} ${
+                            additive.status === "halal"
+                              ? styles.halal
+                              : additive.status === "haram"
+                              ? styles.haram
+                              : styles.doubtful
+                          }`}
+                        >
+                          {
+                            <Link to={`/additivies/${additive.code}`}>
+                              {additive.code}
+                            </Link>
+                          }
+                        </span>
                       </li>
                     );
                   })}
@@ -135,17 +100,37 @@ const SingleProduct = () => {
             </div>
           </div>
         </div>
-        {product.certified && (
-          <div className={styles.productPageBottom}>
-            <div className={styles.certifiedDoc}>
-              <FiCheckCircle id={styles.iconCertified} />
-              <p>{`Certified by: ${product.certifiacates.name}`}</p>
+        <div className={styles.bottom}>
+          <div className={styles.information}>
+            <div className={styles.countryOfOrigin}>
+              <h3>Country of origin:</h3>
+              <p>{product.ingredients.origin}</p>
             </div>
-            <div className={styles.certificate}>
-              <img src={product.certifiacates.certificate} alt="certificate" />
+            <div className={styles.storage}>
+              <h3>Storage:</h3>
+              <p>{product.ingredients.storage}</p>
+            </div>
+            <div className={styles.company}>
+              <h3>HelfLife:</h3>
+              <p>{product.ingredients.helfLife}</p>
             </div>
           </div>
-        )}
+          {product.certified && (
+            <div className={styles.certifiedDoc}>
+              <FiCheckCircle id={styles.iconCertified} />
+              <p>
+                Certified by:{" "}
+                <a
+                  href={product.certifiacates.certificate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {product.certifiacates.name}
+                </a>
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

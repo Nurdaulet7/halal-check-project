@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import { HalalVertification } from "./pages/HalalVertification/HalalVertification.jsx";
 import { BarcodeScanner } from "./pages/BarcodeScanner.jsx";
 import { EAdditivies } from "./pages/EAdditivies/EAdditivies.jsx";
-import { HalalCertification } from "./pages/HalalCertification.jsx";
+import { HalalCertification } from "./pages/Certification/HalalCertification.jsx";
 import { EstablishmentsMap } from "./pages/EstablishmentsMap.jsx";
 import { AboutUs } from "./pages/AboutUs.jsx";
 import { FAQ } from "./pages/FAQ.jsx";
@@ -16,6 +16,8 @@ import SingleProduct from "./pages/HalalVertification/SingleProduct.jsx";
 import { ProductsList } from "./components/MainContent/ProductsList.jsx";
 import AdditiviesList from "./pages/EAdditivies/AdditiviesList.jsx";
 import AdditiveInfo from "./pages/EAdditivies/AdditiveInfo.jsx";
+import CertificationList from "./pages/Certification/CertificationList.jsx";
+import CertificationInfo from "./pages/Certification/CertificationInfo.jsx";
 
 const App = () => {
   return (
@@ -31,14 +33,17 @@ const App = () => {
             <Route path=":slug" element={<SingleProduct />} />
           </Route>
 
-          <Route path="/scanner" element={<BarcodeScanner />} />
-
           <Route path="/additivies" element={<EAdditivies />}>
             <Route index element={<AdditiviesList />} />
             <Route path=":additiveSlug" element={<AdditiveInfo />} />
           </Route>
 
-          <Route path="/certificate" element={<HalalCertification />} />
+          <Route path="/certificate" element={<HalalCertification />}>
+            <Route index element={<CertificationList />} />
+            <Route path=":certificateSlug" element={<CertificationInfo />} />
+          </Route>
+
+          <Route path="/scanner" element={<BarcodeScanner />} />
           <Route path="/establishments" element={<EstablishmentsMap />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/faq" element={<FAQ />} />
