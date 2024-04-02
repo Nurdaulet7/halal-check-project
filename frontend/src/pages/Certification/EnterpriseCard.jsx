@@ -1,12 +1,15 @@
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import { LuAlertTriangle } from "react-icons/lu";
 import React from "react";
 import styles from "./EnterpriseCard.module.css";
 import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
 import { selectEnterpriseFilter } from "../../redux/slices/filterEnterprise";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import isDateBeforeToday from "../../utils/isDateBeforeToday";
 
 const EnterpriseCard = (props) => {
-  const { brand, name, businessType, regNum, deadline, img } = props;
+  const { brand, name, businessType, regNum, deadline, img, slug } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
   const enterprisesName = useSelector(selectEnterpriseFilter);
 
@@ -35,19 +38,36 @@ const EnterpriseCard = (props) => {
       <div className={styles.cardContent}>
         <div className={styles.cardCenter}>
           <div className={styles.enterpriseInfo}>
-            <h4>{businessType}</h4>
-            <h3>{brand}</h3>
-            <p>{regNum}</p>
-            <p>{name}</p>
+            <div className={styles.title}>
+              <p>{businessType}</p>
+              <h3>{highlightMatch(brand, enterprisesName)}</h3>
+            </div>
+            <div className={styles.info}>
+              <p className={styles.regNum}>{regNum}</p>
+              <p>{name}</p>
+            </div>
           </div>
           <div className={styles.enterpriseImg}>
-            <img src={img} alt="" />
+            <img src={img} alt="enterprise" />
           </div>
         </div>
         <div className={styles.cardBottom}>
-          <p>{deadline}</p>
+          <div
+            className={`${styles.deadline} ${
+              isDateBeforeToday(deadline) ? styles.notExpired : styles.expired
+            }`}
+          >
+            {isDateBeforeToday(deadline) ? (
+              <IoCheckmarkDoneSharp id={styles.icon} />
+            ) : (
+              <LuAlertTriangle id={styles.icon} />
+            )}
+            <p> {isDateBeforeToday(deadline) ? deadline : "Expired"}</p>
+          </div>
           <button href="#" className={styles.btn}>
-            <Link className={styles.enterprisetLink}>Read More</Link>
+            <Link to={slug} className={styles.enterprisetLink}>
+              Read More
+            </Link>
           </button>
         </div>
       </div>

@@ -8,8 +8,10 @@
     "deadline": "03.05.2024",
     "region": "Almaty city",
     "address": "ҚР, Алматы қаласы, Т.Жароков көшесі, 91.",
+    "slug": "barista-cofee-zhk",
     "img": "https://static.tildacdn.pro/tild3238-6262-4031-b134-396462616139/photo.jpg",
-    "certificate": "https://halaldamu.kz/storage/app/uploads/public/645/e2c/481/645e2c4816761764430541.jpg"
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/645/e2c/481/645e2c4816761764430541.jpg",
+    "certifiedBy": "QMDB"
   },
   {
     "name": "«Degirmen Astana (Дегирмэн Астана)» ЖШС",
@@ -20,19 +22,23 @@
     "deadline": "17.03.2025",
     "region": "Astana city",
     "address": "Астана қаласы, Республика даңғылы, 19",
+    "slug": "degirmen-astana-zhshs",
     "img": "https://avatars.mds.yandex.net/get-altay/4599571/2a000001794b15c1276404babafcdddde4a3/L_height",
-    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg"
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
+    "certifiedBy": "QMDB"
   },
   {
-    "name": "«Degirmen Astana (Дегирмэн Астана)» ЖШС",
-    "brand": "Degirmen",
+    "name": "«Family Kitchen» ЖШС",
+    "brand": "USTA TÜRK KAFESI",
     "businessType": "Public catering",
-    "regNum": "001057/3",
+    "regNum": "001061",
     "receipt": "18.03.2023",
     "deadline": "01.01.2024",
-    "region": "Astana city",
-    "address": "Астана қаласы, Республика даңғылы, 19",
-    "img": "https://avatars.mds.yandex.net/get-altay/4599571/2a000001794b15c1276404babafcdddde4a3/L_height",
-    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg"
+    "region": "Almaty city",
+    "address": "Алматы қаласы, Желтоқсан көшесі, 144, НП-67",
+    "slug": "usta-turk-kafesi-zhshs",
+    "img": "https://halaldamu.kz/storage/app/uploads/public/660/289/277/660289277d8fa691266226.jpg",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
+    "certifiedBy": "QMDB"
   }
 ]
