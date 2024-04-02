@@ -53,7 +53,7 @@ const CertificationList = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <h2>Food additivies</h2>
+      <h2>Public catering</h2>
       <hr />
       <div className={styles.viewContent}>
         <div className={styles.container}>

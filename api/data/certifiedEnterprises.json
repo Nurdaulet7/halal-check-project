@@ -11,7 +11,9 @@
     "slug": "barista-cofee-zhk",
     "img": "https://static.tildacdn.pro/tild3238-6262-4031-b134-396462616139/photo.jpg",
     "certificate": "https://halaldamu.kz/storage/app/uploads/public/645/e2c/481/645e2c4816761764430541.jpg",
-    "certifiedBy": "QMDB"
+    "certifiedBy": "QMDB",
+    "lng": "43.24230376033211",
+    "lat": "76.89870830666096"
   },
   {
     "name": "«Degirmen Astana (Дегирмэн Астана)» ЖШС",
@@ -25,11 +27,13 @@
     "slug": "degirmen-astana-zhshs",
     "img": "https://avatars.mds.yandex.net/get-altay/4599571/2a000001794b15c1276404babafcdddde4a3/L_height",
     "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
-    "certifiedBy": "QMDB"
+    "certifiedBy": "QMDB",
+    "lng": "51.12851569442519",
+    "lat": "71.43627925170857"
   },
   {
     "name": "«Family Kitchen» ЖШС",
-    "brand": "USTA TÜRK KAFESI",
+    "brand": "Usta turk kafesi",
     "businessType": "Public catering",
     "regNum": "001061",
     "receipt": "18.03.2023",
@@ -39,6 +43,8 @@
     "slug": "usta-turk-kafesi-zhshs",
     "img": "https://halaldamu.kz/storage/app/uploads/public/660/289/277/660289277d8fa691266226.jpg",
     "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
-    "certifiedBy": "QMDB"
+    "certifiedBy": "QMDB",
+    "lng": "43.248894763806405",
+    "lat": "76.94074760797122"
   }
 ]

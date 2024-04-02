@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.mapTitle {
+  color: var(--header-color);
+}
+
 .halal {
   background-color: var(--header-color);
 }
@@ -14,6 +18,31 @@
 
 .haram {
   background-color: var(--error);
+}
+
+.title {
+  color: var(--text-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+.title button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  font-size: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--error);
+}
+
+.title button:hover {
+  background-color: rgb(124, 32, 32);
 }
 
 .enterpriseContent {
@@ -83,4 +112,8 @@
 
 .companyFeatures .companyItem p {
   font-size: 0.875em;
+}
+
+.companyMap {
+  padding-top: 10px;
 }

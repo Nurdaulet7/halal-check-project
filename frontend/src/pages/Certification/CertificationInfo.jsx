@@ -1,3 +1,5 @@
+import { IoMdClose } from "react-icons/io";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -35,8 +37,13 @@ const CertificationInfo = () => {
   return (
     <div className={styles.enterpriseContent}>
       <div className={styles.title}>
-        <h1>{enterprise.brand}</h1>
-        <p>{enterprise.businessType}</p>
+        <div className={styles.enterpriseTop}>
+          <h1>{enterprise.brand}</h1>
+          <p>{enterprise.businessType}</p>
+        </div>
+        <button onClick={handleBack}>
+          <IoMdClose />
+        </button>
       </div>
       <div
         className={`${styles.status} ${
@@ -95,6 +102,24 @@ const CertificationInfo = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.companyMap}>
+        <MapContainer
+          center={[enterprise.lng, enterprise.lat]}
+          zoom={13}
+          scrollWheelZoom={false}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[enterprise.lng, enterprise.lat]}>
+            <Popup>
+              <h2 className={styles.mapTitle}>{enterprise.brand}</h2>
+              <h3>{enterprise.businessType}</h3>
+            </Popup>
+          </Marker>
+        </MapContainer>
       </div>
     </div>
   );
