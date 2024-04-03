@@ -62,7 +62,7 @@ const CertificationList = () => {
             <EmptyPage reset={handleResetFilter} title={"additivies"} />
           )}
           {filteredEnterprises.map((enterprise) => {
-            return <EnterpriseCard {...enterprise} />;
+            return <EnterpriseCard key={uuidv4()} {...enterprise} />;
           })}
         </div>
       </div>

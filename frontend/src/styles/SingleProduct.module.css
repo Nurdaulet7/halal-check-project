@@ -129,6 +129,7 @@
 .productDetails {
   flex: 1;
   width: 50%;
+  min-width: 300px;
 }
 
 .content {
@@ -229,4 +230,10 @@
 .bottom .certifiedDoc p {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .productContent {
+    grid-column: 1 / span 5;
+  }
 }

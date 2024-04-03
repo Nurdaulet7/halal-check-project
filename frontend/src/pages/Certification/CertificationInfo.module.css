@@ -117,3 +117,17 @@
 .companyMap {
   padding-top: 10px;
 }
+
+@media (max-width: 900px) {
+  .companyLogo {
+    min-width: 300px;
+  }
+
+  .companyInfo {
+    min-width: 300px;
+  }
+
+  .enterpriseContent {
+    grid-column: 1 / span 5;
+  }
+}

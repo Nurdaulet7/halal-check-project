@@ -24,7 +24,7 @@ header.vertificationHeader {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
 .searchHeader h3 {
@@ -77,11 +77,20 @@ header.vertificationHeader {
   height: 35px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 767px) {
   .searchHeader form {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  #titleH {
+    display: none;
   }
 
   .searchHeader form input {
