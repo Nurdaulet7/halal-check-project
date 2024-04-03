@@ -30,3 +30,17 @@
 .loaders {
   padding: 10px;
 }
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 900px) {
+  .mainContainer {
+    /* width: 100%; */
+    grid-column: 1 / span 5;
+    margin: 10px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+  }
+}

@@ -107,7 +107,7 @@ header .image-text .header-text {
   color: var(--header-color);
 }
 
-.sidebar header .toggle {
+.sidebar header i {
   position: absolute;
   top: 50%;
   right: -25px;
@@ -254,4 +254,29 @@ header .image-text .header-text {
   .sidebar .hideBarcode {
     display: block !important;
   }
+}
+
+@media (min-width: 500px) {
+}
+
+@media (max-width: 960px) {
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar.close ~ main {
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .sidebar header .toggle {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+}
+
+@media (min-width: 1600px) {
 }

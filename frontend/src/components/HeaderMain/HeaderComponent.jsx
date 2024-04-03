@@ -1,6 +1,8 @@
 import Checkbox from "@mui/material/Checkbox";
 import styles from "./HeaderMain.module.css";
 import engLng from "../../img/UnitedKingdom.png";
+import MobileFilter from "../FilterComponents/MobileFilter";
+import { useMediaQuery } from "react-responsive";
 
 export const HeaderComponent = ({
   placeholder,
@@ -13,15 +15,21 @@ export const HeaderComponent = ({
   const handleSubmit = (e) => {
     e.preventDefault(); // Предотвращаем перезагрузку страницы
   };
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
     <header className={styles.vertificationHeader}>
       <div className={styles.searchHeader}>
-        <h3>
-          <span className={styles.colortext}>HalalCheck</span> is your companion
-          in the world of halal nutrition!
-        </h3>
+        <div className={styles.headerTitle}>
+          <h3>
+            <span className={styles.colortext}>HalalCheck</span> is your
+            companion in the world of halal nutrition!
+          </h3>
+          <div className={styles.lngSwitcher}>
+            <img src={engLng} alt="lngSwitcher" />
+          </div>
+        </div>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -42,9 +50,7 @@ export const HeaderComponent = ({
             </span>
           )}
         </form>
-      </div>
-      <div className={styles.lngSwitcher}>
-        <img src={engLng} alt="lngSwitcher" />
+        {isMobile && <MobileFilter className={styles.mobileFilter} />}
       </div>
     </header>
   );

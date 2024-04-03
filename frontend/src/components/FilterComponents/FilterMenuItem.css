@@ -95,3 +95,40 @@
 const handleWrapClick = (index) => {
   setWrapped(wrapped === index ? null : index);
 }; */
+
+.mobileWrapper {
+  width: 100%;
+  margin: 0;
+}
+
+#icon {
+  margin-top: 2px;
+}
+
+.show button {
+  border-radius: 10px 10px 0 0;
+}
+
+.hide button {
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    box-shadow: none;
+  }
+}
+
+.mobileWrapper button {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  width: 100%;
+  padding: 7px 15px;
+  border: none;
+  background-color: var(--header-color);
+  color: white;
+  font-size: medium;
+  font-weight: 500;
+}

@@ -8,7 +8,7 @@ export const HalalVertification = () => {
     <>
       <HeaderMain className={styles.header} />
       <Outlet />
-      <Filter className={styles.filter} />
+      <Filter />
     </>
   );
 };

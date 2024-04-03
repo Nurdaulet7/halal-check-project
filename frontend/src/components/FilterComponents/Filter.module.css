@@ -5,3 +5,31 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+@media (max-width: 900px) {
+  .filterContainer {
+    grid-column: 1 /-1; /* Занимает последнюю колонку */
+    grid-row: 2;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .filterContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}
+
+@media (min-width: 1600px) {
+}

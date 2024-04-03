@@ -1,8 +1,0 @@
-main {
-  display: grid;
-  align-items: flex-start;
-  grid-template-columns: repeat(5, 1fr); /* 4 колонки */
-  grid-template-rows: auto 1fr; /* Высота хэдера автоматическая, основной контент растягивается на всё доступное пространство */
-  gap: 0.5rem; /* Расстояние между элементами */
-  /* height: 100vh; */
-}

@@ -14,6 +14,12 @@ header.vertificationHeader {
   border-radius: 5px;
 }
 
+.headerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .searchHeader {
   width: 100%;
   display: flex;
@@ -69,4 +75,25 @@ header.vertificationHeader {
 
 .lngSwitcher img {
   height: 35px;
+}
+
+@media (max-width: 767px) {
+  .searchHeader form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchHeader form input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 950px) {
+  .searchHeader form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
 }
