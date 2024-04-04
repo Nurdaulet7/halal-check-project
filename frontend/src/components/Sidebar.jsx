@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { IoClose } from "react-icons/io5";
 import React, { useEffect } from "react";
 import { MenuItems } from "./SidebarComponents/MenuItems.jsx";
 import {
@@ -6,14 +7,19 @@ import {
   setDarkMode,
   selectsidebarVisible,
   selectdarkMode,
+  setMobileSidebar,
+  selectMobileSidebarVisible,
 } from "../redux/slices/sidebarSlice";
 
 import styles from "../styles/Sidebar.module.css";
 import { NavLink } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 const Sidebar = ({ children }) => {
   const dispatch = useDispatch();
+  const isMobile = useMediaQuery({ maxWidth: 960 });
   const isClose = useSelector(selectsidebarVisible);
+  const isMobileMenuVisible = useSelector(selectMobileSidebarVisible);
   const darkMode = useSelector(selectdarkMode);
   // const darkToggle = () => dispatch(setDarkMode());
   // const toggle = () => dispatch(setSidebarWidth());
@@ -49,13 +55,23 @@ const Sidebar = ({ children }) => {
     localStorage.setItem("sidebarVisible", newIsCloseState.toString());
   };
 
+  const mobileToggle = () => {
+    dispatch(setMobileSidebar());
+  };
+
   useEffect(() => {
     document.body.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   return (
     <div className={styles.container}>
-      <nav className={`${styles.sidebar} ${isClose && styles.close}`}>
+      <nav
+        className={`${styles.sidebar}  ${
+          !isMobile
+            ? isClose && styles.close
+            : isMobileMenuVisible && styles.isMobileClose
+        }`}
+      >
         <header>
           <NavLink to={"/"}>
             <div className={`${styles["image-text"]}`}>
@@ -82,7 +98,11 @@ const Sidebar = ({ children }) => {
               </div>
             </div>
           </NavLink>
-
+          {isMobile && (
+            <button className={styles.closeIcon} onClick={mobileToggle}>
+              <IoClose />
+            </button>
+          )}
           <i
             className={`bx bxs-chevron-left ${styles.toggle}`}
             onClick={toggle}

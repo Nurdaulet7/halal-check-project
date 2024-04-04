@@ -1,10 +1,17 @@
 import { NavLink } from "react-router-dom";
 import styles from "../../styles/Sidebar.module.css";
+import { useMediaQuery } from "react-responsive";
 
 export const MenuItem = ({ item }) => {
   const { path, icon, name } = item;
+  const isMobile = useMediaQuery({ maxWidth: 960 });
+
   return (
-    <li className={name === "Barcode Scanner" ? styles.hideBarcode : ""}>
+    <li
+      className={
+        !isMobile && name === "Barcode Scanner" ? styles.hideBarcode : ""
+      }
+    >
       <NavLink
         to={path}
         className={({ isActive }) =>

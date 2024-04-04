@@ -35,10 +35,6 @@
   box-shadow: var(--shadow);
 }
 
-.sidebar.image svg {
-  fill: red;
-}
-
 .sidebar.close {
   width: 78px;
 }
@@ -74,6 +70,16 @@
 
 .sidebar header {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar header button {
+  width: 30px;
+  font-size: 30px;
+  color: var(--header-color);
+  border: none;
+  background-color: var(--sidebar-color);
 }
 
 .sidebar .image-text img {
@@ -256,17 +262,47 @@ header .image-text .header-text {
   }
 }
 
-@media (min-width: 500px) {
-}
-
 @media (max-width: 960px) {
   .sidebar {
-    display: none;
+    /* display: block; */
+    right: 0;
+    left: auto;
+    /* width: 40%; */
+    border-radius: 10px 0 0 10px;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Анимация появления */
+    opacity: 1;
+    visibility: visible;
   }
 
-  .sidebar.close ~ main {
+  .sidebar.isMobileClose {
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .sidebar.isMobileClose ~ main {
+    opacity: 1;
+  }
+
+  .sidebar .text {
+    opacity: 1;
+  }
+
+  .sidebar {
+    width: 40%;
+  }
+
+  .sidebar ~ main {
+    transition: margin-left 0.3s ease;
     left: 0;
     width: 100%;
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 70%;
   }
 }
 

@@ -1,8 +1,10 @@
+import { GiHamburgerMenu } from "react-icons/gi";
 import Checkbox from "@mui/material/Checkbox";
 import styles from "./HeaderMain.module.css";
-import engLng from "../../img/UnitedKingdom.png";
 import MobileFilter from "../FilterComponents/MobileFilter";
 import { useMediaQuery } from "react-responsive";
+import { setMobileSidebar } from "../../redux/slices/sidebarSlice";
+import { useDispatch } from "react-redux";
 
 export const HeaderComponent = ({
   placeholder,
@@ -12,10 +14,16 @@ export const HeaderComponent = ({
   onlyCertifiedFilter,
   handleOnlyCertifiedFilterChange,
 }) => {
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault(); // Предотвращаем перезагрузку страницы
   };
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isMenuVisible = useMediaQuery({ maxWidth: 960 });
+
+  const mobileToggle = () => {
+    dispatch(setMobileSidebar());
+  };
 
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   return (
@@ -44,9 +52,13 @@ export const HeaderComponent = ({
             <span className={styles.colortext}>HalalCheck</span> is your
             companion in the world of halal nutrition!
           </h3>
-          <div className={styles.lngSwitcher}>
-            <img src={engLng} alt="lngSwitcher" />
-          </div>
+
+          {isMenuVisible && (
+            <button className={styles.mobileMenu} onClick={mobileToggle}>
+              <GiHamburgerMenu id={styles.mobileIcon} />
+              {/* <img src={engLng} alt="lngSwitcher" /> */}
+            </button>
+          )}
         </div>
         <form onSubmit={handleSubmit}>
           <input
