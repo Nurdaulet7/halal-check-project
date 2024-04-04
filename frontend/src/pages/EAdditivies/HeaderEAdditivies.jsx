@@ -24,6 +24,7 @@ export const HeaderEAdditivies = () => {
       productNameFilter={additiveCodeFilter}
       hasCertifiedFilter={false}
       handleProductNameFilterChange={handleAdditiveNameFilterChange}
+      hasFilter
     />
   );
 };

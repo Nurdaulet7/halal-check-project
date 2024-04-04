@@ -1,0 +1,27 @@
+.mainContainer {
+  grid-column: 1 / span 5;
+  background-color: var(--sidebar-color);
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  gap: 15px;
+}
+
+.profileCards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h2 {
+  color: var(--header-color);
+}
+
+p {
+  color: var(--text-color);
+}

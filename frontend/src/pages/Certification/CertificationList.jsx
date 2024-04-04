@@ -59,7 +59,7 @@ const CertificationList = () => {
         <div className={styles.container}>
           {isLoading && loaders}
           {!isLoading && filteredEnterprises.length === 0 && (
-            <EmptyPage reset={handleResetFilter} title={"additivies"} />
+            <EmptyPage reset={handleResetFilter} title={"enterprises"} />
           )}
           {filteredEnterprises.map((enterprise) => {
             return <EnterpriseCard key={uuidv4()} {...enterprise} />;

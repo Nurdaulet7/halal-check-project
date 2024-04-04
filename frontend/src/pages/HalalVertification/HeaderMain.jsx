@@ -34,6 +34,7 @@ export const HeaderMain = () => {
       hasCertifiedFilter={true}
       onlyCertifiedFilter={onlyCertifiedFilter}
       handleOnlyCertifiedFilterChange={handleOnlyCertifiedFilterChange}
+      hasFilter
     />
   );
 };

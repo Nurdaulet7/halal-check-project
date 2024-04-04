@@ -24,6 +24,7 @@ export const HeaderCertificatePage = () => {
       productNameFilter={enterpriseFilter}
       hasCertifiedFilter={false}
       handleProductNameFilterChange={handleEnterpriseNameFilterChange}
+      hasFilter
     />
   );
 };

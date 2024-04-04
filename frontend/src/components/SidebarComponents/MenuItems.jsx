@@ -29,11 +29,6 @@ const menuItem = [
     icon: <GrCertificate />,
   },
   {
-    path: "/establishments",
-    name: "Establishments Map",
-    icon: <GrMap />,
-  },
-  {
     path: "/about",
     name: "About us",
     icon: <RiTeamLine />,

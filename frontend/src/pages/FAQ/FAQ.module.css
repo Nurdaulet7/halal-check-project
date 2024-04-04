@@ -1,0 +1,17 @@
+.mainContainer {
+  grid-column: 1 / span 5;
+  background-color: var(--sidebar-color);
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  gap: 15px;
+}
+
+.mainContainer h3 {
+  color: var(--text-color);
+  font-weight: 500;
+}

@@ -13,6 +13,7 @@ export const HeaderComponent = ({
   hasCertifiedFilter,
   onlyCertifiedFilter,
   handleOnlyCertifiedFilterChange,
+  hasFilter = false,
 }) => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -60,26 +61,29 @@ export const HeaderComponent = ({
             </button>
           )}
         </div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={productNameFilter} //
-            onChange={handleProductNameFilterChange} //
-            placeholder={placeholder} //
-          />
-          {hasCertifiedFilter && (
-            <span className={styles.checkbox}>
-              <Checkbox
-                type="checkbox"
-                checked={onlyCertifiedFilter}
-                onChange={handleOnlyCertifiedFilterChange}
-                {...label}
-                color="success"
-              />
-              Show only certified products
-            </span>
-          )}
-        </form>
+        {hasFilter && (
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={productNameFilter} //
+              onChange={handleProductNameFilterChange} //
+              placeholder={placeholder} //
+            />
+            {hasCertifiedFilter && (
+              <span className={styles.checkbox}>
+                <Checkbox
+                  type="checkbox"
+                  checked={onlyCertifiedFilter}
+                  onChange={handleOnlyCertifiedFilterChange}
+                  {...label}
+                  color="success"
+                />
+                Show only certified products
+              </span>
+            )}
+          </form>
+        )}
+
         {isMobile && <MobileFilter className={styles.mobileFilter} />}
       </div>
     </header>
