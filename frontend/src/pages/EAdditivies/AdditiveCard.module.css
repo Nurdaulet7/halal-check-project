@@ -39,7 +39,7 @@
   justify-content: space-between;
   flex: 1;
   gap: 5px;
-  color: var(--sidebar-color);
+  color: white;
   border-radius: 15px;
   box-shadow: var(--shadow);
   padding: 15px;
@@ -66,10 +66,11 @@
 }
 
 .card .additiveInfo h4 {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .card .additiveInfo p {
+  color: white;
   font-size: 14px;
 }
 
@@ -91,11 +92,10 @@
     background: rgba(255, 255, 255, 0.479);
     color: #000000;
   }
-
-  .productLink {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.85);
-  }
+}
+.productLink {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 910px) {

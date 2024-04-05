@@ -62,7 +62,14 @@ const EnterpriseCard = (props) => {
             ) : (
               <LuAlertTriangle id={styles.icon} />
             )}
-            <p> {isDateBeforeToday(deadline) ? deadline : "Expired"}</p>
+            <p
+              className={`${styles.deadline} ${
+                isDateBeforeToday(deadline) ? styles.notExpired : styles.expired
+              }`}
+            >
+              {" "}
+              {isDateBeforeToday(deadline) ? deadline : "Expired"}
+            </p>
           </div>
           <button href="#" className={styles.btn}>
             <Link to={slug} className={styles.enterprisetLink}>

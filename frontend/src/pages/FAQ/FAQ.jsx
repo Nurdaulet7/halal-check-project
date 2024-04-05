@@ -7,7 +7,8 @@ export const FAQ = () => {
     <>
       <HeaderComponent hasFilter={false} />
       <div className={styles.mainContainer}>
-        <h3>Frequently Asked questions and answers</h3>
+        <h2>Frequently Asked questions and answers</h2>
+        <hr />
         <Accordion />
       </div>
     </>

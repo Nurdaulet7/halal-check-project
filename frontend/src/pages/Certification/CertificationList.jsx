@@ -1,4 +1,3 @@
-import axios from "axios";
 import styles from "./CertificationList.module.css";
 import { v4 as uuidv4 } from "uuid";
 import React, { useEffect } from "react";

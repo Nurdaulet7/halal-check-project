@@ -95,7 +95,11 @@ const CertificationInfo = () => {
             <div className={styles.companyItem}>
               <p>Ceftifed by</p>
               <p>
-                <a target="_blank" href={enterprise.certificate}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={enterprise.certificate}
+                >
                   {enterprise.certifiedBy}
                 </a>
               </p>

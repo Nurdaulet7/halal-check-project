@@ -8,7 +8,7 @@ import { EAdditivies } from "./pages/EAdditivies/EAdditivies.jsx";
 import { HalalCertification } from "./pages/Certification/HalalCertification.jsx";
 import { AboutUs } from "./pages/AboutUs/AboutUs.jsx";
 import { FAQ } from "./pages/FAQ/FAQ.jsx";
-import { ContactUs } from "./pages/ContactUs.jsx";
+import { ContactUs } from "./pages/ContactUs/ContactUs.jsx";
 import Error from "./Error/Error.jsx";
 import Main from "./pages/Main.jsx";
 import SingleProduct from "./pages/HalalVertification/SingleProduct.jsx";
