@@ -7,13 +7,14 @@ import { fetchProduct, selectProducts } from "../../redux/slices/productSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/SingleProduct.module.css";
+import createSlug from "../../utils/сreateSlug";
 
 const SingleProduct = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const slug = params.slug;
   const products = useSelector(selectProducts);
-  const product = products.find((product) => product.slug === slug);
+  const product = products.find((product) => createSlug(product.name) === slug);
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -51,9 +52,9 @@ const SingleProduct = () => {
       </div>
       <div
         className={`${styles.status} ${
-          product.status === "halal"
+          product.status.toLowerCase() === "halal"
             ? styles.halal
-            : product.status === "haram"
+            : product.status.toLowerCase() === "haram"
             ? styles.haram
             : styles.doubtful
         }`}
@@ -63,7 +64,7 @@ const SingleProduct = () => {
       <div className={styles.productPage}>
         <div className={styles.productPageTop}>
           <div className={styles.productImage}>
-            <img src={product.img} alt="product" />
+            <img src={product.imageUrl} alt="product" />
           </div>
           <div className={styles.productDetails}>
             <div className={styles.content}>
@@ -95,7 +96,22 @@ const SingleProduct = () => {
               </div>
               <div className={styles.ingredients}>
                 <h3>Ingredients:</h3>
-                <p>{product.ingredients.description}</p>
+                {/* <p>{product.ingredients.description}</p> */}
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+                  consequuntur quod ipsa consectetur omnis beatae minima.
+                  Reprehenderit sit pariatur, nam numquam dolorum sint
+                  asperiores fugiat itaque temporibus autem iure labore
+                  officiis, ipsa aspernatur est aperiam excepturi quibusdam ad
+                  beatae tempore. Nam similique itaque tempora quia modi ducimus
+                  aliquam nihil asperiores quae, magnam quos iure, distinctio
+                  reprehenderit dignissimos ratione eum, eaque in nisi? Dolor
+                  minima accusantium dolorem? Saepe voluptas ullam molestiae
+                  neque magni quos veniam aspernatur error soluta rerum odio
+                  similique illum maxime inventore voluptates qui tempora ipsum,
+                  vero, mollitia molestias corrupti adipisci doloremque impedit
+                  animi? Provident rerum enim exercitationem autem?
+                </p>
               </div>
             </div>
           </div>
@@ -104,15 +120,15 @@ const SingleProduct = () => {
           <div className={styles.information}>
             <div className={styles.countryOfOrigin}>
               <h3>Country of origin:</h3>
-              <p>{product.ingredients.origin}</p>
+              <p>{`${product.originCountry.name}, ${product.originCountry.code}`}</p>
             </div>
             <div className={styles.storage}>
               <h3>Storage:</h3>
-              <p>{product.ingredients.storage}</p>
+              <p>{product.storage}</p>
             </div>
             <div className={styles.company}>
-              <h3>HelfLife:</h3>
-              <p>{product.ingredients.helfLife}</p>
+              <h3>Companies:</h3>
+              <p>{product.company}</p>
             </div>
           </div>
           {product.certified && (

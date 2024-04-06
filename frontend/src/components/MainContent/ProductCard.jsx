@@ -4,18 +4,20 @@ import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
 import TruncatedText from "../../utils/TruncatedText";
 import { selectProductNameFilter } from "../../redux/slices/filterProductsSlice";
 import { Link } from "react-router-dom";
+import createSlug from "../../utils/сreateSlug";
 
 export const ProductCard = (props) => {
   const productNameFilter = useSelector(selectProductNameFilter);
   const {
+    id,
     name,
     barcode,
-    ingredients,
+    // ingredients,
     status,
-    img,
-    certified,
-    certifiacates,
-    slug,
+    imageUrl,
+    // certified,
+    // certifiacates,
+    // slug,
   } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
 
@@ -41,14 +43,14 @@ export const ProductCard = (props) => {
         sidebarVisible ? styles.withoutSidebar : styles.withSidebar
       }`}
     >
-      <div className={`${styles.card} ${styles[status]}`}>
-        <img src={img} alt="product" />
+      <div className={`${styles.card} ${styles[status.toLowerCase()]}`}>
+        <img src={imageUrl} alt="product" />
         <div className={styles.cardContent}>
           <div className={styles.cardCenter}>
             <h3>{highlightMatch(name, productNameFilter)}</h3>
             <p>
               <span className={styles.textBold}>Ingredients:</span>{" "}
-              {<TruncatedText text={ingredients.description} maxLength={85} />}
+              {<TruncatedText text={"sfasfsdfsd"} maxLength={85} />}
             </p>
             <hr color="white" margin="5px" />
             <p>
@@ -57,12 +59,12 @@ export const ProductCard = (props) => {
             </p>
           </div>
           <div className={styles.cardBottom}>
-            <label className={certified ? styles.certified : ""}>
+            {/* <label className={certified ? styles.certified : ""}>
               {certified ? "Certified" : "Not certified"}
-            </label>
-            {certified && <img src={certifiacates.logo} alt="certificate" />}
+            </label> */}
+            {/* {certified && <img src={certifiacates.logo} alt="certificate" />} */}
             <button href="#" className={styles.btn}>
-              <Link to={slug} className={styles.productLink}>
+              <Link to={createSlug(name)} className={styles.productLink}>
                 Read More
               </Link>
             </button>

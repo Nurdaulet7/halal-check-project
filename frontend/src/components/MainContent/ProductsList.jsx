@@ -39,8 +39,9 @@ export const ProductsList = () => {
     const matchesName = product.name
       .toLowerCase()
       .includes(productNameFilter.toLowerCase());
-    const matchesCertified = onlyCertifiedFilter ? product.certified : true;
-    return matchesName && matchesCertified;
+    // const matchesCertified = onlyCertifiedFilter ? product.certified : true;
+    // return matchesName && matchesCertified;
+    return matchesName;
   });
 
   const handleResetFilter = () => {
