@@ -2,13 +2,32 @@ import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import styles from "./ContactUs.module.css";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { setError } from "../../redux/slices/errorSlice";
+import { useDispatch } from "react-redux";
 
 export const ContactUs = () => {
+  const dispatch = useDispatch();
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   const form = useRef();
+
+  const isFormValid = () => {
+    return (
+      userName.trim() && userEmail.trim() && subject.trim() && message.trim()
+    );
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!isFormValid()) {
+      // Показываем сообщение об ошибке, если форма не заполнена
+      dispatch(setError("Please fill out all fields."));
+      return; // Прерываем выполнение функции, чтобы не отправлять форму
+    }
 
     emailjs
       .sendForm("service_by7zinn", "template_0vdx7pd", form.current, {
@@ -16,9 +35,14 @@ export const ContactUs = () => {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
+          dispatch(setError("Your message has been sent"));
+          setUserName("");
+          setUserEmail("");
+          setSubject("");
+          setMessage("");
         },
         (error) => {
+          dispatch(setError(error));
           console.log("FAILED...", error.text);
         }
       );
@@ -49,6 +73,8 @@ export const ContactUs = () => {
                         name="user_name"
                         placeholder="Name"
                         className={styles.formControl}
+                        value={userName}
+                        onChange={(e) => setUserName(e.target.value)}
                       />
                     </div>
                   </div>
@@ -60,6 +86,8 @@ export const ContactUs = () => {
                         name="user_email"
                         placeholder="Email"
                         className={styles.formControl}
+                        value={userEmail}
+                        onChange={(e) => setUserEmail(e.target.value)}
                       />
                     </div>
                   </div>
@@ -73,6 +101,8 @@ export const ContactUs = () => {
                         name="subject"
                         placeholder="Subject"
                         className={styles.formControl}
+                        value={subject}
+                        onChange={(e) => setSubject(e.target.value)}
                       />
                     </div>
                   </div>
@@ -89,6 +119,8 @@ export const ContactUs = () => {
                         rows={4}
                         aria-invalid="false"
                         className={styles.formControl}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                       />
                     </div>
                   </div>

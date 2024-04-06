@@ -30,11 +30,12 @@ export const ProductsList = () => {
   useEffect(() => {
     // Загрузка данных о продуктах, только если массив продуктов пуст
     if (products.length === 0) {
-      dispatch(fetchProduct("http://localhost:4000/product-list-delayed"));
+      dispatch(fetchProduct("http://localhost:8080/product/getAll"));
     }
   }, [dispatch, products.length]);
 
   const filteredProducts = products.filter((product) => {
+    console.log(product);
     const matchesName = product.name
       .toLowerCase()
       .includes(productNameFilter.toLowerCase());

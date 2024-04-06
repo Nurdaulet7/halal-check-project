@@ -29,7 +29,7 @@ const productsSlice = createSlice({
         state.isLoadingViaAPI = false;
         state.products = action.payload.map((product) => ({
           ...product,
-          id: product.barcode, // или любой другой уникальный идентификатор, если нужно
+          id: product.id, // или любой другой уникальный идентификатор, если нужно
         }));
       })
       .addCase(fetchProduct.rejected, (state) => {
