@@ -21,7 +21,7 @@ export const ProductsList = () => {
   const dispatch = useDispatch();
 
   const productNameFilter = useSelector(selectProductNameFilter);
-  // const categoryFilter = useSelector(selectCategoryFilter);
+  const categoryFilter = useSelector(selectCategoryFilter);
   const onlyCertifiedFilter = useSelector(selectOnlyCertifiedFilter);
   // Получаем данные о загрузке и продукты из состояния
   const isLoading = useSelector(selectIsLoadingViaAPI);
@@ -39,9 +39,18 @@ export const ProductsList = () => {
     const matchesName = product.name
       .toLowerCase()
       .includes(productNameFilter.toLowerCase());
-    // const matchesCertified = onlyCertifiedFilter ? product.certified : true;
-    // return matchesName && matchesCertified;
-    return matchesName;
+    // const matchesCategory = product.subCategory.name
+    //   .toLowerCase()
+    //   .includes(categoryFilter.toLowerCase());
+    const matchesCategory =
+      categoryFilter === "" ||
+      product.category.name.toLowerCase() === categoryFilter.toLowerCase() ||
+      (product.subCategory &&
+        product.subCategory.name.toLowerCase() ===
+          categoryFilter.toLowerCase());
+    const matchesCertified = onlyCertifiedFilter ? product.certified : true;
+    return matchesName && matchesCertified && matchesCategory;
+    // return matchesName;
   });
 
   const handleResetFilter = () => {
