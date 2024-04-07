@@ -110,7 +110,7 @@ const CertificationInfo = () => {
       <div className={styles.companyMap}>
         <MapContainer
           center={[enterprise.lng, enterprise.lat]}
-          zoom={13}
+          zoom={17}
           scrollWheelZoom={false}
         >
           <TileLayer

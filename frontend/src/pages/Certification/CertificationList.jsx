@@ -10,6 +10,7 @@ import {
 import {
   resetFilters,
   selectEnterpriseFilter,
+  selectCategoryFilter,
 } from "../../redux/slices/filterEnterprise";
 import { EmptyPage } from "../../utils/EmptyPage";
 import EnterpriseCardLoader from "../../utils/EnterpriseCardLoader";
@@ -21,6 +22,7 @@ const CertificationList = () => {
   const enterprisesNameFilter = useSelector(selectEnterpriseFilter);
   const isLoading = useSelector(selectIsLoadingEnterpriseViaAPI);
   const enterprises = useSelector(selectEnterprises);
+  const companyType = useSelector(selectCategoryFilter);
 
   useEffect(() => {
     if (enterprises.length === 0) {
@@ -34,7 +36,10 @@ const CertificationList = () => {
     const matchesName = enterprise.name
       .toLowerCase()
       .includes(enterprisesNameFilter.toLowerCase());
-    return matchesName;
+    const matchesCompanyType =
+      companyType === "" ||
+      enterprise.companyType.name.toLowerCase() === companyType.toLowerCase();
+    return matchesName && matchesCompanyType;
   });
 
   let loaders = [];
@@ -52,7 +57,7 @@ const CertificationList = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <h2>Public catering</h2>
+      <h2>{companyType === "" ? "Certified Enterprises" : companyType}</h2>
       <hr />
       <div className={styles.viewContent}>
         <div className={styles.container}>

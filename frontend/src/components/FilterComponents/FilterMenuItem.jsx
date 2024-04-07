@@ -1,51 +1,60 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectProducts } from "../../redux/slices/productSlice";
 import "./FilterMenuItem.css";
 import { setCategoryFilter } from "../../redux/slices/filterProductsSlice";
 
-export const FilterMenuItem = () => {
-  const products = useSelector(selectProducts);
+export const FilterMenuItem = ({
+  selector,
+  actionSetCategoryFilter,
+  hasSubcategories = true,
+  forEnterprises = false,
+}) => {
+  const items = useSelector(selector);
   const dispatch = useDispatch();
 
-  // Создаем menuFilter, используя useMemo для оптимизации производительности
   const menuFilter = useMemo(() => {
     const filter = [];
 
-    products.forEach((product) => {
-      const { category, subCategory } = product;
+    items.forEach((item) => {
+      const categoryKey = forEnterprises ? "companyType" : "category";
+      const subCategoryKey = forEnterprises ? "" : "subCategory"; // Предполагаем, что может быть другой ключ для подкатегорий
 
-      let categoryItem = filter.find((item) => item.category === category.name);
+      const categoryName = item[categoryKey]?.name;
+      const subCategory = item[subCategoryKey];
+      let categoryItem = filter.find((it) => it.category === categoryName);
       if (!categoryItem) {
         categoryItem = {
-          category: category.name,
+          category: categoryName,
           subCategory: [],
         };
         filter.push(categoryItem);
       }
 
-      if (subCategory && !categoryItem.subCategory.includes(subCategory.name)) {
+      if (
+        hasSubcategories &&
+        subCategory &&
+        !categoryItem.subCategory.includes(subCategory.name)
+      ) {
         categoryItem.subCategory.push(subCategory.name);
       }
     });
 
     return filter;
-  }, [products]);
-  // Состояние для отслеживания расширенных элементов
+  }, [items, hasSubcategories, forEnterprises]);
+
   const [expanded, setExpanded] = useState(null);
-  const [activeCategory, setActiveCategory] = useState(null); // Состояние для отслеживания активной категории
+  const [activeCategory, setActiveCategory] = useState(null);
   const [wrapped, setWrapped] = useState(null);
 
-  // Обработчик клика по элементу
   const handleItemClick = (index) => {
     const categoryName = menuFilter[index].category;
     if (categoryName === activeCategory) {
-      dispatch(setCategoryFilter("")); // Отправляем сброс фильтра
-      setActiveCategory(null); // Сброс активной категории
+      dispatch(actionSetCategoryFilter(""));
+      setActiveCategory(null);
     } else {
-      dispatch(setCategoryFilter(categoryName));
-      setActiveCategory(categoryName); // Обновляем активную категорию
+      dispatch(actionSetCategoryFilter(categoryName));
+      setActiveCategory(categoryName);
     }
     setExpanded(expanded === index ? null : index);
   };
@@ -81,30 +90,33 @@ export const FilterMenuItem = () => {
               >
                 {product.category}
               </a>
-              <a
-                style={{ transition: "transform 0.5s ease" }}
-                onClick={() => handleWrapClick(index)}
-                className={`${
-                  wrapped === index || expanded === index
-                    ? "rotate"
-                    : "rotateBack"
-                }${wrapped === index ? "active" : ""}`}
-              >
-                <IoIosArrowDown />
-              </a>
+              {hasSubcategories && (
+                <a
+                  style={{ transition: "transform 0.5s ease" }}
+                  onClick={() => handleWrapClick(index)}
+                  className={`${
+                    wrapped === index || expanded === index
+                      ? "rotate"
+                      : "rotateBack"
+                  }${wrapped === index ? "active" : ""}`}
+                >
+                  <IoIosArrowDown />
+                </a>
+              )}
             </div>
-
-            <ul
-              className={`sub-items ${
-                expanded === index || wrapped === index ? "show" : ""
-              }`}
-            >
-              {product.subCategory.map((sub, subIndex) => (
-                <li key={subIndex}>
-                  <a onClick={() => handleCategorySelect(sub)}>{sub}</a>
-                </li>
-              ))}
-            </ul>
+            {hasSubcategories && (
+              <ul
+                className={`sub-items ${
+                  expanded === index || wrapped === index ? "show" : ""
+                }`}
+              >
+                {product.subCategory.map((sub, subIndex) => (
+                  <li key={subIndex}>
+                    <a onClick={() => handleCategorySelect(sub)}>{sub}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

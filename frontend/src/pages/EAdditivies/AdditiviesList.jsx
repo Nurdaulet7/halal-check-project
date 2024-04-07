@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   resetFilters,
   selectAdditiviesCodeFilter,
+  selectCategoryFilter,
 } from "../../redux/slices/filterAdditiviesSlice";
 import {
   fetchAdditive,
@@ -21,6 +22,7 @@ const AdditiviesList = () => {
   const additiveNameFilter = useSelector(selectAdditiviesCodeFilter);
   const isLoading = useSelector(selectIsLoadingAdditiveViaAPI);
   const additivies = useSelector(selectAdditivies);
+  const categoryFilter = useSelector(selectCategoryFilter);
 
   useEffect(() => {
     if (additivies.length === 0) {
@@ -32,7 +34,10 @@ const AdditiviesList = () => {
     const matchesName = additive.code
       .toLowerCase()
       .includes(additiveNameFilter.toLowerCase());
-    return matchesName;
+    const matchesCategory =
+      categoryFilter === "" ||
+      additive.category.name.toLowerCase() === categoryFilter.toLowerCase();
+    return matchesName && matchesCategory;
   });
 
   let loaders = [];
@@ -50,7 +55,7 @@ const AdditiviesList = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <h2>Food additivies</h2>
+      <h2>{categoryFilter === "" ? "Food additivies" : categoryFilter}</h2>
       <hr />
       <div className={styles.viewContent}>
         <div className={styles.container}>

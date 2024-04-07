@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import MyLoader from "../../utils/MyLoader";
 import { ProductCard } from "./ProductCard";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 import {
   fetchProduct,
   selectIsLoadingViaAPI,
@@ -66,7 +67,11 @@ export const ProductsList = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <h2>Confectionery / «Chocolate bars»</h2>
+      <h2>
+        {categoryFilter === ""
+          ? "Products"
+          : capitalizeFirstLetter(categoryFilter)}
+      </h2>
       <hr />
 
       <div className={styles.viewContent}>

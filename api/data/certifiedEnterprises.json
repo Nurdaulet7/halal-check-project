@@ -2,7 +2,7 @@
   {
     "name": "«Barista Cofee» ЖК",
     "brand": "Barista Coffee",
-    "businessType": "Public catering",
+    "businessType": "Poultry farm",
     "regNum": "000901",
     "receipt": "04.05.2023",
     "deadline": "03.05.2024",
@@ -13,7 +13,12 @@
     "certificate": "https://halaldamu.kz/storage/app/uploads/public/645/e2c/481/645e2c4816761764430541.jpg",
     "certifiedBy": "QMDB",
     "lng": "43.24230376033211",
-    "lat": "76.89870830666096"
+    "lat": "76.89870830666096",
+    "companyType": {
+      "id": 2,
+      "name": "Poultry farm",
+      "description": null
+    }
   },
   {
     "name": "«Degirmen Astana (Дегирмэн Астана)» ЖШС",
@@ -29,7 +34,12 @@
     "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
     "certifiedBy": "QMDB",
     "lng": "51.12851569442519",
-    "lat": "71.43627925170857"
+    "lat": "71.43627925170857",
+    "companyType": {
+      "id": 2,
+      "name": "Public Catering",
+      "description": null
+    }
   },
   {
     "name": "«Family Kitchen» ЖШС",
@@ -45,6 +55,11 @@
     "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
     "certifiedBy": "QMDB",
     "lng": "43.248894763806405",
-    "lat": "76.94074760797122"
+    "lat": "76.94074760797122",
+    "companyType": {
+      "id": 2,
+      "name": "Public Catering",
+      "description": null
+    }
   }
 ]
