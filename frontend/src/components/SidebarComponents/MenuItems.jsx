@@ -25,7 +25,7 @@ const menuItem = [
   },
   {
     path: "/certificate",
-    name: "Halal Certification",
+    name: "Certified Enterprises",
     icon: <GrCertificate />,
   },
   {

@@ -1,7 +1,9 @@
 import ContentLoader from "react-content-loader";
+import styles from "../components/MainContent/ProductCard.module.css";
 
 const MyLoader = (props) => (
   <ContentLoader
+    className={styles.viewsRow}
     speed={1}
     width={280}
     height={360}

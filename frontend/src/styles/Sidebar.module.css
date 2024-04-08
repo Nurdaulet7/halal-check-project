@@ -276,6 +276,7 @@ header .image-text .header-text {
 
   .sidebar.isMobileClose {
     /* display: none; */
+    display: none;
     opacity: 0;
     visibility: hidden;
   }

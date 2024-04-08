@@ -84,7 +84,9 @@ export const HeaderComponent = ({
           </form>
         )}
 
-        {isMobile && <MobileFilter className={styles.mobileFilter} />}
+        {hasFilter && isMobile && (
+          <MobileFilter className={styles.mobileFilter} />
+        )}
       </div>
     </header>
   );

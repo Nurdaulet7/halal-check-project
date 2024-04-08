@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux";
-import styles from "./ProductCard.module.css";
-import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
-import TruncatedText from "../../utils/TruncatedText";
-import { selectProductNameFilter } from "../../redux/slices/filterProductsSlice";
 import { Link } from "react-router-dom";
+import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
+import { selectProductNameFilter } from "../../redux/slices/filterProductsSlice";
+import TruncatedText from "../../utils/TruncatedText";
 import createSlug from "../../utils/сreateSlug";
+import styles from "./ProductCard.module.css";
 
 export const ProductCard = (props) => {
   const productNameFilter = useSelector(selectProductNameFilter);
   const {
-    id,
+    // id,
     name,
     barcode,
     // ingredients,
@@ -47,10 +47,24 @@ export const ProductCard = (props) => {
         <img src={imageUrl} alt="product" />
         <div className={styles.cardContent}>
           <div className={styles.cardCenter}>
-            <h3>{highlightMatch(name, productNameFilter)}</h3>
+            <h3>
+              {
+                <TruncatedText
+                  text={highlightMatch(name, productNameFilter)}
+                  maxLength={18}
+                />
+              }
+            </h3>
             <p>
               <span className={styles.textBold}>Ingredients:</span>{" "}
-              {<TruncatedText text={"sfasfsdfsd"} maxLength={85} />}
+              {
+                <TruncatedText
+                  text={
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet voluptatibus sed ad, aut maiores repellat laborum accusamus quidem quibusdam repellendus, et impedit doloremque aperiam porro praesentium odio magnam ea ducimus delectus, quisquam doloribus cumque. Deleniti minima placeat voluptatibus excepturi illo repellendus natus magni quas, corporis necessitatibus illum, dolorum quod."
+                  }
+                  maxLength={85}
+                />
+              }
             </p>
             <hr color="white" margin="5px" />
             <p>
