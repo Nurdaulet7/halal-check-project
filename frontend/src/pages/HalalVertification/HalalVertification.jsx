@@ -5,20 +5,23 @@ import styles from "../../components/FilterComponents/Filter.module.css";
 import { StatusIncticator } from "../../components/FilterComponents/StatusIncticatorOfProduct";
 import { FilterMenuItem } from "../../components/FilterComponents/FilterMenuItem";
 import { setCategoryFilter } from "../../redux/slices/filterProductsSlice";
+import { FilterProvider } from "../../components/FilterComponents/FilterProvider";
 
 export const HalalVertification = () => {
+  const filterProps = {
+    selector: selectProducts,
+    actionSetCategoryFilter: setCategoryFilter,
+    hasSubcategories: true,
+    forEnterprises: false,
+  };
   return (
-    <>
+    <FilterProvider value={filterProps}>
       <HeaderMain />
       <Outlet />
       <div className={styles.filterContainer}>
         <StatusIncticator />
-        <FilterMenuItem
-          selector={selectProducts}
-          actionSetCategoryFilter={setCategoryFilter}
-          hasSubcategories={true}
-        />
+        <FilterMenuItem />
       </div>
-    </>
+    </FilterProvider>
   );
 };

@@ -114,6 +114,10 @@ const handleWrapClick = (index) => {
   box-shadow: var(--shadow);
 }
 
+button p {
+  color: white;
+}
+
 @media (max-width: 767px) {
   .wrapper {
     box-shadow: none;

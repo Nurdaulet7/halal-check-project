@@ -5,10 +5,18 @@ import { StatusIncticator } from "../../components/FilterComponents/StatusInctic
 import { FilterMenuItem } from "../../components/FilterComponents/FilterMenuItem";
 import { setCategoryFilter } from "../../redux/slices/filterEnterprise";
 import { selectEnterprises } from "../../redux/slices/certificateSlice";
+import { FilterProvider } from "../../components/FilterComponents/FilterProvider";
 
 export const HalalCertification = () => {
+  const filterProps = {
+    selector: selectEnterprises,
+    actionSetCategoryFilter: setCategoryFilter,
+    hasSubcategories: false,
+    forEnterprises: true,
+  };
+
   return (
-    <>
+    <FilterProvider value={filterProps}>
       <HeaderCertificatePage />
       <Outlet />
       <div className={styles.filterContainer}>
@@ -20,6 +28,6 @@ export const HalalCertification = () => {
           forEnterprises={true}
         />
       </div>
-    </>
+    </FilterProvider>
   );
 };

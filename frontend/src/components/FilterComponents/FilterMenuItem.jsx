@@ -3,13 +3,15 @@ import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./FilterMenuItem.css";
 import { setCategoryFilter } from "../../redux/slices/filterProductsSlice";
+import { useFilterContext } from "./FilterProvider";
 
-export const FilterMenuItem = ({
-  selector,
-  actionSetCategoryFilter,
-  hasSubcategories = true,
-  forEnterprises = false,
-}) => {
+export const FilterMenuItem = () => {
+  const {
+    selector,
+    actionSetCategoryFilter,
+    hasSubcategories,
+    forEnterprises,
+  } = useFilterContext();
   const items = useSelector(selector);
   const dispatch = useDispatch();
 
