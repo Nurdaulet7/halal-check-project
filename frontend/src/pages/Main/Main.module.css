@@ -1,0 +1,72 @@
+.mainContainer {
+  grid-column: 1 / span 5;
+  background-color: var(--sidebar-color);
+  background-image: url(../../img/mainBckg.png);
+  background-size: cover;
+  background-repeat: unset;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  gap: 15px;
+}
+
+.mainContent {
+  background-color: var(--sidebar-color);
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.mainContent h1 {
+  color: var(--header-color);
+}
+
+.mainContent .contentText {
+  color: var(--text-color);
+  font-weight: 450;
+}
+
+.mainContainer span {
+  color: var(--header-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.mainContent .btn {
+  background-color: var(--header-color);
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  /* border: 1px solid white; */
+  border-color: rgb(46, 141, 43);
+  color: white;
+}
+
+.btn #link {
+  color: white;
+  font-style: italic;
+}
+
+@media (max-width: 960px) {
+  .mainContent {
+    width: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+  .mainContainer {
+    padding: 20px;
+  }
+}

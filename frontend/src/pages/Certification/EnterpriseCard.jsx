@@ -48,7 +48,7 @@ const EnterpriseCard = (props) => {
         <div className={styles.cardCenter}>
           <div className={styles.enterpriseInfo}>
             <div className={styles.title}>
-              <p>{businessType}</p>
+              <p>{companyType.name}</p>
               <h3>{highlightMatch(brand, enterprisesName)}</h3>
             </div>
             <div className={styles.info}>

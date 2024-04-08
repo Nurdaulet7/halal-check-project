@@ -10,7 +10,7 @@ import { AboutUs } from "./pages/AboutUs/AboutUs.jsx";
 import { FAQ } from "./pages/FAQ/FAQ.jsx";
 import { ContactUs } from "./pages/ContactUs/ContactUs.jsx";
 import Error from "./Error/Error.jsx";
-import Main from "./pages/Main.jsx";
+import Main from "./pages/Main/Main.jsx";
 import SingleProduct from "./pages/HalalVertification/SingleProduct.jsx";
 import { ProductsList } from "./components/MainContent/ProductsList.jsx";
 import AdditiviesList from "./pages/EAdditivies/AdditiviesList.jsx";
