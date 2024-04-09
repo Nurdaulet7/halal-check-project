@@ -6,6 +6,7 @@ import { StatusIncticator } from "../../components/FilterComponents/StatusInctic
 import { FilterMenuItem } from "../../components/FilterComponents/FilterMenuItem";
 import { setCategoryFilter } from "../../redux/slices/filterProductsSlice";
 import { FilterProvider } from "../../components/FilterComponents/FilterProvider";
+import { Footer } from "../../components/Footer/Footer";
 
 export const HalalVertification = () => {
   const filterProps = {
@@ -13,6 +14,7 @@ export const HalalVertification = () => {
     actionSetCategoryFilter: setCategoryFilter,
     hasSubcategories: true,
     forEnterprises: false,
+    path: "vertification",
   };
   return (
     <FilterProvider value={filterProps}>
@@ -22,6 +24,7 @@ export const HalalVertification = () => {
         <StatusIncticator />
         <FilterMenuItem />
       </div>
+      <Footer />
     </FilterProvider>
   );
 };

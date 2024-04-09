@@ -2,6 +2,7 @@ import React from "react";
 import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
 import styles from "./AboutUs.module.css";
 import { ProfileCard } from "./ProfileCard";
+import { Footer } from "../../components/Footer/Footer";
 
 export const AboutUs = () => {
   return (
@@ -38,6 +39,7 @@ export const AboutUs = () => {
           <ProfileCard />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

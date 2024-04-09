@@ -6,6 +6,7 @@ import { FilterMenuItem } from "../../components/FilterComponents/FilterMenuItem
 import { setCategoryFilter } from "../../redux/slices/filterEnterprise";
 import { selectEnterprises } from "../../redux/slices/certificateSlice";
 import { FilterProvider } from "../../components/FilterComponents/FilterProvider";
+import { Footer } from "../../components/Footer/Footer";
 
 export const HalalCertification = () => {
   const filterProps = {
@@ -13,6 +14,7 @@ export const HalalCertification = () => {
     actionSetCategoryFilter: setCategoryFilter,
     hasSubcategories: false,
     forEnterprises: true,
+    path: "certificate",
   };
 
   return (
@@ -21,13 +23,9 @@ export const HalalCertification = () => {
       <Outlet />
       <div className={styles.filterContainer}>
         <StatusIncticator />
-        <FilterMenuItem
-          selector={selectEnterprises}
-          actionSetCategoryFilter={setCategoryFilter}
-          hasSubcategories={false}
-          forEnterprises={true}
-        />
+        <FilterMenuItem />
       </div>
+      <Footer />
     </FilterProvider>
   );
 };

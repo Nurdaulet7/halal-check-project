@@ -6,6 +6,7 @@ import { selectAdditivies } from "../../redux/slices/additiveSlice";
 import styles from "../../components/FilterComponents/Filter.module.css";
 import { StatusIncticator } from "../../components/FilterComponents/StatusIncticatorOfProduct";
 import { FilterProvider } from "../../components/FilterComponents/FilterProvider";
+import { Footer } from "../../components/Footer/Footer";
 
 export const EAdditivies = () => {
   const filterProps = {
@@ -13,6 +14,7 @@ export const EAdditivies = () => {
     actionSetCategoryFilter: setCategoryFilter,
     hasSubcategories: false,
     forEnterprises: false,
+    path: "additivies",
   };
   return (
     <FilterProvider value={filterProps}>
@@ -22,6 +24,7 @@ export const EAdditivies = () => {
         <StatusIncticator />
         <FilterMenuItem />
       </div>
+      <Footer />
     </FilterProvider>
   );
 };

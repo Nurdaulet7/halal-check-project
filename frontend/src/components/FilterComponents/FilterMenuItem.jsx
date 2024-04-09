@@ -1,6 +1,7 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./FilterMenuItem.css";
 import { setCategoryFilter } from "../../redux/slices/filterProductsSlice";
 import { useFilterContext } from "./FilterProvider";
@@ -11,8 +12,10 @@ export const FilterMenuItem = () => {
     actionSetCategoryFilter,
     hasSubcategories,
     forEnterprises,
+    path,
   } = useFilterContext();
   const items = useSelector(selector);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const menuFilter = useMemo(() => {
@@ -50,6 +53,7 @@ export const FilterMenuItem = () => {
   const [wrapped, setWrapped] = useState(null);
 
   const handleItemClick = (index) => {
+    navigate(`/${path}`);
     const categoryName = menuFilter[index].category;
     if (categoryName === activeCategory) {
       dispatch(actionSetCategoryFilter(""));
@@ -62,6 +66,7 @@ export const FilterMenuItem = () => {
   };
 
   const handleCategorySelect = (categoryName) => {
+    navigate(`/${path}`);
     if (categoryName === activeCategory) {
       dispatch(setCategoryFilter("")); // Сброс фильтра
       setActiveCategory(null);

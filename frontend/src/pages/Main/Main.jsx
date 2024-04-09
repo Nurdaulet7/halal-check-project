@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
 import styles from "./Main.module.css";
+import { Footer } from "../../components/Footer/Footer";
 
 const Main = () => {
   return (
@@ -33,6 +34,7 @@ const Main = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

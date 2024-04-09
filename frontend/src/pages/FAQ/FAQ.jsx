@@ -1,6 +1,7 @@
 import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
 import styles from "./FAQ.module.css";
 import Accordion from "./AccordionItem";
+import { Footer } from "../../components/Footer/Footer";
 
 export const FAQ = () => {
   return (
@@ -11,6 +12,7 @@ export const FAQ = () => {
         <hr />
         <Accordion />
       </div>
+      <Footer />
     </>
   );
 };

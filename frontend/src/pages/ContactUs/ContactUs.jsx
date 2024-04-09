@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { setError } from "../../redux/slices/errorSlice";
 import { useDispatch } from "react-redux";
+import { Footer } from "../../components/Footer/Footer";
 
 export const ContactUs = () => {
   const dispatch = useDispatch();
@@ -157,6 +158,7 @@ export const ContactUs = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
