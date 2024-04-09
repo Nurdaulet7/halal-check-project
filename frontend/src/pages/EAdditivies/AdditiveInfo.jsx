@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   selectAdditivies,
   fetchAdditive,
+  selectIsLoadingAdditiveViaAPI,
 } from "../../redux/slices/additiveSlice";
 import styles from "./AdditiveInfo.module.css";
 
@@ -14,6 +15,7 @@ const AdditiveInfo = () => {
   const slug = params.additiveSlug;
   const additivies = useSelector(selectAdditivies);
   const additive = additivies.find((additive) => additive.code === slug);
+  const isLoading = selectIsLoadingAdditiveViaAPI;
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -26,7 +28,18 @@ const AdditiveInfo = () => {
     }
   }, [dispatch, additivies.length]);
 
-  if (!additive) {
+  // Перенаправление, если добавка не найдена
+  if (additivies.length > 0 && !additive) {
+    return (
+      <div className={styles.additiveNotFound}>
+        <h1>Additive Not Found</h1>
+        <p>The additive with code {slug} does not exist in our database.</p>
+        <button onClick={() => navigate("/additivies")}>Return to List</button>
+      </div>
+    );
+  }
+
+  if (!additive && isLoading) {
     console.log(additive);
     return <div>Loading product details...</div>;
   }

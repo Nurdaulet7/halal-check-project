@@ -25,6 +25,12 @@
   box-shadow: var(--shadow);
   background-color: var(--sidebar-color);
   color: var(--sidebar-color);
+  transition: 0.3s all;
+}
+
+.cardContent:hover,
+.cardContent:focus {
+  transform: scale(1.05);
 }
 
 .cardCenter {

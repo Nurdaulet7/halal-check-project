@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./FilterMenuItem.css";
 import { setCategoryFilter } from "../../redux/slices/filterProductsSlice";
 import { useFilterContext } from "./FilterProvider";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 
 export const FilterMenuItem = () => {
   const {
@@ -95,7 +96,7 @@ export const FilterMenuItem = () => {
                 onClick={() => handleItemClick(index)}
                 className={expanded === index ? "active" : ""}
               >
-                {product.category}
+                {capitalizeFirstLetter(product.category)}
               </a>
               {hasSubcategories && (
                 <a
@@ -119,7 +120,9 @@ export const FilterMenuItem = () => {
               >
                 {product.subCategory.map((sub, subIndex) => (
                   <li key={subIndex}>
-                    <a onClick={() => handleCategorySelect(sub)}>{sub}</a>
+                    <a onClick={() => handleCategorySelect(sub)}>
+                      {capitalizeFirstLetter(sub)}
+                    </a>
                   </li>
                 ))}
               </ul>

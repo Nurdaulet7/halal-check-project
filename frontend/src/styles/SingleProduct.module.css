@@ -197,6 +197,7 @@
 }
 
 .information h3 {
+  color: var(--text-color);
   font-size: 1em;
   margin: 10px 0 5px 0;
   font-weight: bold;

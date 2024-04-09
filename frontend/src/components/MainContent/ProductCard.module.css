@@ -38,6 +38,12 @@
   overflow: hidden;
   box-shadow: var(--shadow);
   padding: 10px;
+  transition: 0.3s all;
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.05);
 }
 
 .card img {
