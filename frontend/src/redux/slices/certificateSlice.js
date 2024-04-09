@@ -3,7 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setError } from "./errorSlice";
 
-const initialState = { enterprises: [], isLoadingViaAPI: false };
+const initialState = {
+  enterprises: JSON.parse(localStorage.getItem("enterprises")) || [],
+  isLoadingViaAPI: false,
+};
 
 // /enterprises-list-delayed
 export const fetchEnterprise = createAsyncThunk(
@@ -33,6 +36,7 @@ const enterprisesSlice = createSlice({
           ...enterprise,
           id: uuidv4(), // или любой другой уникальный идентификатор, если нужно
         }));
+        localStorage.setItem("enterprises", JSON.stringify(state.enterprises));
       })
       .addCase(fetchEnterprise.rejected, (state) => {
         state.isLoadingViaAPI = false;

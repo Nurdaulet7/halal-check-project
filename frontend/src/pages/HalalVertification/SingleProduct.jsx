@@ -23,7 +23,7 @@ const SingleProduct = () => {
   useEffect(() => {
     // Загрузка данных о продуктах, только если массив продуктов пуст
     if (products.length === 0) {
-      dispatch(fetchProduct("http://localhost:4000/product-list-delayed"));
+      dispatch(fetchProduct("http://localhost:8080/product/getAll"));
     }
   }, [dispatch, products.length]);
 
@@ -76,9 +76,9 @@ const SingleProduct = () => {
                       <li key={uuidv4()}>
                         <span
                           className={`${styles.code} ${
-                            additive.status === "halal"
+                            additive.status.toLowerCase() === "halal"
                               ? styles.halal
-                              : additive.status === "haram"
+                              : additive.status.toLowerCase() === "haram"
                               ? styles.haram
                               : styles.doubtful
                           }`}
@@ -97,21 +97,7 @@ const SingleProduct = () => {
               <div className={styles.ingredients}>
                 <h3>Ingredients:</h3>
                 {/* <p>{product.ingredients.description}</p> */}
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                  consequuntur quod ipsa consectetur omnis beatae minima.
-                  Reprehenderit sit pariatur, nam numquam dolorum sint
-                  asperiores fugiat itaque temporibus autem iure labore
-                  officiis, ipsa aspernatur est aperiam excepturi quibusdam ad
-                  beatae tempore. Nam similique itaque tempora quia modi ducimus
-                  aliquam nihil asperiores quae, magnam quos iure, distinctio
-                  reprehenderit dignissimos ratione eum, eaque in nisi? Dolor
-                  minima accusantium dolorem? Saepe voluptas ullam molestiae
-                  neque magni quos veniam aspernatur error soluta rerum odio
-                  similique illum maxime inventore voluptates qui tempora ipsum,
-                  vero, mollitia molestias corrupti adipisci doloremque impedit
-                  animi? Provident rerum enim exercitationem autem?
-                </p>
+                <p>{product.ingredients[0].description}</p>
               </div>
             </div>
           </div>

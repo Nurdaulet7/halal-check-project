@@ -3,7 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setError } from "./errorSlice";
 
-const initialState = { additivies: [], isLoadingViaAPI: false };
+const initialState = {
+  additivies: JSON.parse(localStorage.getItem("additivies")) || [],
+  isLoadingViaAPI: false,
+};
 
 export const fetchAdditive = createAsyncThunk(
   "additivies/fetchAdditive",
@@ -32,6 +35,7 @@ const additiviesSlice = createSlice({
           ...additive,
           id: uuidv4(), // или любой другой уникальный идентификатор, если нужно
         }));
+        localStorage.setItem("additivies", JSON.stringify(state.additivies));
       })
       .addCase(fetchAdditive.rejected, (state) => {
         state.isLoadingViaAPI = false;

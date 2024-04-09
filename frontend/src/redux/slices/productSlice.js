@@ -2,7 +2,10 @@ import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setError } from "./errorSlice";
 
-const initialState = { products: [], isLoadingViaAPI: false };
+const initialState = {
+  products: JSON.parse(localStorage.getItem("products")) || [],
+  isLoadingViaAPI: false,
+};
 
 export const fetchProduct = createAsyncThunk(
   "products/fetchProduct",
@@ -26,11 +29,12 @@ const productsSlice = createSlice({
         state.isLoadingViaAPI = true;
       })
       .addCase(fetchProduct.fulfilled, (state, action) => {
-        state.isLoadingViaAPI = false;
         state.products = action.payload.map((product) => ({
           ...product,
-          id: product.id, // или любой другой уникальный идентификатор, если нужно
+          id: product.id,
         }));
+        localStorage.setItem("products", JSON.stringify(state.products));
+        state.isLoadingViaAPI = false;
       })
       .addCase(fetchProduct.rejected, (state) => {
         state.isLoadingViaAPI = false;
