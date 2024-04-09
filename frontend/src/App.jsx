@@ -17,6 +17,7 @@ import AdditiviesList from "./pages/EAdditivies/AdditiviesList.jsx";
 import AdditiveInfo from "./pages/EAdditivies/AdditiveInfo.jsx";
 import CertificationList from "./pages/Certification/CertificationList.jsx";
 import CertificationInfo from "./pages/Certification/CertificationInfo.jsx";
+import { NotFound } from "./components/NotFound/NotFound.jsx";
 
 const App = () => {
   return (
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/scanner" element={<BarcodeScanner />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Sidebar>
       <Error />

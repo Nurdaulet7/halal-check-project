@@ -1,0 +1,43 @@
+.notFound {
+  grid-column: 1 / span 5;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.notFound h1 {
+  font-size: 110px;
+  color: var(--primary-color);
+  padding: 0;
+  margin: 0;
+  line-height: 4.5rem;
+}
+
+.notFound p {
+  color: var(--primary-color);
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.notFound .btn-go-home {
+  padding: 8px 12px;
+  background-color: var(--header-color);
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.notFound .btn-go-home * {
+  color: white;
+}
+
+.notFound .btn-go-home:hover {
+  background-color: var(--primary-color);
+}

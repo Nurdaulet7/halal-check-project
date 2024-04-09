@@ -8,13 +8,16 @@ import {
   selectIsLoadingAdditiveViaAPI,
 } from "../../redux/slices/additiveSlice";
 import styles from "./AdditiveInfo.module.css";
+import { NotFound } from "../../components/NotFound/NotFound";
 
 const AdditiveInfo = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const slug = params.additiveSlug;
   const additivies = useSelector(selectAdditivies);
-  const additive = additivies.find((additive) => additive.code === slug);
+  const additive = additivies.find(
+    (additive) => additive.code.toLocaleLowerCase() === slug.toLocaleLowerCase()
+  );
   const isLoading = selectIsLoadingAdditiveViaAPI;
   const navigate = useNavigate();
 
@@ -30,13 +33,7 @@ const AdditiveInfo = () => {
 
   // Перенаправление, если добавка не найдена
   if (additivies.length > 0 && !additive) {
-    return (
-      <div className={styles.additiveNotFound}>
-        <h1>Additive Not Found</h1>
-        <p>The additive with code {slug} does not exist in our database.</p>
-        <button onClick={() => navigate("/additivies")}>Return to List</button>
-      </div>
-    );
+    return <NotFound />;
   }
 
   if (!additive && isLoading) {
