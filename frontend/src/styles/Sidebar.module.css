@@ -264,25 +264,21 @@ header .image-text .header-text {
 
 @media (max-width: 960px) {
   .sidebar {
-    /* display: block; */
     right: 0;
     left: auto;
-    /* width: 40%; */
     border-radius: 10px 0 0 10px;
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Анимация появления */
-    opacity: 1;
-    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Анимация для opacity и visibility */
+    opacity: 0; /* Начальное состояние - полностью прозрачный */
+    visibility: hidden; /* Начальное состояние - невидимый */
   }
 
   .sidebar.isMobileClose {
-    /* display: none; */
-    display: none;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1; /* Полностью непрозрачный */
+    visibility: visible; /* Состояние видимости */
   }
 
   .sidebar.isMobileClose ~ main {
-    opacity: 1;
+    opacity: 0.3;
   }
 
   .sidebar .text {
@@ -297,7 +293,7 @@ header .image-text .header-text {
     transition: margin-left 0.3s ease;
     left: 0;
     width: 100%;
-    opacity: 0.3;
+    opacity: 1;
   }
 }
 

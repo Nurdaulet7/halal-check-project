@@ -21,13 +21,6 @@ const Sidebar = ({ children }) => {
   const isClose = useSelector(selectsidebarVisible);
   const isMobileMenuVisible = useSelector(selectMobileSidebarVisible);
   const darkMode = useSelector(selectdarkMode);
-  // const darkToggle = () => dispatch(setDarkMode());
-  // const toggle = () => dispatch(setSidebarWidth());
-
-  // useEffect(() => {
-  //   // Применение класса 'dark-mode' к <body>, в зависимости от состояния darkMode
-  //   document.body.classList.toggle("dark", darkMode);
-  // }, [darkMode]);
 
   useEffect(() => {
     // Восстановление состояния темы из localStorage при загрузке компонента
@@ -50,7 +43,7 @@ const Sidebar = ({ children }) => {
   };
 
   const toggle = () => {
-    const newIsCloseState = !isClose;
+    const newIsCloseState = isClose;
     dispatch(setSidebarWidth()); // Предполагается, что этот экшен переключает состояние видимости
     localStorage.setItem("sidebarVisible", newIsCloseState.toString());
   };
