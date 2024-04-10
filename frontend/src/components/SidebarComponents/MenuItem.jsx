@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 
 export const MenuItem = ({ item }) => {
   const { path, icon, name } = item;
-  const isMobile = useMediaQuery({ maxWidth: 960 });
+  const isMobile = useMediaQuery({ maxWidth: 540 });
 
   return (
     <li

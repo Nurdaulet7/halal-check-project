@@ -3,7 +3,6 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar.jsx";
 import { HalalVertification } from "./pages/HalalVertification/HalalVertification.jsx";
-import { BarcodeScanner } from "./pages/Scanner/BarcodeScanner.jsx";
 import { EAdditivies } from "./pages/EAdditivies/EAdditivies.jsx";
 import { HalalCertification } from "./pages/Certification/HalalCertification.jsx";
 import { AboutUs } from "./pages/AboutUs/AboutUs.jsx";
@@ -18,6 +17,9 @@ import AdditiveInfo from "./pages/EAdditivies/AdditiveInfo.jsx";
 import CertificationList from "./pages/Certification/CertificationList.jsx";
 import CertificationInfo from "./pages/Certification/CertificationInfo.jsx";
 import { NotFound } from "./components/NotFound/NotFound.jsx";
+import { ScannedProductDetails } from "./pages/Scanner/ScannedProductDetails.jsx";
+import { BarcodeScanner } from "./pages/Scanner/BarcodeScanner.jsx";
+import ScannerBarcode from "./pages/Scanner/ScannerBarcode.jsx";
 
 const App = () => {
   return (
@@ -41,9 +43,15 @@ const App = () => {
             <Route path=":certificateSlug" element={<CertificationInfo />} />
           </Route>
 
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/scanner" element={<ScannerBarcode />}>
+            <Route index element={<BarcodeScanner />} />
+            <Route
+              path=":scannedProductSlug"
+              element={<ScannedProductDetails />}
+            />
+          </Route>
 
-          <Route path="/scanner" element={<BarcodeScanner />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="*" element={<NotFound />} />

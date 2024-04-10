@@ -125,6 +125,16 @@ input:focus {
   border: none;
 }
 
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 20px;
+  }
+
+  .contact {
+    padding: 2rem;
+  }
+}
+
 @media (min-width: 768px) {
   .contactContainer {
     -webkit-box-flex: 0;
