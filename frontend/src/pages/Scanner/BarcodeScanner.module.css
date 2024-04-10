@@ -1,0 +1,12 @@
+.mainContainer {
+  grid-column: 1 / span 5;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  gap: 15px;
+}

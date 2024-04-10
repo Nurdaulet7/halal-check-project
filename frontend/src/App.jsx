@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar.jsx";
 import { HalalVertification } from "./pages/HalalVertification/HalalVertification.jsx";
-import { BarcodeScanner } from "./pages/BarcodeScanner.jsx";
+import { BarcodeScanner } from "./pages/Scanner/BarcodeScanner.jsx";
 import { EAdditivies } from "./pages/EAdditivies/EAdditivies.jsx";
 import { HalalCertification } from "./pages/Certification/HalalCertification.jsx";
 import { AboutUs } from "./pages/AboutUs/AboutUs.jsx";
