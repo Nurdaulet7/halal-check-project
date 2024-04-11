@@ -18,7 +18,7 @@ const SingleProduct = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate("/vertification");
+    navigate(-1);
   };
   useEffect(() => {
     // Загрузка данных о продуктах, только если массив продуктов пуст

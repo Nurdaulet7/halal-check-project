@@ -12,6 +12,8 @@ import styles from "./Scanner.module.css";
 // import { setError } from "../../redux/slices/errorSlice";
 // import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { TbFaceIdError } from "react-icons/tb";
+import { MagnifyingGlass } from "react-loader-spinner";
 
 export const ScannedProductDetails = () => {
   const product = useSelector(selectScannedProduct);
@@ -24,10 +26,61 @@ export const ScannedProductDetails = () => {
     navigate("/scanner");
   };
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (isLoading)
+    return (
+      <div className={styles.loader}>
+        <MagnifyingGlass
+          visible={true}
+          height="100"
+          width="100"
+          ariaLabel="magnifying-glass-loading"
+          wrapperStyle={{}}
+          wrapperClass="magnifying-glass-wrapper"
+          glassColor="#c0efff"
+          color="#e15b64"
+        />
+        <p>Searching.....</p>
+      </div>
+    );
+  if (error)
+    return (
+      <div className={styles.productDetail}>
+        <div className={styles.header}>
+          <div className={styles.productName}>
+            <h1>{error}</h1>
+            <span className={styles.barcode}>
+              Sorry, we couldn't find the product
+            </span>
+          </div>
+          <button onClick={handleBack}>
+            <IoMdClose />
+          </button>
+        </div>
+        <div className={`${styles.status} ${styles.haram}`} />
+        <div className={styles.error}>
+          <TbFaceIdError />
+        </div>
+      </div>
+    );
   if (!product || product.length === 0)
-    return <div className={styles.productDetail}>No Found.</div>;
+    return (
+      <div className={styles.productDetail}>
+        <div className={styles.header}>
+          <div className={styles.productName}>
+            <h1>Not Found</h1>
+            <span className={styles.barcode}>
+              Sorry, we couldn't find the product you're looking for in our
+              database.
+            </span>
+          </div>
+          <button onClick={handleBack}>
+            <IoMdClose />
+          </button>
+        </div>
+
+        <div className={`${styles.status} ${styles.doubtful}`} />
+      </div>
+    );
   return (
     <div className={styles.productDetail}>
       <div className={styles.header}>

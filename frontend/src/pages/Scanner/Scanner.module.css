@@ -30,6 +30,20 @@
   padding: 20px;
 }
 
+.loader {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loader p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .header {
   display: flex;
   gap: 10px;
@@ -38,7 +52,17 @@
 }
 
 .header .productName h1 {
+  color: var(--text-color);
   font-size: 20px;
+}
+
+.error {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 200px;
+  color: var(--error);
 }
 
 .header .productName .barcode {
@@ -95,6 +119,7 @@
   flex: 1;
   min-width: 300px;
   border-radius: 20%;
+  padding-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -106,7 +131,7 @@
   max-height: 500px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .productDetails {
