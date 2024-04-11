@@ -1,10 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchProductByBarcode,
-  selectScannedProduct,
-  selectScannedProductIsLoading,
-  selectError,
-} from "../../redux/slices/barcodeSlice";
+import { useDispatch } from "react-redux";
+import { fetchProductByBarcode } from "../../redux/slices/barcodeSlice";
 import { useNavigate } from "react-router-dom";
 import { Scanner } from "@yudiel/react-qr-scanner";
 import styles from "./Scanner.module.css";
@@ -12,9 +7,6 @@ import { setError } from "../../redux/slices/errorSlice";
 
 export const BarcodeScanner = () => {
   const dispatch = useDispatch();
-  const product = useSelector(selectScannedProduct);
-  const isLoading = useSelector(selectScannedProductIsLoading);
-  const error = useSelector(selectError);
   const navigate = useNavigate();
 
   const handleResult = (text, result) => {

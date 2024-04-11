@@ -1,5 +1,5 @@
 import { BiSearchAlt, BiLeaf } from "react-icons/bi";
-import { GrCertificate, GrMap } from "react-icons/gr";
+import { GrCertificate } from "react-icons/gr";
 import { RiTeamLine } from "react-icons/ri";
 import { PiBarcode, PiPhoneCallBold } from "react-icons/pi";
 import { TbMessage2Question } from "react-icons/tb";

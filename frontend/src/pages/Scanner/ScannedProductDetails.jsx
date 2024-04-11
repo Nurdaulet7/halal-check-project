@@ -1,7 +1,7 @@
 import React from "react";
 import { IoMdClose } from "react-icons/io";
 import { FiCheckCircle } from "react-icons/fi";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   selectScannedProduct,
   selectScannedProductIsLoading,
@@ -9,15 +9,15 @@ import {
 } from "../../redux/slices/barcodeSlice";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Scanner.module.css";
-import { setError } from "../../redux/slices/errorSlice";
-import { useParams } from "react-router-dom";
+// import { setError } from "../../redux/slices/errorSlice";
+// import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 export const ScannedProductDetails = () => {
   const product = useSelector(selectScannedProduct);
   const isLoading = useSelector(selectScannedProductIsLoading);
   const error = useSelector(selectError);
-  const { scannedProductSlug } = useParams();
+  // const { scannedProductSlug } = useParams();
   const navigate = useNavigate();
 
   const handleBack = () => {

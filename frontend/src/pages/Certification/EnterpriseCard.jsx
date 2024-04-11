@@ -9,16 +9,7 @@ import { Link } from "react-router-dom";
 import isDateBeforeToday from "../../utils/isDateBeforeToday";
 
 const EnterpriseCard = (props) => {
-  const {
-    brand,
-    name,
-    businessType,
-    regNum,
-    deadline,
-    img,
-    slug,
-    companyType,
-  } = props;
+  const { brand, name, regNum, deadline, img, slug, companyType } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
   const enterprisesName = useSelector(selectEnterpriseFilter);
 

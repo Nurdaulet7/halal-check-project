@@ -14,7 +14,7 @@ export const ProfileCard = () => {
       {team.map((user, i) => {
         return (
           <div className="card" key={i}>
-            <img src={userImg} />
+            <img src={userImg} alt="developer" />
 
             <div className="info">
               <h2>{user.name}</h2>

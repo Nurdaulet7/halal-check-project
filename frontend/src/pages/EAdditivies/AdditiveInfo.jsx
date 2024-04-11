@@ -8,7 +8,8 @@ import {
   selectIsLoadingAdditiveViaAPI,
 } from "../../redux/slices/additiveSlice";
 import styles from "./AdditiveInfo.module.css";
-import { NotFound } from "../../components/NotFound/NotFound";
+
+// import { NotFound } from "../../components/NotFound/NotFound";
 
 const AdditiveInfo = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,8 @@ const AdditiveInfo = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate("/additivies");
+    // navigate("/additivies");
+    navigate(-1);
   };
 
   useEffect(() => {
@@ -33,7 +35,23 @@ const AdditiveInfo = () => {
 
   // Перенаправление, если добавка не найдена
   if (additivies.length > 0 && !additive) {
-    return <NotFound />;
+    return (
+      <div className={styles.additiveContent}>
+        <div className={styles.additiveHeader}>
+          <div className={styles.additiveTitle}>
+            <h1>Not Found</h1>
+            <span className={styles.additiveName}>
+              Sorry, we couldn't find the additive you're looking for in our
+              database.
+            </span>
+          </div>
+          <button onClick={handleBack}>
+            <IoMdClose />
+          </button>
+        </div>
+        <div className={`${styles.status} ${styles.doubtful}`}></div>
+      </div>
+    );
   }
 
   if (!additive && isLoading) {

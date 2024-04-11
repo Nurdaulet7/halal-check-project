@@ -125,6 +125,48 @@ input:focus {
   border: none;
 }
 
+.colMd3 {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.dbox {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.icon {
+  display: grid;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--header-color);
+  margin: 0 auto;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dbox .icon * {
+  font-size: 20px;
+  color: #fff;
+}
+
+.dbox p span {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.dbox p {
+  font-size: 16px;
+  color: var(--text-color-menu);
+}
+
 @media (max-width: 768px) {
   .mainContainer {
     padding: 20px;
@@ -161,5 +203,17 @@ input:focus {
     -ms-flex: 0 0 41.66667%;
     flex: 0 0 41.66667%;
     max-width: 41.66667%;
+  }
+
+  .colMd3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .dbox {
+    margin-bottom: 0;
+    padding: 0;
   }
 }

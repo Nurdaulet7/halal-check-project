@@ -1,4 +1,6 @@
 import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt, FaPaperPlane, FaGlobeEurope } from "react-icons/fa";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import styles from "./ContactUs.module.css";
 import emailjs from "@emailjs/browser";
@@ -155,6 +157,68 @@ export const ContactUs = () => {
                 </Popup>
               </Marker>
             </MapContainer>
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div className={styles.colMd3}>
+            <div className={styles.dbox}>
+              <div className={styles.icon}>
+                <span>
+                  <FaLocationDot />
+                </span>
+              </div>
+              <div className={styles.text}>
+                <p>
+                  <span>Address: </span>
+                  Kazakhstan Almaty Kaskelen, street Abylaikhan 1/1.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.colMd3}>
+            <div className={styles.dbox}>
+              <div className={styles.icon}>
+                <span>
+                  <FaPhoneAlt />
+                </span>
+              </div>
+              <div className={styles.text}>
+                <p>
+                  <span>Phone: </span>
+                  +777 777 77 77
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.colMd3}>
+            <div className={styles.dbox}>
+              <div className={styles.icon}>
+                <span>
+                  <FaPaperPlane />
+                </span>
+              </div>
+              <div className={styles.text}>
+                <p>
+                  <span>Email: </span>
+                  halalcheck@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.colMd3}>
+            <div className={styles.dbox}>
+              <div className={styles.icon}>
+                <span>
+                  <FaGlobeEurope />
+                </span>
+              </div>
+              <div className={styles.text}>
+                <p>
+                  <span>Website: </span>
+                  halalCheck.net
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
