@@ -16,11 +16,11 @@ import { useEffect } from "react";
 import AdditiveCardLoader from "../../utils/AdditiveCardLoader";
 import AdditiveCard from "./AdditiveCard";
 import { clearError, selectErrorMessage } from "../../redux/slices/errorSlice";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 
 const AdditiviesList = () => {
   const dispatch = useDispatch();
   const errorMessage = useSelector(selectErrorMessage);
-
   const additiveNameFilter = useSelector(selectAdditiviesCodeFilter);
   const isLoading = useSelector(selectIsLoadingAdditiveViaAPI);
   const additivies = useSelector(selectAdditivies);
@@ -62,7 +62,11 @@ const AdditiviesList = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <h2>{categoryFilter === "" ? "Food additivies" : categoryFilter}</h2>
+      <h2>
+        {categoryFilter === ""
+          ? "Food additivies"
+          : capitalizeFirstLetter(categoryFilter)}
+      </h2>
       <hr />
       <div className={styles.viewContent}>
         <div className={styles.container}>

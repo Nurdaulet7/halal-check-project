@@ -96,7 +96,7 @@
 }
 
 .cardBottom .certified {
-  display: none;
+  /* display: none; */
 }
 
 /* .cardBottom .notCertified {
@@ -175,6 +175,10 @@
   .cardContent p {
     color: rgba(255, 255, 255, 0.85); /* Белый текст с 85% непрозрачности */
     font-size: clamp(0.625rem, 0.5643rem + 0.2589vw, 0.875rem);
+  }
+
+  .cardBottom label {
+    display: none;
   }
 }
 

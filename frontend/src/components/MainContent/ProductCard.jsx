@@ -15,8 +15,8 @@ export const ProductCard = (props) => {
     // ingredients,
     status,
     imageUrl,
-    // certified,
-    // certifiacates,
+    certified,
+    certifiacate,
     // slug,
   } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
@@ -73,9 +73,11 @@ export const ProductCard = (props) => {
             </p>
           </div>
           <div className={styles.cardBottom}>
-            {/* <label className={certified ? styles.certified : ""}>
-              {certified ? "Certified" : "Not certified"}
-            </label> */}
+            {
+              <label className={certified ? styles.certified : ""}>
+                {certified ? "Certified" : "Not certified"}
+              </label>
+            }
             {/* {certified && <img src={certifiacates.logo} alt="certificate" />} */}
             <button href="#" className={styles.btn}>
               <Link to={createSlug(name)} className={styles.productLink}>
