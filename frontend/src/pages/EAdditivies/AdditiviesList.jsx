@@ -15,20 +15,21 @@ import {
 import { useEffect } from "react";
 import AdditiveCardLoader from "../../utils/AdditiveCardLoader";
 import AdditiveCard from "./AdditiveCard";
+import { clearError, selectErrorMessage } from "../../redux/slices/errorSlice";
 
 const AdditiviesList = () => {
   const dispatch = useDispatch();
+  const errorMessage = useSelector(selectErrorMessage);
 
   const additiveNameFilter = useSelector(selectAdditiviesCodeFilter);
   const isLoading = useSelector(selectIsLoadingAdditiveViaAPI);
   const additivies = useSelector(selectAdditivies);
   const categoryFilter = useSelector(selectCategoryFilter);
 
-  useEffect(() => {
-    if (additivies.length === 0) {
-      dispatch(fetchAdditive("http://localhost:4000/additivies-list-delayed"));
-    }
-  }, [dispatch, additivies.length]);
+  const handleFetchData = () => {
+    dispatch(fetchAdditive("http://localhost:4000/additivies-list-delayed"));
+    dispatch(clearError());
+  };
 
   const filteredAdditivies = additivies.filter((additive) => {
     const matchesName = additive.code
@@ -39,6 +40,12 @@ const AdditiviesList = () => {
       additive.category.name.toLowerCase() === categoryFilter.toLowerCase();
     return matchesName && matchesCategory;
   });
+
+  useEffect(() => {
+    if (additivies.length === 0) {
+      handleFetchData();
+    }
+  }, [dispatch, additivies.length]);
 
   let loaders = [];
   if (isLoading) {
@@ -59,14 +66,25 @@ const AdditiviesList = () => {
       <hr />
       <div className={styles.viewContent}>
         <div className={styles.container}>
-          {isLoading && loaders}
-          {!isLoading && filteredAdditivies.length === 0 && (
-            <EmptyPage reset={handleResetFilter} title={"additivies"} />
+          {isLoading ? (
+            loaders
+          ) : errorMessage ? (
+            <EmptyPage
+              isError={true}
+              errorMessage={errorMessage}
+              fetch={handleFetchData}
+            />
+          ) : filteredAdditivies.length > 0 ? (
+            filteredAdditivies.map((additive) => (
+              <AdditiveCard {...additive} key={uuidv4()} />
+            ))
+          ) : (
+            <EmptyPage
+              isError={false}
+              reset={handleResetFilter}
+              title={"additives"}
+            />
           )}
-          {filteredAdditivies.map((additive) => {
-            return <AdditiveCard {...additive} key={uuidv4()} />;
-            // return <ProductCard {...product} key={uuidv4()} />;
-          })}
         </div>
       </div>
     </div>

@@ -17,10 +17,11 @@ import {
 } from "../../redux/slices/filterProductsSlice";
 import styles from "./ProductList.module.css";
 import { EmptyPage } from "../../utils/EmptyPage";
+import { clearError, selectErrorMessage } from "../../redux/slices/errorSlice";
 
 export const ProductsList = () => {
   const dispatch = useDispatch();
-
+  const errorMessage = useSelector(selectErrorMessage);
   const productNameFilter = useSelector(selectProductNameFilter);
   const categoryFilter = useSelector(selectCategoryFilter);
   const onlyCertifiedFilter = useSelector(selectOnlyCertifiedFilter);
@@ -31,9 +32,14 @@ export const ProductsList = () => {
   useEffect(() => {
     // Загрузка данных о продуктах, только если массив продуктов пуст
     if (products.length === 0) {
-      dispatch(fetchProduct("http://localhost:8080/product/getAll"));
+      handleFetchData();
     }
   }, [dispatch, products.length]);
+
+  const handleFetchData = () => {
+    dispatch(fetchProduct("http://localhost:8080/product/getAll"));
+    dispatch(clearError());
+  };
 
   const filteredProducts = products.filter((product) => {
     console.log(product);
@@ -76,13 +82,25 @@ export const ProductsList = () => {
 
       <div className={styles.viewContent}>
         <div className={styles.container}>
-          {isLoading && loaders}
-          {!isLoading && filteredProducts.length === 0 && (
-            <EmptyPage reset={handleResetFilter} />
+          {isLoading ? (
+            loaders
+          ) : errorMessage ? (
+            <EmptyPage
+              isError={true}
+              errorMessage={errorMessage}
+              fetch={handleFetchData}
+            />
+          ) : filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => {
+              return <ProductCard {...product} key={uuidv4()} />;
+            })
+          ) : (
+            <EmptyPage
+              isError={false}
+              reset={handleResetFilter}
+              title={"products"}
+            />
           )}
-          {filteredProducts.map((product) => {
-            return <ProductCard {...product} key={uuidv4()} />;
-          })}
         </div>
       </div>
     </div>

@@ -31,3 +31,29 @@
   color: var(--header-color);
   font-size: 100px;
 }
+
+.errorMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.errorMessage p {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.errorMessage #icon {
+  color: var(--primary-color);
+}
+
+.errorMessage button {
+  padding: 10px 25px;
+  background-color: var(--header-color);
+}
+
+.errorMessage button:hover {
+  background-color: var(--error);
+}

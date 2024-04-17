@@ -159,6 +159,7 @@
 .additives li {
   display: inline-block;
   margin-right: 10px;
+  text-transform: lowercase;
 }
 
 .code {

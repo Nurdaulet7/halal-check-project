@@ -2,7 +2,7 @@
   {
     "name": "«Barista Cofee» ЖК",
     "brand": "Barista Coffee",
-    "businessType": "Poultry farm",
+    "businessType": "Public catering",
     "regNum": "000901",
     "receipt": "04.05.2023",
     "deadline": "03.05.2024",
@@ -16,7 +16,28 @@
     "lat": "76.89870830666096",
     "companyType": {
       "id": 2,
-      "name": "Poultry farm",
+      "name": "Public catering",
+      "description": null
+    }
+  },
+  {
+    "name": "«Kraft» ЖК",
+    "brand": "Sherbet",
+    "businessType": "Public catering",
+    "regNum": "000811",
+    "receipt": "11.11.2023",
+    "deadline": "10.11.2024",
+    "region": "Zhambyl obl",
+    "address": "ҚР, Жамбыл облысы, Тараз қаласы, А.Комратов көшесі, 69",
+    "slug": "kraft-zhk",
+    "img": "https://halaldamu.kz/storage/app/uploads/public/655/afc/4aa/655afc4aa085a906271829.jpg",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/645/e2c/481/645e2c4816761764430541.jpg",
+    "certifiedBy": "QMDB",
+    "lng": "43.24230376033211",
+    "lat": "76.89870830666096",
+    "companyType": {
+      "id": 2,
+      "name": "Public catering",
       "description": null
     }
   },
@@ -37,7 +58,91 @@
     "lat": "71.43627925170857",
     "companyType": {
       "id": 2,
-      "name": "Public Catering",
+      "name": "Public catering",
+      "description": null
+    }
+  },
+  {
+    "name": "«Sever-Et» ЖШС",
+    "brand": "Sever-Et",
+    "businessType": "slaughterhouse",
+    "regNum": "000420",
+    "receipt": "26.06.2023",
+    "deadline": "25.06.2024",
+    "region": "Kostanai obl",
+    "address": "ҚР, Қостанай қаласы, Заречное ауылы, В.Ленин көшесі, 29А.",
+    "slug": "sever-et",
+    "img": "https://halaldamu.kz/storage/app/uploads/public/5fb/15f/a83/5fb15fa83d4f2582660708.jpg",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
+    "certifiedBy": "QMDB",
+    "lng": "51.12851569442519",
+    "lat": "71.43627925170857",
+    "companyType": {
+      "id": 2,
+      "name": "slaughterhouse",
+      "description": null
+    }
+  },
+  {
+    "name": "«Alatau kus» ЖШС",
+    "brand": "Alatau kus",
+    "businessType": "Poultry farm",
+    "regNum": "000003",
+    "receipt": "13.10.2023",
+    "deadline": "12.10.2024",
+    "region": "Almaty obl",
+    "address": "Іле ауданы, Чапаев ауылы, Өндірістік аймақ",
+    "slug": "alatau-kus",
+    "img": "https://halaldamu.kz/storage/app/uploads/public/5f6/e05/ba5/5f6e05ba5aa91070308213.jpg",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
+    "certifiedBy": "QMDB",
+    "lng": "51.12851569442519",
+    "lat": "71.43627925170857",
+    "companyType": {
+      "id": 2,
+      "name": "Poultry farm",
+      "description": null
+    }
+  },
+  {
+    "name": "«Alel, Ameral fresh» ЖШС",
+    "brand": "Alel",
+    "businessType": "Poultry farm",
+    "regNum": "000003",
+    "receipt": "27.02.2024",
+    "deadline": "26.02.2025",
+    "region": "Almaty obl",
+    "address": "РК, Алматинская область, Илийский район, Ащибулакский сельский округ, с. М.Туймебаева, стр. 109Б.",
+    "slug": "alel-ameral-fresh",
+    "img": "https://halaldamu.kz/storage/app/uploads/public/5f6/e09/cf4/5f6e09cf431af844750452.jpg",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
+    "certifiedBy": "QMDB",
+    "lng": "51.12851569442519",
+    "lat": "71.43627925170857",
+    "companyType": {
+      "id": 2,
+      "name": "Poultry farm",
+      "description": null
+    }
+  },
+  {
+    "name": "«Bio Agro Meat» ЖШС",
+    "brand": "Bio Agro Meat",
+    "businessType": "slaughterhouse",
+    "regNum": "000093",
+    "receipt": "30.12.2022",
+    "deadline": "29.12.2023",
+    "region": "Shymkent city",
+    "address": "Еңбекшілер ауданы, Теріскей ықшам ауданы, 64 үй, 10 пәтер",
+    "slug": "bio-agro-meat",
+    "img": "https://halaldamu.kz/storage/app/uploads/public/5f6/e13/864/5f6e138646cee622137637.jpg",
+    "certificate": "https://halaldamu.kz/storage/app/uploads/public/660/29e/97e/66029e97e8afa033446364.jpg",
+    "certifiedBy": "QMDB",
+    "lng": "51.12851569442519",
+    "lat": "71.43627925170857",
+    "companyType": {
+      "id": 2,
+      "name": "slaughterhouse",
       "description": null
     }
   },
@@ -58,7 +163,7 @@
     "lat": "76.94074760797122",
     "companyType": {
       "id": 2,
-      "name": "Public Catering",
+      "name": "Public catering",
       "description": null
     }
   }

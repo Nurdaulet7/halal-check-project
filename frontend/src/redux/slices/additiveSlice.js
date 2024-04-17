@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setError } from "./errorSlice";
 
 const initialState = {
-  additivies: JSON.parse(localStorage.getItem("additivies")) || [],
+  additivies: [], //JSON.parse(localStorage.getItem("additivies")) ||
   isLoadingViaAPI: false,
 };
 
@@ -15,7 +15,7 @@ export const fetchAdditive = createAsyncThunk(
       const res = await axios.get(url);
       return res.data;
     } catch (error) {
-      thunkAPI.dispatch(setError(error.message));
+      thunkAPI.dispatch(setError(`Error during fetching: ${error.message}`));
       return thunkAPI.rejectWithValue(error);
     }
   }

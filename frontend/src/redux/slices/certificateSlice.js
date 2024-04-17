@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setError } from "./errorSlice";
 
 const initialState = {
-  enterprises: JSON.parse(localStorage.getItem("enterprises")) || [],
+  enterprises: [],
   isLoadingViaAPI: false,
 };
 

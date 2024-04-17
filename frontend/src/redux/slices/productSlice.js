@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setError } from "./errorSlice";
 
 const initialState = {
-  products: JSON.parse(localStorage.getItem("products")) || [],
+  products: [], //JSON.parse(localStorage.getItem("products")) ||
   isLoadingViaAPI: false,
 };
 
