@@ -6,14 +6,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   fetchEnterprise,
   selectEnterprises,
+  selectIsLoadingEnterpriseViaAPI,
 } from "../../redux/slices/certificateSlice";
 import styles from "./CertificationInfo.module.css";
 import isDateBeforeToday from "../../utils/isDateBeforeToday";
+import { ThreeDots } from "react-loader-spinner";
 
 const CertificationInfo = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const slug = params.certificateSlug;
+  const isLoading = selectIsLoadingEnterpriseViaAPI;
   const enterprises = useSelector(selectEnterprises);
   const enterprise = enterprises.find((enterprise) => enterprise.slug === slug);
   const navigate = useNavigate();
@@ -30,8 +33,21 @@ const CertificationInfo = () => {
     }
   }, [dispatch, enterprises.length]);
 
-  if (!enterprise) {
-    return <div>Loading product details...</div>;
+  if (!enterprise && isLoading) {
+    return (
+      <div className={`${styles.enterpriseContent} ${styles.loader}`}>
+        <ThreeDots
+          visible={true}
+          height="80"
+          width="80"
+          color="#4fa94d"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
   }
 
   return (

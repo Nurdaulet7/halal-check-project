@@ -169,11 +169,11 @@ export const ScannedProductDetails = () => {
               <p>
                 Certified by:{" "}
                 <a
-                  href={product[0].certifiacates.certificate}
+                  href={product[0].certificate.imageUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {product.certifiacates.name}
+                  {product[0].certificate.name}
                 </a>
               </p>
             </div>

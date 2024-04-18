@@ -16,8 +16,6 @@ export const ProductCard = (props) => {
     status,
     imageUrl,
     certified,
-    certifiacate,
-    // slug,
   } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
 

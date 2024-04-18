@@ -28,6 +28,16 @@
   gap: 15px;
 }
 
+.additiveContent.loader {
+  justify-content: center;
+  align-content: center;
+}
+
+.additiveContent.loader * {
+  display: flex;
+  justify-content: center;
+}
+
 .additiveHeader {
   display: flex;
   align-items: flex-start;

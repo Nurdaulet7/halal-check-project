@@ -8,6 +8,7 @@ import {
   selectIsLoadingAdditiveViaAPI,
 } from "../../redux/slices/additiveSlice";
 import styles from "./AdditiveInfo.module.css";
+import { ThreeDots } from "react-loader-spinner";
 
 // import { NotFound } from "../../components/NotFound/NotFound";
 
@@ -56,7 +57,20 @@ const AdditiveInfo = () => {
 
   if (!additive && isLoading) {
     console.log(additive);
-    return <div>Loading product details...</div>;
+    return (
+      <div className={`${styles.additiveContent} ${styles.loader}`}>
+        <ThreeDots
+          visible={true}
+          height="80"
+          width="80"
+          color="#4fa94d"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
   }
 
   return (

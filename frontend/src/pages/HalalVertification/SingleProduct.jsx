@@ -7,6 +7,7 @@ import { fetchProduct, selectProducts } from "../../redux/slices/productSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/SingleProduct.module.css";
+import { ThreeDots } from "react-loader-spinner";
 import createSlug from "../../utils/сreateSlug";
 
 const SingleProduct = () => {
@@ -28,7 +29,20 @@ const SingleProduct = () => {
   }, [dispatch, products.length]);
 
   if (!product) {
-    return <div>Loading product details...</div>;
+    return (
+      <div className={`${styles.productContent} ${styles.loader}`}>
+        <ThreeDots
+          visible={true}
+          height="80"
+          width="80"
+          color="#4fa94d"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
   }
   return (
     <div className={styles.productContent}>
@@ -38,12 +52,12 @@ const SingleProduct = () => {
             {product.name}
             <span className={styles.barcode}>{product.barcode}</span>
           </h1>
-          {product.certified && (
+          {/* {product.certified && (
             <div className={styles.certified}>
               <FiCheckCircle id={styles.iconCertified} />
               <p>Certified</p>
             </div>
-          )}
+          )} */}
         </div>
 
         <button onClick={handleBack}>
@@ -123,11 +137,11 @@ const SingleProduct = () => {
               <p>
                 Certified by:{" "}
                 <a
-                  href={product.certifiacates.certificate}
+                  href={product.certificate.imageUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {product.certifiacates.name}
+                  {product.certificate.name}
                 </a>
               </p>
             </div>
