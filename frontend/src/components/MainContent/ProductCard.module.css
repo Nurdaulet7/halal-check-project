@@ -120,7 +120,7 @@
   transition: 0.3s all;
   &:hover {
     background: rgba(255, 255, 255, 0.479);
-    color: #000000;
+    color: #ffffff;
   }
 }
 
@@ -135,8 +135,7 @@
   background-color: #3b83ba;
 }
 
-.productLink {
-  text-decoration: none;
+.btn:hover {
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -151,6 +150,22 @@
   .viewsRow {
     width: calc(100% / 2);
     min-width: 220px;
+  }
+}
+
+@media (max-width: 460px) {
+  .cardBottom {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  #ingredientText {
+    display: none;
+  }
+
+  .viewsRow {
+    padding: 0.5rem;
   }
 }
 

@@ -25,7 +25,6 @@ export const ProductsList = () => {
   const productNameFilter = useSelector(selectProductNameFilter);
   const categoryFilter = useSelector(selectCategoryFilter);
   const onlyCertifiedFilter = useSelector(selectOnlyCertifiedFilter);
-  // Получаем данные о загрузке и продукты из состояния
   const isLoading = useSelector(selectIsLoadingViaAPI);
   const products = useSelector(selectProducts);
 
@@ -84,7 +83,7 @@ export const ProductsList = () => {
         <div className={styles.container}>
           {isLoading ? (
             loaders
-          ) : errorMessage ? (
+          ) : errorMessage && products.length === 0 ? (
             <EmptyPage
               isError={true}
               errorMessage={errorMessage}

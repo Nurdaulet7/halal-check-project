@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { selectsidebarVisible } from "../../redux/slices/sidebarSlice";
 import { selectProductNameFilter } from "../../redux/slices/filterProductsSlice";
 import TruncatedText from "../../utils/TruncatedText";
 import createSlug from "../../utils/сreateSlug";
 import styles from "./ProductCard.module.css";
+import { useMediaQuery } from "react-responsive";
 
 export const ProductCard = (props) => {
   const productNameFilter = useSelector(selectProductNameFilter);
@@ -18,6 +19,13 @@ export const ProductCard = (props) => {
     certified,
   } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
+  const isMobile = useMediaQuery({ maxWidth: 460 });
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(createSlug(name));
+  };
 
   const highlightMatch = (text, filter) => {
     if (!filter) return text;
@@ -41,7 +49,10 @@ export const ProductCard = (props) => {
         sidebarVisible ? styles.withoutSidebar : styles.withSidebar
       }`}
     >
-      <div className={`${styles.card} ${styles[status.toLowerCase()]}`}>
+      <div
+        className={`${styles.card} ${styles[status.toLowerCase()]}`}
+        onClick={isMobile ? handleClick : null}
+      >
         <img src={imageUrl} alt="product" />
         <div className={styles.cardContent}>
           <div className={styles.cardCenter}>
@@ -53,7 +64,7 @@ export const ProductCard = (props) => {
                 />
               }
             </h3>
-            <p>
+            <p id={styles.ingredientText}>
               <span className={styles.textBold}>Ingredients:</span>{" "}
               {
                 <TruncatedText
@@ -77,14 +88,13 @@ export const ProductCard = (props) => {
               </label>
             }
             {/* {certified && <img src={certifiacates.logo} alt="certificate" />} */}
-            <button href="#" className={styles.btn}>
-              <Link to={createSlug(name)} className={styles.productLink}>
-                Read More
-              </Link>
+            <button href="#" className={styles.btn} onClick={handleClick}>
+              Read More
             </button>
           </div>
         </div>
       </div>
+      {/* </Link> */}
     </div>
   );
 };

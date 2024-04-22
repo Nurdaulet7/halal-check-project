@@ -251,3 +251,9 @@
     grid-column: 1 / span 5;
   }
 }
+
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 20px;
+  }
+}

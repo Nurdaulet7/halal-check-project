@@ -72,6 +72,12 @@ main {
   /* height: 100vh; */
 }
 
+@media (max-width: 450px) {
+  main {
+    padding: 0rem;
+  }
+}
+
 .mainComponents {
   display: flex;
   flex-direction: column;

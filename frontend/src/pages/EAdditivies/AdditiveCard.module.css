@@ -76,7 +76,7 @@
 
 .cardBottom {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .btn {
@@ -90,7 +90,7 @@
   transition: 0.3s all;
   &:hover {
     background: rgba(255, 255, 255, 0.479);
-    color: #000000;
+    color: #ffffff;
   }
 }
 .productLink {
@@ -140,17 +140,48 @@
     width: calc(100% / 2);
   }
 
+  .card .additiveInfo h3 {
+    font-size: 13px;
+  }
+
   .card .additiveInfo h4 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .card .additiveInfo p {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .btn {
     font-size: 10px;
     padding: 5px 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cardBottom {
+    display: none;
+  }
+
+  .viewsRow {
+    min-height: 180px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 450px) {
+  .viewsRow {
+    min-width: 100px;
+    max-width: 440px;
+    width: 100%;
+  }
+
+  .card .additiveInfo h4 {
+    font-size: 16px;
+  }
+
+  .card .additiveInfo p {
+    font-size: 15px;
   }
 }
 

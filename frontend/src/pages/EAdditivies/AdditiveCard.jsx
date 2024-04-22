@@ -4,12 +4,19 @@ import { selectAdditiviesCodeFilter } from "../../redux/slices/filterAdditiviesS
 import { useSelector } from "react-redux";
 import styles from "./AdditiveCard.module.css";
 import TruncatedText from "../../utils/TruncatedText";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 const AdditiveCard = (props) => {
   const { code, name, status, description } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
   const additiveCode = useSelector(selectAdditiviesCodeFilter);
+  const isMobile = useMediaQuery({ maxWidth: 500 });
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(code);
+  };
 
   const highlightMatch = (text, filter) => {
     if (!filter) return text;
@@ -32,6 +39,7 @@ const AdditiveCard = (props) => {
       className={`${styles.viewsRow} ${
         sidebarVisible ? styles.withoutSidebar : styles.withSidebar
       }`}
+      onClick={isMobile ? handleClick : null}
     >
       <div className={`${styles.card} ${styles[status]}`}>
         <div className={styles.cardContent}>
@@ -44,10 +52,8 @@ const AdditiveCard = (props) => {
           </div>
         </div>
         <div className={styles.cardBottom}>
-          <button href="#" className={styles.btn}>
-            <Link to={code} className={styles.productLink}>
-              Read More
-            </Link>
+          <button href="#" className={styles.btn} onClick={handleClick}>
+            Read More
           </button>
         </div>
       </div>
