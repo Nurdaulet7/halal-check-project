@@ -95,9 +95,40 @@ const AdditiveInfo = () => {
       >
         {`This additive is ${additive.status}`}
       </div>
+      {additive.status === "doubtful" && (
+        <div className={styles.doubtfulInfo}>
+          <p>
+            <span className={styles.halalIf}>Halal, </span>if it is 100% of
+            vegetable origin.
+          </p>
+          <p>
+            <span className={styles.haramIf}>Haram, </span>
+            if from pork liver and kidney.
+          </p>
+        </div>
+      )}
       <div className={styles.additiveInfo}>
         <h3>General information</h3>
         <p>{additive.description}</p>
+      </div>
+      <div className={styles.additionalInfo}>
+        <h3>Influence on the body</h3>
+        <div className={`${styles.benefit} ${styles.influenceOnBodyType}`}>
+          <h4>Benefit</h4>
+          <p>
+            {additive.benefit === ""
+              ? `The ${additive.code} supplement has no beneficial effects on the body.`
+              : additive.benefit}
+          </p>
+        </div>
+        <div className={`${styles.harm} ${styles.influenceOnBodyType}`}>
+          <h4>Harm</h4>
+          <p>
+            {additive.harm === ""
+              ? `The ${additive.code} supplement has no harmful effects on the body.`
+              : additive.harm}
+          </p>
+        </div>
       </div>
     </div>
   );

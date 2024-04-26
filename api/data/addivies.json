@@ -6,7 +6,12 @@
     "category": {
       "name": "dyes"
     },
-    "description": "Colouring: Orange-yellow colouring extracted from the rhizome of a plant of the ginger family called Curcuma longa (turmeric)"
+    "description": "Colouring: Orange-yellow colouring extracted from the rhizome of a plant of the ginger family called Curcuma longa (turmeric)",
+
+    "halalIf": "",
+    "haramIf": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "benefit": "",
+    "harm": ""
   },
   {
     "code": "e101",
@@ -15,7 +20,12 @@
     "category": {
       "name": "dyes"
     },
-    "description": "Colouring/ Vitamin: Yellow or orange-yellow colouring manufactured from yeast or other fermenting organisms. May also be synthesised from xylene, ribose or alloxan"
+    "description": "Colouring/ Vitamin: Yellow or orange-yellow colouring manufactured from yeast or other fermenting organisms. May also be synthesised from xylene, ribose or alloxan",
+
+    "halalIf": "if it is 100% of vegetable origin",
+    "haramIf": "if from pork liver and kidney.",
+    "benefit": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "harm": "Carmine is considered a harmless additive and is allowed for use in the territory of the Russian Federation, since no side effects have been found at concentrations used in the food industry. But there is a small percentage of people in the world who are allergic to the E120 dye and similar ingredients. In them, carmine in the composition of the product can cause anaphylactic shock. Also, in rare cases, the E120 supplement can cause allergic reactions when in contact with the skin."
   },
   {
     "code": "e102",
@@ -24,7 +34,12 @@
     "category": {
       "name": "dyes"
     },
-    "description": "Colouring: Synthetic yellow colouring"
+    "description": "Colouring: Synthetic yellow colouring",
+
+    "halalIf": "",
+    "haramIf": "",
+    "benefit": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "harm": ""
   },
   {
     "code": "e120",
@@ -33,7 +48,11 @@
     "category": {
       "name": "dyes"
     },
-    "description": "The E120 (Cochineal) (Dactylopius coccus) is a scale insect in the suborder Sternorrhyncha, from which the natural dye carmine is derived. Carminic acid, typically 17–24% of dried insects' weight, can be extracted from the body and eggs, then mixed with aluminium or calcium salts to make carmine dye, also known as E120 (Cochineal). "
+    "description": "The E120 (Cochineal) (Dactylopius coccus) is a scale insect in the suborder Sternorrhyncha, from which the natural dye carmine is derived. Carminic acid, typically 17–24% of dried insects' weight, can be extracted from the body and eggs, then mixed with aluminium or calcium salts to make carmine dye, also known as E120 (Cochineal). ",
+    "halalIf": "",
+    "haramIf": "",
+    "benefit": "",
+    "harm": "Carmine is considered a harmless additive and is allowed for use in the territory of the Russian Federation, since no side effects have been found at concentrations used in the food industry. But there is a small percentage of people in the world who are allergic to the E120 dye and similar ingredients. In them, carmine in the composition of the product can cause anaphylactic shock. Also, in rare cases, the E120 supplement can cause allergic reactions when in contact with the skin."
   },
   {
     "code": "e140",
@@ -42,7 +61,11 @@
     "category": {
       "name": "dyes"
     },
-    "description": "Colouring: Natural olive to dark green colouring found in many plants. Solvents such as ethanol are used in the extraction of chlorophyll"
+    "description": "Colouring: Natural olive to dark green colouring found in many plants. Solvents such as ethanol are used in the extraction of chlorophyll",
+    "halalIf": "",
+    "haramIf": "",
+    "benefit": "",
+    "harm": "Carmine is considered a harmless additive and is allowed for use in the territory of the Russian Federation, since no side effects have been found at concentrations used in the food industry. But there is a small percentage of people in the world who are allergic to the E120 dye and similar ingredients. In them, carmine in the composition of the product can cause anaphylactic shock. Also, in rare cases, the E120 supplement can cause allergic reactions when in contact with the skin."
   },
   {
     "code": "e133",
@@ -51,7 +74,12 @@
     "category": {
       "name": "dyes"
     },
-    "description": "Colouring: Synthetic blue colouring"
+    "description": "Colouring: Synthetic blue colouring",
+
+    "halalIf": "",
+    "haramIf": "",
+    "benefit": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "harm": ""
   },
   {
     "code": "e200",
@@ -60,7 +88,12 @@
     "category": {
       "name": "Food Preservative"
     },
-    "description": "Potassium sorbate is used as a preservative in a number of foods, since its anti-microbial properties stop the growth and spread of harmful bacteria and molds. It is used in cheese, baked goods, syrups and jams. It is also used as a preservative for dehydrated foods like jerky and dried fruit, as it does not leave an aftertaste. The use of potassium sorbate increases the shelf life of foods, so many dietary supplements also include it. It is commonly used in wine production because it stops the yeast from continuing to ferment in the bottles."
+    "description": "Potassium sorbate is used as a preservative in a number of foods, since its anti-microbial properties stop the growth and spread of harmful bacteria and molds. It is used in cheese, baked goods, syrups and jams. It is also used as a preservative for dehydrated foods like jerky and dried fruit, as it does not leave an aftertaste. The use of potassium sorbate increases the shelf life of foods, so many dietary supplements also include it. It is commonly used in wine production because it stops the yeast from continuing to ferment in the bottles.",
+
+    "halalIf": "",
+    "haramIf": "",
+    "benefit": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "harm": ""
   },
   {
     "code": "e201",
@@ -69,7 +102,12 @@
     "category": {
       "name": "Food Preservative"
     },
-    "description": "E 201 (Sodium Sorbate) can be found in candied peel, cheese, cider, dessert sauces, dried apricots, fillings and toppings, fermented milks, frozen pizzas, fruit salads, gelatin capsules, margarine, processed cheese spreads and slices, soft drinks, soup concentrates, sweets and yoghurt. Used as a preservative, both antibacterial and antifungal but effective in only slightly acid environments."
+    "description": "E 201 (Sodium Sorbate) can be found in candied peel, cheese, cider, dessert sauces, dried apricots, fillings and toppings, fermented milks, frozen pizzas, fruit salads, gelatin capsules, margarine, processed cheese spreads and slices, soft drinks, soup concentrates, sweets and yoghurt. Used as a preservative, both antibacterial and antifungal but effective in only slightly acid environments.",
+
+    "halalIf": "",
+    "haramIf": "",
+    "benefit": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "harm": ""
   },
   {
     "code": "e202",
@@ -78,7 +116,12 @@
     "category": {
       "name": "Food Preservative"
     },
-    "description": "E 202 (Potassium Sorbate) is used in permitted finished products, taking into account the relevant limitations, in accordance with the regulations in the Turkish Food Codex Regulation on Food Additives and vertical communiqués. E 202 (Potassium Sorbate) is a salt of sorbic acid obtained by the reaction of sorbic acid with potassium hydroxide. It has a polymer structure, white color and crystal structure, and is available in powder or granule form."
+    "description": "E 202 (Potassium Sorbate) is used in permitted finished products, taking into account the relevant limitations, in accordance with the regulations in the Turkish Food Codex Regulation on Food Additives and vertical communiqués. E 202 (Potassium Sorbate) is a salt of sorbic acid obtained by the reaction of sorbic acid with potassium hydroxide. It has a polymer structure, white color and crystal structure, and is available in powder or granule form.",
+
+    "halalIf": "",
+    "haramIf": "",
+    "benefit": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "harm": ""
   },
   {
     "code": "e203",
@@ -87,7 +130,12 @@
     "category": {
       "name": "Food Preservative"
     },
-    "description": "Preservative - Prevents and inhibits the growth of unwanted microorganisms which may be harmful, Calcium sorbate is the calcium salt of sorbic. Calcium sorbate is used as an antifungal and antibacterial synthetic preservative in food products (E203). Calcium sorbate can be found in candied peel, cheese, cider, concentrated fruit juice, dessert sauces, dried apricots, fillings and toppings, fermented milks, frozen pizzas, fruit salads, gelatin capsules, margarine, processed cheese spreads and slices, soft drinks, soup concentrates, sweets and yoghurt. "
+    "description": "Preservative - Prevents and inhibits the growth of unwanted microorganisms which may be harmful, Calcium sorbate is the calcium salt of sorbic. Calcium sorbate is used as an antifungal and antibacterial synthetic preservative in food products (E203). Calcium sorbate can be found in candied peel, cheese, cider, concentrated fruit juice, dessert sauces, dried apricots, fillings and toppings, fermented milks, frozen pizzas, fruit salads, gelatin capsules, margarine, processed cheese spreads and slices, soft drinks, soup concentrates, sweets and yoghurt. ",
+
+    "halalIf": "",
+    "haramIf": "",
+    "benefit": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "harm": ""
   },
   {
     "code": "e471",
@@ -96,6 +144,11 @@
     "category": {
       "name": "stabilizers, thickeners"
     },
-    "description": "Emulsifier/ Stabiliser: Commercially prepared from glycerin (E422) and fatty acids"
+    "description": "Emulsifier/ Stabiliser: Commercially prepared from glycerin (E422) and fatty acids",
+
+    "halalIf": "if it is 100% of vegetable origin",
+    "haramIf": "if from pork liver and kidney.",
+    "benefit": "Despite the fact that the E120 supplement is of natural origin, scientific data on any benefit of carmine has not been received at the moment.",
+    "harm": "Carmine is considered a harmless additive and is allowed for use in the territory of the Russian Federation, since no side effects have been found at concentrations used in the food industry. But there is a small percentage of people in the world who are allergic to the E120 dye and similar ingredients. In them, carmine in the composition of the product can cause anaphylactic shock. Also, in rare cases, the E120 supplement can cause allergic reactions when in contact with the skin."
   }
 ]

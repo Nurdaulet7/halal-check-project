@@ -16,6 +16,22 @@
   background-color: var(--error);
 }
 
+.halalIf {
+  color: var(--header-color);
+}
+
+.doubtfulIf {
+  color: var(--warning);
+}
+
+.haramIf {
+  color: var(--error);
+}
+
+.doubtfulInfo span {
+  font-weight: 700;
+}
+
 .additiveContent {
   grid-column: 1 / span 4;
   background-color: var(--sidebar-color);
@@ -44,8 +60,15 @@
   justify-content: space-between;
 }
 
+.additiveInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .additiveInfo h3 {
   color: var(--text-color);
+  font-size: 1.175em;
 }
 
 .additiveTitle {
@@ -77,11 +100,63 @@
 .status {
   width: 100%;
   color: white;
-  padding: 10px 0;
+  padding: 7px 0;
   font-weight: 600;
   border-radius: 5px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.additionalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.influenceOnBodyType {
+  display: flex;
+  flex-direction: column;
+  /* padding-top: 10px; */
+}
+
+.additionalInfo h3 {
+  color: var(--text-color);
+  font-size: 1.175em;
+}
+
+.harm {
+  color: var(--error);
+}
+
+.harm h4::after {
+  background: var(--error);
+}
+
+.benefit {
+  color: var(--header-color);
+}
+
+.benefit h4::after {
+  background-color: var(--header-color);
+}
+
+.influenceOnBodyType h4 {
+  display: flex;
+  align-items: baseline;
+  font-size: 1.025em;
+  font-weight: 650;
+  width: 100%;
+}
+
+.influenceOnBodyType p {
+  margin-top: 5px;
+}
+
+.influenceOnBodyType h4::after {
+  content: "";
+  flex: 1;
+  height: 0.77px;
+  margin-left: 5px;
 }
 
 @media (max-width: 900px) {
