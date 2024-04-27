@@ -22,7 +22,7 @@ export const HalalCertification = () => {
       <HeaderCertificatePage />
       <Outlet />
       <div className={styles.filterContainer}>
-        <StatusIncticator />
+        <StatusIncticator enterprisePage={true} type={"company"} />
         <FilterMenuItem />
       </div>
       <Footer />

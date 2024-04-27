@@ -72,7 +72,7 @@ const AdditiviesList = () => {
         <div className={styles.container}>
           {isLoading ? (
             loaders
-          ) : errorMessage ? (
+          ) : errorMessage && additivies.length === 0 ? (
             <EmptyPage
               isError={true}
               errorMessage={errorMessage}

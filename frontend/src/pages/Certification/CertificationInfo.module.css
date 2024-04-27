@@ -95,8 +95,10 @@
 
 .companyLogo img {
   border-radius: 5px;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   width: 100%;
+  max-width: 480px;
+  max-height: 350px;
 }
 
 .companyInfo {
@@ -106,7 +108,7 @@
   display: flex;
   min-width: 360px;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: start;
 }
 
 .companyFeatures {

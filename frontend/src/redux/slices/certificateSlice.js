@@ -12,6 +12,10 @@ const initialState = {
 export const fetchEnterprise = createAsyncThunk(
   "enterprises/fetchEnterprise",
   async (url, thunkAPI) => {
+    const cachedEnterprises = localStorage.getItem("enterprises");
+    if (cachedEnterprises) {
+      return JSON.parse(cachedEnterprises);
+    }
     try {
       const res = await axios.get(url);
       return res.data;

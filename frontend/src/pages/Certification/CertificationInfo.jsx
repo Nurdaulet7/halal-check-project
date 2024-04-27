@@ -11,6 +11,9 @@ import {
 import styles from "./CertificationInfo.module.css";
 import isDateBeforeToday from "../../utils/isDateBeforeToday";
 import { ThreeDots } from "react-loader-spinner";
+import createSlug from "../../utils/сreateSlug";
+import formatIsoDateToDmy from "../../utils/formatDate";
+import { clearError } from "../../redux/slices/errorSlice";
 
 const CertificationInfo = () => {
   const dispatch = useDispatch();
@@ -18,7 +21,20 @@ const CertificationInfo = () => {
   const slug = params.certificateSlug;
   const isLoading = selectIsLoadingEnterpriseViaAPI;
   const enterprises = useSelector(selectEnterprises);
-  const enterprise = enterprises.find((enterprise) => enterprise.slug === slug);
+  const placeholderImage = "https://www.svgrepo.com/show/457691/img-box.svg";
+
+  const onImageError = (e) => {
+    e.target.src = placeholderImage;
+  };
+
+  const handleFetchData = () => {
+    dispatch(fetchEnterprise("http://localhost:8080/company/getAll"));
+    dispatch(clearError());
+  };
+
+  const enterprise = enterprises.find(
+    (enterprise) => createSlug(enterprise.brandName) === slug
+  );
   const navigate = useNavigate();
 
   const handleBack = () => {
@@ -27,9 +43,7 @@ const CertificationInfo = () => {
   useEffect(() => {
     // Загрузка данных о продуктах, только если массив продуктов пуст
     if (enterprises.length === 0) {
-      dispatch(
-        fetchEnterprise("http://localhost:4000/enterprises-list-delayed")
-      );
+      handleFetchData();
     }
   }, [dispatch, enterprises.length]);
 
@@ -54,8 +68,8 @@ const CertificationInfo = () => {
     <div className={styles.enterpriseContent}>
       <div className={styles.title}>
         <div className={styles.enterpriseTop}>
-          <h1>{enterprise.brand}</h1>
-          <p>{enterprise.businessType}</p>
+          <h1>{enterprise.brandName}</h1>
+          <p>{enterprise.typeOfBusiness}</p>
         </div>
         <button onClick={handleBack}>
           <IoMdClose />
@@ -63,46 +77,50 @@ const CertificationInfo = () => {
       </div>
       <div
         className={`${styles.status} ${
-          isDateBeforeToday(enterprise.deadline)
+          isDateBeforeToday(formatIsoDateToDmy(enterprise.deadlineDate))
             ? styles.halal
             : styles.doubtful
         }`}
       >
         {`${
-          isDateBeforeToday(enterprise.deadline)
+          isDateBeforeToday(formatIsoDateToDmy(enterprise.deadlineDate))
             ? "This enterprise is certified until"
             : "Certificate for this enterprise expired on"
-        } ${enterprise.deadline}`}
+        } ${formatIsoDateToDmy(enterprise.deadlineDate)}`}
       </div>
       <div className={styles.companyCard}>
         <div className={styles.companyLogo}>
-          <img src={enterprise.img} alt="" />
+          <img
+            src={!enterprise.imageUrl ? placeholderImage : enterprise.imageUrl}
+            onError={onImageError}
+            alt="enterprise"
+          />
         </div>
         <div className={styles.companyInfo}>
           <div className={styles.companyFeatures}>
             <div className={styles.companyItem}>
               <p>Enterprise name</p>
-              <p>{enterprise.name}</p>
+              <p>{enterprise.enterpriceName}</p>
             </div>
             <div className={styles.companyItem}>
               <p>Brand name</p>
-              <p>{enterprise.brand}</p>
+              <p>{enterprise.brandName}</p>
             </div>
             <div className={styles.companyItem}>
               <p>Type of business</p>
-              <p>{enterprise.businessType}</p>
+              <p>{enterprise.typeOfBusiness}</p>
             </div>
             <div className={styles.companyItem}>
-              <p>Registration number</p>
-              <p>{enterprise.regNum}</p>
+              <p>Controller</p>
+              <p>{enterprise.controller}</p>
             </div>
             <div className={styles.companyItem}>
               <p>Date of receipt</p>
-              <p>{enterprise.receipt}</p>
+              <p>{formatIsoDateToDmy(enterprise.dateOfReceipt)}</p>
             </div>
             <div className={styles.companyItem}>
               <p>Deadline date</p>
-              <p>{enterprise.deadline}</p>
+              <p>{formatIsoDateToDmy(enterprise.deadlineDate)}</p>
             </div>
             <div className={styles.companyItem}>
               <p>Region</p>
@@ -114,7 +132,7 @@ const CertificationInfo = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={enterprise.certificate}
+                  href={enterprise.certificateUrl}
                 >
                   {enterprise.certifiedBy}
                 </a>
@@ -125,7 +143,14 @@ const CertificationInfo = () => {
       </div>
       <div className={styles.companyMap}>
         <MapContainer
-          center={[enterprise.lng, enterprise.lat]}
+          center={[
+            !enterprise.lat || enterprise.lat === ""
+              ? 43.24230376033211
+              : enterprise.lat,
+            !enterprise.lng || enterprise.lng === ""
+              ? 76.89870830666096
+              : enterprise.lng,
+          ]}
           zoom={17}
           scrollWheelZoom={false}
         >
@@ -133,10 +158,19 @@ const CertificationInfo = () => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[enterprise.lng, enterprise.lat]}>
+          <Marker
+            position={[
+              !enterprise.lat || enterprise.lat === ""
+                ? 43.24230376033211
+                : enterprise.lat,
+              !enterprise.lng || enterprise.lng === ""
+                ? 76.89870830666096
+                : enterprise.lng,
+            ]}
+          >
             <Popup>
-              <h2 className={styles.mapTitle}>{enterprise.brand}</h2>
-              <h3>{enterprise.businessType}</h3>
+              <h2 className={styles.mapTitle}>{enterprise.brandName}</h2>
+              <h3>{enterprise.typeOfBusiness}</h3>
             </Popup>
           </Marker>
         </MapContainer>

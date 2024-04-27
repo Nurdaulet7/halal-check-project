@@ -29,14 +29,23 @@
   border-radius: 5px;
 }
 
-.status.halal {
+.statusCompany {
+  font-size: 14px;
+  width: 48%;
+  border: none;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+.halal {
   background-color: var(--header-color);
 }
 
-.status.doubtful {
+.doubtful {
   background-color: #ffc107;
 }
 
-.status.haram {
+.haram {
   background-color: #dc3545;
 }

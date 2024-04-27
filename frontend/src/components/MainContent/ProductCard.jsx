@@ -20,6 +20,10 @@ export const ProductCard = (props) => {
   } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
   const isMobile = useMediaQuery({ maxWidth: 460 });
+  const placeholderImage = "https://www.svgrepo.com/show/457691/img-box.svg";
+  const onImageError = (e) => {
+    e.target.src = placeholderImage;
+  };
 
   const navigate = useNavigate();
 
@@ -53,7 +57,11 @@ export const ProductCard = (props) => {
         className={`${styles.card} ${styles[status.toLowerCase()]}`}
         onClick={isMobile ? handleClick : null}
       >
-        <img src={imageUrl} alt="product" />
+        <img
+          src={!imageUrl ? placeholderImage : imageUrl}
+          onError={onImageError}
+          alt="product"
+        />
         <div className={styles.cardContent}>
           <div className={styles.cardCenter}>
             <h3>

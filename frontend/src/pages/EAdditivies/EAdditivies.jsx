@@ -21,7 +21,7 @@ export const EAdditivies = () => {
       <HeaderEAdditivies />
       <Outlet />
       <div className={styles.filterContainer}>
-        <StatusIncticator />
+        <StatusIncticator type={"additives"} />
         <FilterMenuItem />
       </div>
       <Footer />

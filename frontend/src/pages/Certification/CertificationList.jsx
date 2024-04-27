@@ -22,7 +22,7 @@ const CertificationList = () => {
   const dispatch = useDispatch();
 
   const handleFetchData = () => {
-    dispatch(fetchEnterprise("http://localhost:4000/enterprises-list-delayed"));
+    dispatch(fetchEnterprise("http://localhost:8080/company/getAll"));
     dispatch(clearError());
   };
 
@@ -39,12 +39,12 @@ const CertificationList = () => {
   }, [dispatch, enterprises.length]);
 
   const filteredEnterprises = enterprises.filter((enterprise) => {
-    const matchesName = enterprise.name
+    const matchesName = enterprise.brandName
       .toLowerCase()
       .includes(enterprisesNameFilter.toLowerCase());
     const matchesCompanyType =
       companyType === "" ||
-      enterprise.companyType.name.toLowerCase() === companyType.toLowerCase();
+      enterprise.typeOfBusiness.toLowerCase() === companyType.toLowerCase();
     return matchesName && matchesCompanyType;
   });
 
@@ -73,7 +73,7 @@ const CertificationList = () => {
         <div className={styles.container}>
           {isLoading ? (
             loaders
-          ) : errorMessage ? (
+          ) : errorMessage && enterprises.length === 0 ? (
             <EmptyPage
               isError={true}
               errorMessage={errorMessage}

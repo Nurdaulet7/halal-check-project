@@ -21,7 +21,7 @@ export const HalalVertification = () => {
       <HeaderMain />
       <Outlet />
       <div className={styles.filterContainer}>
-        <StatusIncticator />
+        <StatusIncticator type={"products"} />
         <FilterMenuItem />
       </div>
       <Footer />
