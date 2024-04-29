@@ -41,14 +41,32 @@ const AdditiveCard = (props) => {
       }`}
       onClick={isMobile ? handleClick : null}
     >
-      <div className={`${styles.card} ${styles[status]}`}>
+      <div className={`${styles.card} ${styles[status.toLowerCase()]}`}>
         <div className={styles.cardContent}>
           <div className={styles.additiveCode}>
-            <h3>{highlightMatch(code, additiveCode)}</h3>
+            <h3>{highlightMatch(code.toLowerCase(), additiveCode)}</h3>
           </div>
           <div className={styles.additiveInfo}>
-            <h4>{<TruncatedText text={name} maxLength={25} />}</h4>
-            <p>{<TruncatedText text={description} maxLength={120} />}</p>
+            <h4>
+              {
+                <TruncatedText
+                  text={!name ? "Lorem, ipsum" : name}
+                  maxLength={25}
+                />
+              }
+            </h4>
+            <p>
+              {
+                <TruncatedText
+                  text={
+                    !description
+                      ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quidem voluptatum obcaecati ex, nostrum iure minus labore, vero molestiae id deserunt. Fuga saepe veniam tempora officia quia, corrupti minus reiciendis repellat iste minima recusandae eveniet ad consequatur non nemo dolor quibusdam ab, unde totam id cum error! Quis, sunt necessitatibus."
+                      : description
+                  }
+                  maxLength={120}
+                />
+              }
+            </p>
           </div>
         </div>
         <div className={styles.cardBottom}>

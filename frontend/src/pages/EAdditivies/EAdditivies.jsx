@@ -14,6 +14,7 @@ export const EAdditivies = () => {
     actionSetCategoryFilter: setCategoryFilter,
     hasSubcategories: false,
     forEnterprises: false,
+    forAdditives: true,
     path: "additivies",
   };
   return (

@@ -30,7 +30,7 @@ const AdditiveInfo = () => {
 
   useEffect(() => {
     if (additivies.length === 0) {
-      dispatch(fetchAdditive("http://localhost:4000/additivies-list-delayed"));
+      dispatch(fetchAdditive("http://localhost:8080/additives/getAll"));
     }
   }, [dispatch, additivies.length]);
 
@@ -86,24 +86,22 @@ const AdditiveInfo = () => {
       </div>
       <div
         className={`${styles.status} ${
-          additive.status === "halal"
+          additive.status.toLocaleLowerCase() === "halal"
             ? styles.halal
-            : additive.status === "haram"
+            : additive.status.toLocaleLowerCase() === "haram"
             ? styles.haram
             : styles.doubtful
         }`}
       >
         {`This additive is ${additive.status}`}
       </div>
-      {additive.status === "doubtful" && (
+      {additive.status.toLocaleLowerCase() === "doubtful" && (
         <div className={styles.doubtfulInfo}>
           <p>
-            <span className={styles.halalIf}>Halal, </span>if it is 100% of
-            vegetable origin.
+            <span className={styles.halalIf}>Halal, </span> {additive.halalIf}
           </p>
           <p>
-            <span className={styles.haramIf}>Haram, </span>
-            if from pork liver and kidney.
+            <span className={styles.haramIf}>Haram, </span> {additive.haramIf}
           </p>
         </div>
       )}
@@ -113,18 +111,20 @@ const AdditiveInfo = () => {
       </div>
       <div className={styles.additionalInfo}>
         <h3>Influence on the body</h3>
-        <div className={`${styles.benefit} ${styles.influenceOnBodyType}`}>
-          <h4>Benefit</h4>
-          <p>
-            {additive.benefit === ""
-              ? `The ${additive.code} supplement has no beneficial effects on the body.`
-              : additive.benefit}
-          </p>
-        </div>
+        {additive.status.toLocaleLowerCase() !== "haram" && (
+          <div className={`${styles.benefit} ${styles.influenceOnBodyType}`}>
+            <h4>Benefit</h4>
+            <p>
+              {additive.benefit === "" || !additive.benefit
+                ? `The ${additive.code} supplement has no beneficial effects on the body.`
+                : additive.benefit}
+            </p>
+          </div>
+        )}
         <div className={`${styles.harm} ${styles.influenceOnBodyType}`}>
           <h4>Harm</h4>
           <p>
-            {additive.harm === ""
+            {additive.harm === "" || !additive.harm
               ? `The ${additive.code} supplement has no harmful effects on the body.`
               : additive.harm}
           </p>

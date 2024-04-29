@@ -27,7 +27,7 @@ const AdditiviesList = () => {
   const categoryFilter = useSelector(selectCategoryFilter);
 
   const handleFetchData = () => {
-    dispatch(fetchAdditive("http://localhost:4000/additivies-list-delayed"));
+    dispatch(fetchAdditive("http://localhost:8080/additives/getAll"));
     dispatch(clearError());
   };
 
@@ -37,7 +37,8 @@ const AdditiviesList = () => {
       .includes(additiveNameFilter.toLowerCase());
     const matchesCategory =
       categoryFilter === "" ||
-      additive.category.name.toLowerCase() === categoryFilter.toLowerCase();
+      (additive.ecategory &&
+        additive.ecategory.name.toLowerCase() === categoryFilter.toLowerCase()); // Добавляем проверку на additive.ecategory
     return matchesName && matchesCategory;
   });
 
