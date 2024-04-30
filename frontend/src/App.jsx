@@ -27,22 +27,18 @@ const App = () => {
       <Sidebar>
         <Routes>
           <Route path="/" element={<Main />} />
-
           <Route path="/vertification" element={<HalalVertification />}>
             <Route index element={<ProductsList />} />
             <Route path=":slug" element={<SingleProduct />} />
           </Route>
-
           <Route path="/additivies" element={<EAdditivies />}>
             <Route index element={<AdditiviesList />} />
             <Route path=":additiveSlug" element={<AdditiveInfo />} />
           </Route>
-
           <Route path="/certificate" element={<HalalCertification />}>
             <Route index element={<CertificationList />} />
             <Route path=":certificateSlug" element={<CertificationInfo />} />
           </Route>
-
           <Route path="/scanner" element={<ScannerBarcode />}>
             <Route index element={<BarcodeScanner />} />
             <Route
@@ -50,7 +46,6 @@ const App = () => {
               element={<ScannedProductDetails />}
             />
           </Route>
-
           <Route path="/about" element={<AboutUs />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<ContactUs />} />

@@ -11,6 +11,10 @@ const initialState = {
 export const fetchAdditive = createAsyncThunk(
   "additivies/fetchAdditive",
   async (url, thunkAPI) => {
+    const cachedAdditives = localStorage.getItem("additives");
+    if (cachedAdditives) {
+      return JSON.parse(cachedAdditives);
+    }
     try {
       const res = await axios.get(url);
       return res.data;
@@ -35,7 +39,7 @@ const additiviesSlice = createSlice({
           ...additive,
           id: uuidv4(), // или любой другой уникальный идентификатор, если нужно
         }));
-        localStorage.setItem("additivies", JSON.stringify(state.additivies));
+        localStorage.setItem("additives", JSON.stringify(state.additivies));
       })
       .addCase(fetchAdditive.rejected, (state) => {
         state.isLoadingViaAPI = false;

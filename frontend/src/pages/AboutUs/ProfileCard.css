@@ -8,7 +8,7 @@
   align-items: center;
   max-width: 250px;
   padding: 30px;
-  background: var(--active-menu-dropdown);
+  background: var(--header-color);
   border-radius: 24px;
   width: 100%;
   text-align: center;
@@ -41,7 +41,7 @@
 .card h3 {
   font-size: 14px;
   font-weight: 500;
-  color: rgb(0 0 0 / 90%);
+  color: aliceblue;
 }
 
 .card button {
@@ -49,6 +49,7 @@
   background: white;
   color: rgb(0, 0, 0);
   font-family: inherit;
+  font-weight: 500;
   padding: 10px 25px;
   font-size: 14px;
   border-radius: 10px;

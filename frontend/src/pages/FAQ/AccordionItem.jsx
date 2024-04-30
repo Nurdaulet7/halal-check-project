@@ -6,33 +6,33 @@ import "./AccordionStyles.css";
 const faqs = [
   {
     id: 1,
-    header: "What is Lorem Ipsum?",
-    text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+    header: "What is the Halal Check Project?",
+    text: `The Halal Check Project is a comprehensive platform designed to help consumers find both Halal-certified and non-certified products. It provides detailed information about products to ensure that consumers can make informed decisions according to Halal standards.`,
   },
   {
     id: 2,
-    header: "Where does it come from?",
-    text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+    header: "How does the Halal Check Project verify products?",
+    text: `Our platform includes a database of products with varying Halal certification statuses. Each product listed, whether certified or not, is displayed with clear information about its Halal status to assist consumers in their selection.`,
   },
   {
     id: 3,
-    header: "Why do we use it?",
-    text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+    header: "How do I search for products on the Halal Check Project?",
+    text: `You can search for products by entering the product name, category, or Halal status in the search bar. Filters are also available to refine your search results based on certification status and other criteria.`,
   },
   {
     id: 4,
-    header: "Where can I get some?",
-    text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+    header: "How can I use the barcode scanner?",
+    text: `The barcode scanner feature in the Halal Check Project allows you to easily check a product's Halal status by simply scanning its barcode with your mobile device. This tool is designed to be user-friendly and is accessible directly within our mobile platform, making it convenient to use while shopping or at home. Just open our app, navigate to the barcode scanner, and point your device's camera at the product barcode. The app will automatically scan the barcode and provide you with the Halal status of the product instantly. This feature makes it exceptionally easy for consumers to verify the Halal compliance of any product in real-time.`,
   },
   {
     id: 5,
-    header: "Where can I get some?",
-    text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+    header: "How often is the product database updated?",
+    text: `Our product database is updated regularly to reflect new information from Halal certification bodies, manufacturers, and community contributions. This ensures that the information provided is both current and accurate.`,
   },
   {
     id: 6,
-    header: "Where can I get some?",
-    text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+    header: "How can I suggest a new feature or report a bug?",
+    text: `To suggest new features or report bugs, please use the "Contact Us" section on our website. There you can send us a direct message with your feedback, feature suggestions, or details of any issues you've encountered. We value your input and aim to continuously improve the platform based on user suggestions. Your feedback helps us enhance your experience and serve the community better.`,
   },
 ];
 

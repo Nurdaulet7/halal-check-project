@@ -13,7 +13,7 @@ export const ProductCard = (props) => {
     // id,
     name,
     barcode,
-    // ingredients,
+    ingredients,
     status,
     imageUrl,
     certified,
@@ -77,32 +77,37 @@ export const ProductCard = (props) => {
               {
                 <TruncatedText
                   text={
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet voluptatibus sed ad, aut maiores repellat laborum accusamus quidem quibusdam repellendus, et impedit doloremque aperiam porro praesentium odio magnam ea ducimus delectus, quisquam doloribus cumque. Deleniti minima placeat voluptatibus excepturi illo repellendus natus magni quas, corporis necessitatibus illum, dolorum quod."
+                    !ingredients[0]
+                      ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet voluptatibus sed ad, aut maiores repellat laborum accusamus quidem quibusdam repellendus, et impedit doloremque aperiam porro praesentium odio magnam ea ducimus delectus, quisquam doloribus cumque. Deleniti minima placeat voluptatibus excepturi illo repellendus natus magni quas, corporis necessitatibus illum, dolorum quod."
+                      : ingredients[0].description
                   }
-                  maxLength={85}
+                  maxLength={48}
                 />
               }
             </p>
-            <hr color="white" margin="5px" />
-            <p>
-              <span className={styles.textBold}>Barcode: </span>
-              {barcode}
-            </p>
           </div>
           <div className={styles.cardBottom}>
-            {
-              <label className={certified ? styles.certified : ""}>
-                {certified ? "Certified" : "Not certified"}
-              </label>
-            }
-            {/* {certified && <img src={certifiacates.logo} alt="certificate" />} */}
-            <button href="#" className={styles.btn} onClick={handleClick}>
-              Read More
-            </button>
+            <div className={styles.barcode}>
+              <hr color="white" margin="5px" />
+              <p>
+                <span className={styles.textBold}>Barcode: </span>
+                {barcode}
+              </p>
+            </div>
+            <div className={styles.cardBottomButton}>
+              {
+                <label className={certified ? styles.certified : ""}>
+                  {certified ? "Certified" : "Not certified"}
+                </label>
+              }
+              {/* {certified && <img src={certifiacates.logo} alt="certificate" />} */}
+              <button href="#" className={styles.btn} onClick={handleClick}>
+                Read More
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      {/* </Link> */}
     </div>
   );
 };

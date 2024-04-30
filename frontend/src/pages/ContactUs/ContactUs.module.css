@@ -68,6 +68,12 @@
   margin-bottom: 1rem;
 }
 
+.formGroup .btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+}
+
 .formGroup label {
   color: var(--text-color);
   display: inline-block;

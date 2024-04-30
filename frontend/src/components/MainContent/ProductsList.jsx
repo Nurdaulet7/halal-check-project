@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import MyLoader from "../../utils/MyLoader";
 import { ProductCard } from "./ProductCard";
 import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
+import { TbZoomReset } from "react-icons/tb";
 import {
   fetchProduct,
   selectIsLoadingViaAPI,
@@ -18,6 +19,8 @@ import {
 import styles from "./ProductList.module.css";
 import { EmptyPage } from "../../utils/EmptyPage";
 import { clearError, selectErrorMessage } from "../../redux/slices/errorSlice";
+import { useMediaQuery } from "react-responsive";
+import TruncatedText from "../../utils/TruncatedText";
 
 export const ProductsList = () => {
   const dispatch = useDispatch();
@@ -27,6 +30,8 @@ export const ProductsList = () => {
   const onlyCertifiedFilter = useSelector(selectOnlyCertifiedFilter);
   const isLoading = useSelector(selectIsLoadingViaAPI);
   const products = useSelector(selectProducts);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const mobileCategoryText = useMediaQuery({ maxWidth: 500 });
 
   useEffect(() => {
     // Загрузка данных о продуктах, только если массив продуктов пуст
@@ -40,8 +45,17 @@ export const ProductsList = () => {
     dispatch(clearError());
   };
 
+  const handleResetFilter = () => {
+    dispatch(resetFilters());
+  };
+
+  const isAnyFilterActive = () => {
+    return (
+      productNameFilter !== "" || categoryFilter !== "" || onlyCertifiedFilter
+    );
+  };
+
   const filteredProducts = products.filter((product) => {
-    console.log(product);
     const matchesName = product.name
       .toLowerCase()
       .includes(productNameFilter.toLowerCase());
@@ -59,10 +73,6 @@ export const ProductsList = () => {
     // return matchesName;
   });
 
-  const handleResetFilter = () => {
-    dispatch(resetFilters());
-  };
-
   let loaders = [];
   if (isLoading) {
     for (let i = 0; i < 3; i++) {
@@ -72,11 +82,27 @@ export const ProductsList = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <h2>
-        {categoryFilter === ""
-          ? "Products"
-          : capitalizeFirstLetter(categoryFilter)}
-      </h2>
+      <div className={styles.listTop}>
+        <h2>
+          {categoryFilter === "" ? (
+            "Products"
+          ) : mobileCategoryText ? (
+            <TruncatedText
+              text={capitalizeFirstLetter(categoryFilter)}
+              maxLength={15}
+            />
+          ) : (
+            capitalizeFirstLetter(categoryFilter)
+          )}
+        </h2>
+        {isAnyFilterActive() && (
+          <p onClick={handleResetFilter}>
+            {isMobile ? "" : "Reset filters"}
+            <TbZoomReset id={styles.resetIcon} />
+          </p>
+        )}
+      </div>
+
       <hr />
 
       <div className={styles.viewContent}>

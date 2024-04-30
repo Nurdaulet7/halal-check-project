@@ -1,5 +1,6 @@
 import styles from "./AdditiviesList.module.css";
 import { v4 as uuidv4 } from "uuid";
+import { TbZoomReset } from "react-icons/tb";
 import { EmptyPage } from "../../utils/EmptyPage";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -17,6 +18,7 @@ import AdditiveCardLoader from "../../utils/AdditiveCardLoader";
 import AdditiveCard from "./AdditiveCard";
 import { clearError, selectErrorMessage } from "../../redux/slices/errorSlice";
 import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
+import { useMediaQuery } from "react-responsive";
 
 const AdditiviesList = () => {
   const dispatch = useDispatch();
@@ -25,10 +27,16 @@ const AdditiviesList = () => {
   const isLoading = useSelector(selectIsLoadingAdditiveViaAPI);
   const additivies = useSelector(selectAdditivies);
   const categoryFilter = useSelector(selectCategoryFilter);
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const mobileCategoryText = useMediaQuery({ maxWidth: 500 });
 
   const handleFetchData = () => {
     dispatch(fetchAdditive("http://localhost:8080/additives/getAll"));
     dispatch(clearError());
+  };
+
+  const isAnyFilterActive = () => {
+    return additiveNameFilter !== "" || categoryFilter !== "";
   };
 
   const filteredAdditivies = additivies.filter((additive) => {
@@ -53,7 +61,7 @@ const AdditiviesList = () => {
     for (let i = 0; i < 3; i++) {
       loaders.push(
         <AdditiveCardLoader className={styles.loaders} key={uuidv4()} />
-      ); // Используйте индекс i в качестве ключа
+      );
     }
   }
 
@@ -63,11 +71,19 @@ const AdditiviesList = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <h2>
-        {categoryFilter === ""
-          ? "Food additivies"
-          : capitalizeFirstLetter(categoryFilter)}
-      </h2>
+      <div className={styles.listTop}>
+        <h2>
+          {categoryFilter === ""
+            ? "Food additivies"
+            : capitalizeFirstLetter(categoryFilter)}
+        </h2>
+        {isAnyFilterActive() && (
+          <p onClick={handleResetFilter}>
+            {isMobile ? "" : "Reset filters"}
+            <TbZoomReset id={styles.resetIcon} />
+          </p>
+        )}
+      </div>
       <hr />
       <div className={styles.viewContent}>
         <div className={styles.container}>

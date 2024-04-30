@@ -52,12 +52,6 @@ const SingleProduct = () => {
             {product.name}
             <span className={styles.barcode}>{product.barcode}</span>
           </h1>
-          {/* {product.certified && (
-            <div className={styles.certified}>
-              <FiCheckCircle id={styles.iconCertified} />
-              <p>Certified</p>
-            </div>
-          )} */}
         </div>
 
         <button onClick={handleBack}>
@@ -85,6 +79,11 @@ const SingleProduct = () => {
               <div className={styles.additives}>
                 <h3>Additivies:</h3>
                 <ul>
+                  {product.additives.length === 0 && (
+                    <p id={styles.additiveEmpty}>
+                      Not contain any food additives.
+                    </p>
+                  )}
                   {product.additives.map((additive) => {
                     return (
                       <li key={uuidv4()}>
@@ -110,25 +109,28 @@ const SingleProduct = () => {
               </div>
               <div className={styles.ingredients}>
                 <h3>Ingredients:</h3>
-                {/* <p>{product.ingredients.description}</p> */}
-                <p>{product.ingredients[0].description}</p>
+                <p>
+                  {!product.ingredients[0]
+                    ? ""
+                    : product.ingredients[0].description}
+                </p>
               </div>
             </div>
           </div>
         </div>
         <div className={styles.bottom}>
           <div className={styles.information}>
-            <div className={styles.countryOfOrigin}>
+            {/* <div className={styles.countryOfOrigin}>
               <h3>Country of origin:</h3>
               <p>{`${product.originCountry.name}, ${product.originCountry.code}`}</p>
+            </div> */}
+            <div className={styles.company}>
+              <h3>Companies:</h3>
+              <p>{product.company}</p>
             </div>
             <div className={styles.storage}>
               <h3>Storage:</h3>
               <p>{product.storage}</p>
-            </div>
-            <div className={styles.company}>
-              <h3>Companies:</h3>
-              <p>{product.company}</p>
             </div>
           </div>
           {product.certified && (
@@ -153,7 +155,3 @@ const SingleProduct = () => {
 };
 
 export default SingleProduct;
-// <>
-//   <div>{product.status}</div>
-//   <button onClick={handleBack}>Назад к списку продуктов</button>
-// </>

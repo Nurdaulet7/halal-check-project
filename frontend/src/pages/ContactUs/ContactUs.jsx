@@ -2,6 +2,7 @@ import { HeaderComponent } from "../../components/HeaderMain/HeaderComponent";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt, FaPaperPlane, FaGlobeEurope } from "react-icons/fa";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { RotatingLines } from "react-loader-spinner";
 import styles from "./ContactUs.module.css";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
@@ -15,6 +16,7 @@ export const ContactUs = () => {
   const [userEmail, setUserEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
   const form = useRef();
 
   const isFormValid = () => {
@@ -31,6 +33,7 @@ export const ContactUs = () => {
       dispatch(setError("Please fill out all fields."));
       return; // Прерываем выполнение функции, чтобы не отправлять форму
     }
+    setIsSending(true);
 
     emailjs
       .sendForm("service_by7zinn", "template_0vdx7pd", form.current, {
@@ -43,10 +46,12 @@ export const ContactUs = () => {
           setUserEmail("");
           setSubject("");
           setMessage("");
+          setIsSending(false);
         },
         (error) => {
           dispatch(setError(error));
           console.log("FAILED...", error.text);
+          setIsSending(false);
         }
       );
     form.current.reset();
@@ -129,11 +134,26 @@ export const ContactUs = () => {
                   </div>
                   <div className={styles.colMd12}>
                     <div className={styles.formGroup}>
-                      <input
-                        type="submit"
-                        value="Send message"
-                        className={styles.btn}
-                      />
+                      <button type="submit" className={styles.btn}>
+                        {isSending ? (
+                          <>
+                            Sending
+                            <RotatingLines
+                              visible={true}
+                              height="17"
+                              width="17"
+                              strokeColor="#fff"
+                              strokeWidth="5"
+                              animationDuration="0.75"
+                              ariaLabel="rotating-lines-loading"
+                              wrapperStyle={{}}
+                              wrapperClass=""
+                            />
+                          </>
+                        ) : (
+                          "Send message"
+                        )}
+                      </button>
                     </div>
                   </div>
                 </div>

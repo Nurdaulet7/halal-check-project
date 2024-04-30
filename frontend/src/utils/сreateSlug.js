@@ -6,7 +6,3 @@ export default function createSlug(productName) {
     .replace(/\s+/g, "-") // замена пробелов и последовательностей пробелов на дефис
     .toLowerCase(); // приведение к нижнему регистру
 }
-
-// Пример использования
-const slug = createSlug("Товар №123 с названием на русском!");
-console.log(slug); // "товар-123-с-названием-на-русском"
