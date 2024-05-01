@@ -97,7 +97,7 @@ const SingleProduct = () => {
                           }`}
                         >
                           {
-                            <Link to={`/additivies/${additive.code}`}>
+                            <Link to={`/additives/${additive.code}`}>
                               {additive.code}
                             </Link>
                           }

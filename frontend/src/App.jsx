@@ -31,7 +31,7 @@ const App = () => {
             <Route index element={<ProductsList />} />
             <Route path=":slug" element={<SingleProduct />} />
           </Route>
-          <Route path="/additivies" element={<EAdditivies />}>
+          <Route path="/additives" element={<EAdditivies />}>
             <Route index element={<AdditiviesList />} />
             <Route path=":additiveSlug" element={<AdditiveInfo />} />
           </Route>

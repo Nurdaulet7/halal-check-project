@@ -19,8 +19,8 @@ const menuItem = [
     icon: <PiBarcode />,
   },
   {
-    path: "/additivies",
-    name: "E-additivies",
+    path: "/additives",
+    name: "E-additives",
     icon: <BiLeaf />,
   },
   {

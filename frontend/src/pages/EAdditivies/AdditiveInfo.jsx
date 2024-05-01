@@ -24,7 +24,7 @@ const AdditiveInfo = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    // navigate("/additivies");
+    // navigate("/additives");
     navigate(-1);
   };
 

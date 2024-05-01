@@ -12,7 +12,7 @@ export const HeaderEAdditivies = () => {
   const navigate = useNavigate();
 
   const handleAdditiveNameFilterChange = (e) => {
-    navigate("/additivies");
+    navigate("/additives");
     dispatch(setAdditiveNameFilter(e.target.value));
   };
 

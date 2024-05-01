@@ -74,7 +74,7 @@ const AdditiviesList = () => {
       <div className={styles.listTop}>
         <h2>
           {categoryFilter === ""
-            ? "Food additivies"
+            ? "Food additives"
             : capitalizeFirstLetter(categoryFilter)}
         </h2>
         {isAnyFilterActive() && (

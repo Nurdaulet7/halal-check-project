@@ -15,7 +15,7 @@ export const EAdditivies = () => {
     hasSubcategories: false,
     forEnterprises: false,
     forAdditives: true,
-    path: "additivies",
+    path: "additives",
   };
   return (
     <FilterProvider value={filterProps}>
