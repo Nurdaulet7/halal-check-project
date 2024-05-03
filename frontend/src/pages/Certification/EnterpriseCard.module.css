@@ -151,12 +151,20 @@
     min-width: 220px;
     width: calc(100% / 2);
   }
+
+  .cardCenter .enterpriseInfo .title h3 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 670px) {
   .viewsRow {
     min-width: 220px;
     width: 100%;
+  }
+
+  .cardCenter .enterpriseInfo .title h3 {
+    font-size: 18px;
   }
 }
 

@@ -36,8 +36,8 @@ export const ContactUs = () => {
     setIsSending(true);
 
     emailjs
-      .sendForm("service_by7zinn", "template_0vdx7pd", form.current, {
-        publicKey: "4NVIl0iYxvKbUcJNT",
+      .sendForm("service_0qnmpyn", "template_qsun1dh", form.current, {
+        publicKey: "VhzpbxPy2jpoBGIby",
       })
       .then(
         () => {

@@ -19,17 +19,17 @@ import AdditiveCard from "./AdditiveCard";
 import { clearError, selectErrorMessage } from "../../redux/slices/errorSlice";
 import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
 import { useMediaQuery } from "react-responsive";
+import sortDataByCode from "../../utils/sortDataByCode";
 
 const AdditiviesList = () => {
   const dispatch = useDispatch();
   const errorMessage = useSelector(selectErrorMessage);
   const additiveNameFilter = useSelector(selectAdditiviesCodeFilter);
   const isLoading = useSelector(selectIsLoadingAdditiveViaAPI);
-  const additivies = useSelector(selectAdditivies);
+  const additivies = sortDataByCode(useSelector(selectAdditivies));
   const categoryFilter = useSelector(selectCategoryFilter);
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const mobileCategoryText = useMediaQuery({ maxWidth: 500 });
-
   const handleFetchData = () => {
     dispatch(fetchAdditive("http://localhost:8080/additives/getAll"));
     dispatch(clearError());

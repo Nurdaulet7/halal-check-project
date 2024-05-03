@@ -16,11 +16,18 @@ const SingleProduct = () => {
   const slug = params.slug;
   const products = useSelector(selectProducts);
   const product = products.find((product) => createSlug(product.name) === slug);
+  const placeholderImage = "https://www.svgrepo.com/show/457691/img-box.svg";
+
+  const onImageError = (e) => {
+    e.target.src = placeholderImage;
+  };
+
   const navigate = useNavigate();
 
   const handleBack = () => {
     navigate(-1);
   };
+
   useEffect(() => {
     // Загрузка данных о продуктах, только если массив продуктов пуст
     if (products.length === 0) {
@@ -72,7 +79,7 @@ const SingleProduct = () => {
       <div className={styles.productPage}>
         <div className={styles.productPageTop}>
           <div className={styles.productImage}>
-            <img src={product.imageUrl} alt="product" />
+            <img src={product.imageUrl} onError={onImageError} alt="product" />
           </div>
           <div className={styles.productDetails}>
             <div className={styles.content}>

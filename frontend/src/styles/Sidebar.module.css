@@ -281,6 +281,14 @@ header .image-text .header-text {
     opacity: 0.3;
   }
 
+  .sidebar.isMobileClose .menu {
+    display: flex;
+  }
+
+  .sidebar .menu {
+    display: none;
+  }
+
   .sidebar .text {
     opacity: 1;
   }
