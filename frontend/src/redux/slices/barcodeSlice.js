@@ -12,7 +12,7 @@ const initialState = {
 export const fetchProductByBarcode = createAsyncThunk(
   "products/fetchProductByBarcode",
   async (barcode, thunkAPI) => {
-    const url = `http://localhost:8080/product/products?barcode=${barcode}`;
+    const url = `https://halalcheck.onrender.com/product/products?barcode=${barcode}`;
     try {
       const response = await axios.get(url);
       return response.data; // Предполагается, что сервер возвращает данные продукта
