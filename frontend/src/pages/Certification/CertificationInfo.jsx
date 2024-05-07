@@ -28,7 +28,7 @@ const CertificationInfo = () => {
   };
 
   const handleFetchData = () => {
-    dispatch(fetchEnterprise("http://localhost:8080/company/getAll"));
+    dispatch(fetchEnterprise("https://halalcheck.onrender.com/company/getAll"));
     dispatch(clearError());
   };
 

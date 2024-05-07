@@ -12,15 +12,25 @@ const initialState = {
 export const fetchEnterprise = createAsyncThunk(
   "enterprises/fetchEnterprise",
   async (url, thunkAPI) => {
+    const now = new Date();
     const cachedEnterprises = localStorage.getItem("enterprises");
-    if (cachedEnterprises) {
+    const cacheTime = localStorage.getItem("enterprisesCacheTime");
+
+    if (
+      cachedEnterprises &&
+      cacheTime &&
+      now.getTime() - Number(cacheTime) < 43200000
+    ) {
+      // 43200000 ms = 12 часа
       return JSON.parse(cachedEnterprises);
     }
     try {
       const res = await axios.get(url);
+      localStorage.setItem("enterprises", JSON.stringify(res.data));
+      localStorage.setItem("enterprisesCacheTime", now.getTime().toString());
       return res.data;
     } catch (error) {
-      thunkAPI.dispatch(setError(error.message));
+      thunkAPI.dispatch(setError(`Error during fetching: ${error.message}`));
       return thunkAPI.rejectWithValue(error);
     }
   }

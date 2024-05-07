@@ -31,11 +31,11 @@ const SingleProduct = () => {
   useEffect(() => {
     // Загрузка данных о продуктах, только если массив продуктов пуст
     if (products.length === 0) {
-      dispatch(fetchProduct("http://localhost:8080/product/getAll"));
+      dispatch(fetchProduct("https://halalcheck.onrender.com/product/getAll"));
     }
   }, [dispatch, products.length]);
 
-  if (!product) {
+  if (!product || !product.imageUrl) {
     return (
       <div className={`${styles.productContent} ${styles.loader}`}>
         <ThreeDots
@@ -79,7 +79,11 @@ const SingleProduct = () => {
       <div className={styles.productPage}>
         <div className={styles.productPageTop}>
           <div className={styles.productImage}>
-            <img src={product.imageUrl} onError={onImageError} alt="product" />
+            <img
+              src={product?.imageUrl || placeholderImage}
+              onError={onImageError}
+              alt="product"
+            />
           </div>
           <div className={styles.productDetails}>
             <div className={styles.content}>

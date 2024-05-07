@@ -30,7 +30,9 @@ const AdditiveInfo = () => {
 
   useEffect(() => {
     if (additivies.length === 0) {
-      dispatch(fetchAdditive("http://localhost:8080/additives/getAll"));
+      dispatch(
+        fetchAdditive("https://halalcheck.onrender.com/additives/getAll")
+      );
     }
   }, [dispatch, additivies.length]);
 

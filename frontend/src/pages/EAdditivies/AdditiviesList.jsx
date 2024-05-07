@@ -31,7 +31,7 @@ const AdditiviesList = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const mobileCategoryText = useMediaQuery({ maxWidth: 500 });
   const handleFetchData = () => {
-    dispatch(fetchAdditive("http://localhost:8080/additives/getAll"));
+    dispatch(fetchAdditive("https://halalcheck.onrender.com/additives/getAll"));
     dispatch(clearError());
   };
 

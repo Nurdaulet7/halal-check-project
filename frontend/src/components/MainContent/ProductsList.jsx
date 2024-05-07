@@ -41,7 +41,7 @@ export const ProductsList = () => {
   }, [dispatch, products.length]);
 
   const handleFetchData = () => {
-    dispatch(fetchProduct("http://localhost:8080/product/getAll"));
+    dispatch(fetchProduct("https://halalcheck.onrender.com/product/getAll"));
     dispatch(clearError());
   };
 

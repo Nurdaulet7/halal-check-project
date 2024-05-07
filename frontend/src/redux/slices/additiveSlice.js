@@ -11,12 +11,23 @@ const initialState = {
 export const fetchAdditive = createAsyncThunk(
   "additivies/fetchAdditive",
   async (url, thunkAPI) => {
+    const now = new Date();
     const cachedAdditives = localStorage.getItem("additives");
-    if (cachedAdditives) {
+    const cacheTime = localStorage.getItem("additivesCacheTime");
+
+    // Проверяем наличие кэша и время кэша
+    if (
+      cachedAdditives &&
+      cacheTime &&
+      now.getTime() - Number(cacheTime) < 43200000
+    ) {
+      // 43200000 ms = 12 часа
       return JSON.parse(cachedAdditives);
     }
     try {
       const res = await axios.get(url);
+      localStorage.setItem("additives", JSON.stringify(res.data));
+      localStorage.setItem("additivesCacheTime", now.getTime().toString());
       return res.data;
     } catch (error) {
       thunkAPI.dispatch(setError(`Error during fetching: ${error.message}`));

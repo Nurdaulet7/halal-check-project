@@ -24,6 +24,9 @@ export const ProductCard = (props) => {
   const onImageError = (e) => {
     e.target.src = placeholderImage;
   };
+  {
+    console.log(name);
+  }
 
   const navigate = useNavigate();
 

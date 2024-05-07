@@ -11,11 +11,21 @@ export const fetchProduct = createAsyncThunk(
   "products/fetchProduct",
   async (url, thunkAPI) => {
     const cachedProducts = localStorage.getItem("products");
-    if (cachedProducts) {
+    const cacheTime = localStorage.getItem("cacheTime");
+    const now = new Date();
+
+    if (
+      cachedProducts &&
+      cacheTime &&
+      now.getTime() - Number(cacheTime) < 43200000
+    ) {
+      // 43200000 ms = 12 hours
       return JSON.parse(cachedProducts);
     }
     try {
       const res = await axios.get(url);
+      localStorage.setItem("products", JSON.stringify(res.data));
+      localStorage.setItem("cacheTime", now.getTime().toString());
       return res.data;
     } catch (error) {
       thunkAPI.dispatch(setError(error.message));
