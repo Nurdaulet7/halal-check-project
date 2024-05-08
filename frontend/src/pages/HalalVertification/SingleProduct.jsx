@@ -144,21 +144,24 @@ const SingleProduct = () => {
               <p>{product.storage}</p>
             </div>
           </div>
-          {product.certified && (
-            <div className={styles.certifiedDoc}>
-              <FiCheckCircle id={styles.iconCertified} />
-              <p>
-                Certified by:{" "}
-                <a
-                  href={product.certificate.imageUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {product.certificate.name}
-                </a>
-              </p>
-            </div>
-          )}
+          {product.certified &&
+            product.certificate &&
+            product.certificate.imageUrl &&
+            product.certificate.name && (
+              <div className={styles.certifiedDoc}>
+                <FiCheckCircle id={styles.iconCertified} />
+                <p>
+                  Certified by:{" "}
+                  <a
+                    href={product.certificate.imageUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {product.certificate.name}
+                  </a>
+                </p>
+              </div>
+            )}
         </div>
       </div>
     </div>
