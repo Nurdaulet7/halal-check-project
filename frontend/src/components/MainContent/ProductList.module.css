@@ -13,6 +13,14 @@
   flex-direction: column;
 }
 
+.mobileContainer {
+  width: 100%;
+  padding-top: 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .listTop {
   display: flex;
   justify-content: space-between;

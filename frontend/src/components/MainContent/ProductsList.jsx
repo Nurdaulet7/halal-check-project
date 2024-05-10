@@ -16,6 +16,7 @@ import {
   selectOnlyCertifiedFilter,
   resetFilters,
 } from "../../redux/slices/filterProductsSlice";
+import { ThreeDots } from "react-loader-spinner";
 import styles from "./ProductList.module.css";
 import { EmptyPage } from "../../utils/EmptyPage";
 import { clearError, selectErrorMessage } from "../../redux/slices/errorSlice";
@@ -108,7 +109,22 @@ export const ProductsList = () => {
       <div className={styles.viewContent}>
         <div className={styles.container}>
           {isLoading ? (
-            loaders
+            !isMobile ? (
+              loaders
+            ) : (
+              <div className={styles.mobileContainer}>
+                <ThreeDots
+                  visible={true}
+                  height="80"
+                  width="80"
+                  color="#4fa94d"
+                  radius="9"
+                  ariaLabel="three-dots-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                />
+              </div>
+            )
           ) : errorMessage && products.length === 0 ? (
             <EmptyPage
               isError={true}

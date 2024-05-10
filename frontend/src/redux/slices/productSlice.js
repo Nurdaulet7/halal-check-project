@@ -14,14 +14,14 @@ export const fetchProduct = createAsyncThunk(
     const cacheTime = localStorage.getItem("cacheTime");
     const now = new Date();
 
-    // if (
-    //   cachedProducts &&
-    //   cacheTime &&
-    //   now.getTime() - Number(cacheTime) < 43200000
-    // ) {
-    //   // 43200000 ms = 12 hours
-    //   return JSON.parse(cachedProducts);
-    // }
+    if (
+      cachedProducts &&
+      cacheTime &&
+      now.getTime() - Number(cacheTime) < 43200000
+    ) {
+      // 43200000 ms = 12 hours
+      return JSON.parse(cachedProducts);
+    }
     try {
       const res = await axios.get(url);
       localStorage.setItem("products", JSON.stringify(res.data));

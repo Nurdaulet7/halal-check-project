@@ -173,7 +173,7 @@ export const ContactUs = () => {
               <Marker position={[43.20842111555535, 76.66913153068846]}>
                 <Popup>
                   <h2 className={styles.mapTitle}>SDU</h2>
-                  <h3>University</h3>
+                  <h4>Almaty Kaskelen, street Abylaikhan 1/1.</h4>
                 </Popup>
               </Marker>
             </MapContainer>
@@ -220,7 +220,7 @@ export const ContactUs = () => {
               <div className={styles.text}>
                 <p>
                   <span>Email: </span>
-                  halalcheck@gmail.com
+                  halalchecksdu@gmail.com
                 </p>
               </div>
             </div>

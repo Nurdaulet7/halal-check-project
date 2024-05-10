@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 
 const AdditiveCard = (props) => {
-  const { code, name, status, description } = props;
+  const { code, ecategory, status, description } = props;
   const sidebarVisible = useSelector(selectsidebarVisible);
   const additiveCode = useSelector(selectAdditiviesCodeFilter);
   const isMobile = useMediaQuery({ maxWidth: 500 });
@@ -50,7 +50,11 @@ const AdditiveCard = (props) => {
             <h4>
               {
                 <TruncatedText
-                  text={!name ? "Lorem, ipsum" : name}
+                  text={
+                    !ecategory || !ecategory.name || ecategory.name === ""
+                      ? "Lorem, ipsum"
+                      : ecategory.name
+                  }
                   maxLength={25}
                 />
               }
